@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="csrf-token"
+      content="WCdfJy4VcTcFPFczChV7CBIAI0UIEgd9oo7fJy7VRknr_qMfMIjh_gO0"
+    />
+    <title data-suffix="">Crs</title>
+    <link rel="canonical" href="https://crs.ecitizen.go.ke" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico"
+    />
+    <link
+      phx-track-static
+      rel="stylesheet"
+      href="assets/main-19eca7b2e7656617bc169bee5136883e.css"
+    />
+    <link
+      phx-track-static
+      rel="stylesheet"
+      href="assets/app-ced38148c650510e515759b66aeb3e30.css"
+    />
+    <script
+      defer
+      phx-track-static
+      type="text/javascript"
+      src="/assets/app-afd6b69306582c548fae7ef3c36bdacd.js?vsn=d"
+    ></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+  <body class="h-full">
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link
+          rel="icon"
+          href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A really cool weather widget" />
+        <title>Government EDRMS</title>
+        <link
+          phx-track-static
+          rel="stylesheet"
+          href="assets/main-19eca7b2e7656617bc169bee5136883e.css"
+        />
+        <link
+          phx-track-static
+          rel="stylesheet"
+          href="assets/app-ced38148c650510e515759b66aeb3e30.css"
+        />
+      </head>
+      <body>
+        <div class="min-h-4 bg-white relative z-10 pb-18">
+              <section >
+                <div class="max-w-7xl mx-auto px-4">
+                  <div class="flex flex-row justify-between items-start sm:items-center my-3">
+                    <div>
+                      <img src="images/icta.png" class="h-8 sm:h-10 lg:h-12" alt="logo" />
+                    </div>
+                    <div class="flex items-center justify-end flex-1 lg:w-0 space-x-3">
+                      <a
+                        href="documentation.html"
+                        class="whitespace-nowrap inline-flex items-center justify-center px-5 py-2 border border-gray-300 bg-white rounded-full shadow-sm text-sm font-semibold text-gray-600 hover:opacity-80"
+                      >
+                        Documentation
+                      </a>
+                      <a
+                        href="about-us.html"
+                        class="whitespace-nowrap inline-flex items-center justify-center px-5 py-2 border border-gray-300 bg-white rounded-full shadow-sm text-sm font-semibold text-gray-600 hover:opacity-80"
+                      >
+                        About Us
+                      </a>
+                      <a
+                        href="contact-us.html"
+                        class="whitespace-nowrap inline-flex items-center justify-center px-5 py-2 border border-gray-300 bg-white rounded-full shadow-sm text-sm font-semibold text-gray-600 hover:opacity-80"
+                      >
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>              
+        
+        
+            
+          <!-- header section -->
+          <section class="bg-[#F9F4F7]">
+            <div class="max-w-7xl mx-auto px-4">
+              <div
+                class="pb-8 md:pb-12 pt-8 sm:pt-40 lg:pt-44 md:pt-44 lg:pb-24 rounded-xl mb-8 sm:mb-10 md:mb-10 lg:mb-20 xl:mb-16"
+              >
+                <div
+                  class="px-8 mx-auto grid grid-cols-12 gap-2 md:gap-3 lg:gap-10"
+                >
+                  <div
+                    class="col-span-12 md:col-span-6 lg:col-span-7 pr-0 md:pr-5 lg:pr-12"
+                  >
+                    <h2
+                      class="text-xl md:text-2xl lg:text-3xl font-bold text-primary-700 mb-4 relative"
+                    >
+                      What is EDRMS
+                    </h2>
+                    <p
+                      class="text-base tracking-[0.01em] lg:text-lg font-normal mb-5 md:mb-0"
+                    >
+                    Embracing the digital revolution, our government is transitioning towards a paperless administration. 
+                    This transformation enhances efficiency, reduces environmental impact, and provides citizens with faster, 
+                    more convenient access to services. Our Electronic Document and Records Management System (EDRMS) is at the heart of this change. 
+                    It streamlines the creation, organization, and management of documents, ensuring a seamless flow of information. 
+                    By automating processes, we’re not only saving time and 
+                    resources but also improving transparency and accountability. Join us in this journey towards a sustainable, digital future.
+                    </p>
+                  </div>
+                  <div
+                    class="col-span-12 md:col-span-6 lg:col-span-5 relative z-10"
+                  >
+                    <img
+                      alt="crs kenya "
+                      src="images/earth.png"
+                      class="md:absolute left-0 right-0 md:-top-7 w-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- about edrms -->
+          <section>
+            <div class="max-w-7xl mx-auto px-4 pt-4 ">
+              <label for="ministryDropdown" class="text-lg font-semibold text-primary-700">
+                Select Ministry To Get Started:
+              </label>
+              <select id="ministryDropdown" class="block w-full p-2 border border-gray-300 rounded-md mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleMinistryChange()">
+                <option value="" disabled selected>Select a Ministry</option>
+                <option value="interior">Interior and National Administration</option>
+                <option value="public">Public Service, Gender and Affirmative Action</option>
+                <option value="defence">Defence</option>
+                <option value="water">Water, Sanitation and Irrigation</option>
+                <option value="foregn">Foreign and Diaspora Affairs</option>
+                <option value="trade">Trade, Investment and Industry</option>
+                <option value="eac">East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development</option>
+                <option value="roads">Roads, Transport and Public Works</option>
+                <option value="environment">Environment and Forestry</option>
+                <option value="lands">Lands, Housing and Urban Development</option>
+                <option value="tourism">Tourism, Wildlife and Heritage</option>
+                <option value="agriculture">Agriculture and Livestock Development</option>
+                <option value="education">EducationEnergy and Petroleum</option>
+                <option value="youth">Youth Affairs, Sports and the Arts</option>
+                <option value="cooperatives">Co-operatives and Micro, Small and Medium Enterprises (MSME) Development</option>
+                <option value="mining">Mining, Blue Economy and Maritime Affairs</option>
+                <option value="labor">Labour and Social Protection</option>
+                <option value="information">Information, Communications and the Digital Economy</option>
+                <option value="health">Health</option>
+                <!-- Add more options for other ministries -->
+              </select>
+            </div>
+
+            <!-- State Corporation Dropdown (Initially Hidden) -->
+            <div id="stateCorporationDropdownContainer" class="max-w-7xl mx-auto px-4 pt-4 hidden">
+              <label for="stateCorporationDropdown" class="text-lg font-semibold text-primary-700">
+                Select State Corporation:
+              </label>
+              <select id="stateCorporationDropdown" class="block w-full p-2 border border-gray-300 rounded-md mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleStateCorporationChange()">
+                <!-- Options for State Corporations will be dynamically populated based on the selected ministry -->
+                <option value="" disabled selected>Select a State Corporation</option>
+              </select>
+            </div>
+          
+            <!-- Online Services Cards -->
+            <div id="serviceCard" class="max-w-7xl mx-auto px-4 pt-4 hidden">
+              <div class="px-2 sm:px-8">
+                <h2
+                  class="text-2xl lg:text-3xl font-bold text-primary-700 mb-3"
+                >
+                  Accessing The EDRMS
+                </h2>
+                <p class="font-normal text-base md:text-lg w-10/12">
+                  To access the EDRMS service, sign in with your credentials and explore a range of online services designed to meet your needs. 
+                  From document management to process automation, 
+                  The EDRMS provides a seamless and efficient experience. Simply click the "Sign In" link below to get started.
+                </p>
+              </div>
+              <div
+                class="px-2 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10"
+              >
+                <div
+                  class="bg-primary-800 p-5 rounded-2xl space-y-4 flex flex-col justify-between"
+                >
+                  <div class="pb-3">
+                    <img
+                    src="images/gok.png"
+                    alt="Government Logo"
+                    class="w-12 h-12" 
+                  />
+                  </div>
+                  <h6
+                    class="text-base sm:text-lg font-bold text-primary-700 pb-3"
+                  >
+                    Government EDRMS
+                  </h6>
+                  <p class="text-primary-700 text-base">
+                    By automating processes, the EDRMS enhances efficiency and ensures secure access to information, simplifying tasks  
+                    and optimizing organizational productivity.
+                  </p>
+                  <div class="flex flex-row justify-between items-center">
+                    <a
+                      class="inline-flex text-sm text-primary-700 hover:underline cursor-pointer opacity-70"
+                    >
+                      Learn more
+                    </a>
+                    <a
+                      href="#"
+                      class="whitespace-nowrap inline-flex items-center justify-center px-3 py-2 border border-primary-700 bg-transparent rounded-full shadow-sm text-sm font-bold text-primary-700 hover:opacity-80 space-x-2"
+                    >
+                      <span>Sign In</span>
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="21"
+                          height="20"
+                          viewBox="0 0 21 20"
+                          fill="none"
+                        >
+                          <path
+                            d="M4.50005 10H16.1667M16.1667 10L10.3334 4.16669M16.1667 10L10.3334 15.8334"
+                            stroke="#FF5A5F"
+                            stroke-width="1.66667"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+               
+                  
+              </div>
+            </div>
+          </section>
+          
+          
+          <!-- Civil Registration Services -->
+          <section class="py-10">
+            <div class="max-w-7xl mx-auto px-4 z-10">
+              <div class="grid grid-cols-12 gap-6 px-2 sm:px-8">
+                <div class="col-span-12 sm:col-span-4">
+                  <h2 class="text-2xl font-semibold">
+                    Key information <br class="hidden sm:block" />
+                    and facts
+                  </h2>
+                </div>
+                <div class="col-span-12 sm:col-span-8">
+                  <div
+                    class="bg-white border border-white rounded-3xl"
+                    x-data="{selected:1}"
+                  >
+                    <ul class="shadow-box">
+                      <li
+                        class="relative rounded-3xl"
+                        x-bind:class="selected == 1  ? 'bg-[#FCF5FB]' : 'bg-white'"
+                      >
+                        <button
+                          type="button"
+                          class="w-full px-6 py-6 text-left"
+                          @click="selected !== 1 ? selected = 1 : selected = null"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="text-xl"> Efficiency </span>
+                            <!--
+                                                x-html="open ? '-' :'+' "
+                                            <svg x-bind:class="openProfile ? 'rotate-0 transform' : 'rotate-180 transform'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 rotate-0 transform">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+                                              </svg>
+                                            <span x-show="selected = 1" x-html="open ? '-' :'+' ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                    <path d="M20 36.6667C29.2047 36.6667 36.6666 29.2048 36.6666 20C36.6666 10.7953 29.2047 3.33337 20 3.33337C10.7952 3.33337 3.33331 10.7953 3.33331 20C3.33331 29.2048 10.7952 36.6667 20 36.6667Z" stroke="#4F9ECB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M13.3333 20H26.6666" stroke="#4F9ECB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            -->
+                            <span>
+                              <img
+                              src="images/diamond.svg"
+                              alt="Icon"
+                              width="42"
+                              height="41"
+                            />
+                            </span>
+                          </div>
+                        </button>
+                        <div
+                          class="relative overflow-hidden transition-all max-h-0 duration-700"
+                          x-ref="container1"
+                          x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                        >
+                          <div class="pb-6 px-6 pt-2 space-y-5">
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                Efficiency:
+                              </span>
+                              Automation can significantly speed up administrative processes, reducing the time spent on manual tasks and allowing staff to focus on more complex issues.
+                            </p>
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                Cost Saving
+                              </span>
+                              By reducing the need for physical storage and manual record-keeping, an EDRMS can lead to substantial cost savings over time.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="relative rounded-3xl"
+                        x-bind:class="selected == 2  ? 'bg-[#FCF5FB]' : 'bg-white'"
+                      >
+                        <button
+                          type="button"
+                          class="w-full px-6 py-6 text-left"
+                          @click="selected !== 2 ? selected = 2 : selected = null"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="text-xl"> Cost Saving </span>
+                            <span>
+                              <img
+                              src="images/diamond.svg"
+                              alt="Icon"
+                              width="42"
+                              height="41"
+                            />
+                            </span>
+                          </div>
+                        </button>
+                        <div
+                          class="relative overflow-hidden transition-all max-h-0 duration-700"
+                          x-ref="container2"
+                          x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                        >
+                          <div class="pb-6 px-6 pt-2 space-y-5">
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="relative rounded-3xl"
+                        x-bind:class="selected == 3  ? 'bg-[#FCF5FB]' : 'bg-white'"
+                      >
+                        <button
+                          type="button"
+                          class="w-full px-6 py-6 text-left"
+                          @click="selected !== 3 ? selected = 3 : selected = null"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="text-xl">
+                              Accessibility
+                            </span>
+                            <span>
+                              <img
+                              src="images/diamond.svg"
+                              alt="Icon"
+                              width="42"
+                              height="41"
+                            />
+                            </span>
+                          </div>
+                        </button>
+                        <div
+                          class="relative overflow-hidden transition-all max-h-0 duration-700"
+                          x-ref="container3"
+                          x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                        >
+                          <div class="pb-6 px-6 pt-2 space-y-5">
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="relative rounded-3xl"
+                        x-bind:class="selected == 4  ? 'bg-[#FCF5FB]' : 'bg-white'"
+                      >
+                        <button
+                          type="button"
+                          class="w-full px-6 py-6 text-left"
+                          @click="selected !== 4 ? selected = 4 : selected = null"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="text-xl">
+                              Security
+                            </span>
+                            <span>
+                              <img
+                              src="images/diamond.svg"
+                              alt="Icon"
+                              width="42"
+                              height="41"
+                            />
+                            </span>
+                          </div>
+                        </button>
+                        <div
+                          class="relative overflow-hidden transition-all max-h-0 duration-700"
+                          x-ref="container4"
+                          x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+                        >
+                          <div class="pb-6 px-6 pt-2 space-y-5">
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="relative rounded-3xl"
+                        x-bind:class="selected == 5  ? 'bg-[#FCF5FB]' : 'bg-white'"
+                      >
+                        <button
+                          type="button"
+                          class="w-full px-6 py-6 text-left"
+                          @click="selected !== 5 ? selected = 5 : selected = null"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="text-xl">
+                              Accuracy
+                            </span>
+                            <span>
+                              <img
+                              src="images/diamond.svg"
+                              alt="Icon"
+                              width="42"
+                              height="41"
+                            />
+                            </span>
+                          </div>
+                        </button>
+                        <div
+                          class="relative overflow-hidden transition-all max-h-0 duration-700"
+                          x-ref="container5"
+                          x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+                        >
+                          <div class="pb-6 px-6 pt-2 space-y-5">
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="relative rounded-3xl"
+                        x-bind:class="selected == 6  ? 'bg-[#FCF5FB]' : 'bg-white'"
+                      >
+                        <button
+                          type="button"
+                          class="w-full px-6 py-6 text-left"
+                          @click="selected !== 6 ? selected = 6 : selected = null"
+                        >
+                          <div class="flex items-center justify-between">
+                            <span class="text-xl">
+                              Compliance
+                            </span>
+                            <span>
+                              <img
+                                  src="images/diamond.svg"
+                                  alt="Icon"
+                                  width="42"
+                                  height="41"
+                                />
+                                
+                              
+                          </div>
+                        </button>
+                        <div
+                          class="relative overflow-hidden transition-all max-h-0 duration-700"
+                          x-ref="container6"
+                          x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+                        >
+                          <div class="pb-6 px-6 pt-2 space-y-5">
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                <!---point-->
+                              </span>
+                              <!---explanatio-->
+                            </p>
+                            <p
+                              class="text-base tracking-[0.01em] font-normal text-gray-500"
+                            >
+                              <span class="font-medium text-black">
+                                Regarding the mother of the child:
+                              </span>
+                              Date of birth or age, Marital status, Educational
+                              attainment, Place of usual residence, Birth order
+                              parity, Number of fetal deaths born to the mother
+                              during her entire lifetime
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <footer class="bg-[#F7FAFD]">
+            <div class="max-w-7xl mx-auto px-4 py-12">
+              <div class="px-2 sm:px-8 grid grid-cols-12 gap-x-5">
+                <div
+                  class="col-span-12 sm:col-span-5 md:col-span-4 space-y-6 sm:space-y-16 mb-6 sm:mb-0"
+                >
+                  <div>
+                    <img
+                      src="images/icta.png"
+                      class="h-10 md:h-12"
+                      alt="ict authority"
+                    />
+                  </div>
+                  <div>
+                    <a href="">
+                      <img
+                        src="images/moict.png"
+                        class="h-10"
+                        alt="moict"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="col-span-12 sm:col-span-7 md:col-span-5 space-y-6">
+                  <div class="space-y-4">
+                    <p class="text-lg text-[#475467] font-semibold">Location of Our Offices</p>
+                    <p class="text-base text-[#475467] font-normal">
+                      Teleposta Towers, Kenyatta Ave, Nairobi.
+                    </p>
+                  </div>
+                  <div class="space-y-4">
+                    <p class="text-lg text-[#475467] font-semibold">
+                      Talk to us
+                    </p>
+                    <ul class="text-base text-[#475467] font-normal space-y-1">
+                      <li>+254 20 667 6999 / +254 20 667 6999</li>
+                      <li>
+                        <a href="mailto: info@ict.go.ke" class="hover:underline"
+                          > info@ict.go.ke</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-span-3 hidden md:block">&nbsp;</div>
+              </div>
+              <div class="bg-[#F7FAFD] sm:text-right pt-7">
+                <p class="text-sm text-[#475467] text-left sm:text-right">
+                  © Copyright GovtEDRMS 2023. All rights Reserved.
+                </p>
+              </div>
+            </div>
+          </footer>
+        </div>
+        
+      </body>
+    </html>    
+    <script>
+      // Define a mapping of ministries to their respective state corporations
+      const stateCorporationsByMinistry = {
+        information: [
+          "Communications Authority of Kenya (CA) – www.ca.go.ke",
+          "Kenya Broadcasting Corporation – www.kbc.co.ke",
+          "Postal Corporation of Kenya – http://www.posta.co.ke",
+          "Konza Technopolis Development Authority  – http://www.konzacity.go.ke",
+          "Kenya ICT Authority – www.icta.go.ke",
+          "Kenya Yearbook Editorial Board (KYEB) – http://kenyayearbook.co.ke",
+          "Media Council of Kenya – http://www.mediacouncil.or.ke",
+          "Office of the Data Protection Commissioner – https://www.odpc.go.ke"
+        ],
+        // Add mappings for other ministries
+      };
+    
+      function handleMinistryChange() {
+        // Get the selected ministry from the dropdown
+        const selectedMinistry = document.getElementById("ministryDropdown").value;
+    
+        // Get the state corporation dropdown element
+        const stateCorporationDropdown = document.getElementById("stateCorporationDropdown");
+    
+        // Clear existing options
+        stateCorporationDropdown.innerHTML = '<option value="" disabled selected>Select a State Corporation</option>';
+    
+        // Populate state corporations based on the selected ministry
+        const stateCorporations = stateCorporationsByMinistry[selectedMinistry] || [];
+        stateCorporations.forEach((corporation) => {
+          const option = document.createElement("option");
+          option.value = corporation;
+          option.text = corporation;
+          stateCorporationDropdown.add(option);
+        });
+    
+        // Show the state corporation dropdown
+        document.getElementById("stateCorporationDropdownContainer").classList.remove("hidden");
+
+        // Hide the service card when ministry changes
+    document.getElementById("serviceCard").classList.add("hidden");
+  }
+
+  function handleStateCorporationChange() {
+    // Check if a state corporation is selected
+    var selectedStateCorporation = document.getElementById("stateCorporationDropdown").value;
+
+    // Show or hide the service card based on whether a state corporation is selected
+    var serviceCard = document.getElementById("serviceCard");
+    if (selectedStateCorporation !== "") {
+      serviceCard.classList.remove("hidden");
+    } else {
+      serviceCard.classList.add("hidden");
+    }
+  }
+    </script>
+    
+    
+  </body>
+</html>
