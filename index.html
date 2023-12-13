@@ -136,7 +136,7 @@
               <label for="ministryDropdown" class="text-lg font-bold text-primary-700" id="ministry">
                 Select Ministry To Get Started:
               </label>
-              <select id="ministryDropdown" class="block w-full p-2 border border-gray-300 rounded-md mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleMinistryChange()">
+              <select id="ministryDropdown" class="block w-full p-2 border border-gray-300 rounded-full mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleMinistryChange()">
                 <option value="" disabled selected>Select a Ministry</option>
                 <option value="interior">Interior and National Administration</option>
                 <option value="public">Public Service, Gender and Affirmative Action</option>
@@ -166,82 +166,15 @@
               <label for="stateCorporationDropdown" class="text-lg font-semibold text-primary-700">
                 Select State Corporation:
               </label>
-              <select id="stateCorporationDropdown" class="block w-full p-2 border border-gray-300 rounded-md mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleStateCorporationChange()">
+              <select id="stateCorporationDropdown" class="block w-full p-2 border border-gray-300 rounded-full mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleStateCorporationChange()">
                 <!-- Options for State Corporations will be dynamically populated based on the selected ministry -->
                 <option value="" disabled selected>Select a State Corporation</option>
               </select>
             </div>
           
             <!-- Online Services Cards -->
-            <div id="serviceCard" class="max-w-7xl mx-auto px-4 pt-4 hidden">
-              <div class="px-2 sm:px-8">
-                <h2
-                  class="text-2xl lg:text-3xl font-bold text-primary-700 mb-3"
-                >
-                  Accessing The EDRMS
-                </h2>
-                <p class="font-normal text-base md:text-lg w-10/12">
-                  To access the EDRMS service, sign in with your credentials and explore a range of online services designed to meet your needs. 
-                  From document management to process automation, 
-                  The EDRMS provides a seamless and efficient experience. Simply click the "Sign In" link below to get started.
-                </p>
-              </div>
-              <div
-                class="px-2 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10"
-              >
-                <div
-                  class="bg-primary-800 p-5 rounded-2xl space-y-4 flex flex-col justify-between"
-                >
-                  <div class="pb-3">
-                    <img
-                    src="images/gok.png"
-                    alt="Government Logo"
-                    class="w-12 h-12" 
-                  />
-                  </div>
-                  <h6
-                    class="text-base sm:text-lg font-bold text-primary-700 pb-3"
-                  >
-                    Government EDRMS
-                  </h6>
-                  <p class="text-primary-700 text-base">
-                    By automating processes, the EDRMS enhances efficiency and ensures secure access to information, simplifying tasks  
-                    and optimizing organizational productivity.
-                  </p>
-                  <div class="flex flex-row justify-between items-center">
-                    <a
-                      class="inline-flex text-sm text-primary-700 hover:underline cursor-pointer opacity-70"
-                    >
-                      Learn more
-                    </a>
-                    <a
-                      href="http://edrms.icta.go.ke:86/edrms/Home"
-                      class="whitespace-nowrap inline-flex items-center justify-center px-3 py-2 border border-primary-700 bg-transparent rounded-full shadow-sm text-sm font-bold text-primary-700 hover:opacity-80 space-x-2"
-                    >
-                      <span>Sign In</span>
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="21"
-                          height="20"
-                          viewBox="0 0 21 20"
-                          fill="none"
-                        >
-                          <path
-                            d="M4.50005 10H16.1667M16.1667 10L10.3334 4.16669M16.1667 10L10.3334 15.8334"
-                            stroke="#FF5A5F"
-                            stroke-width="1.66667"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-               
-                  
-              </div>
+            <div id="serviceCard" class="max-w-4xl mx-auto px-4 pt-4 hidden">
+              <!-- Card content will be dynamically populated based on user selections -->
             </div>
           </section>
           
@@ -627,58 +560,193 @@
     </html>    
     <script>
       // Define a mapping of ministries to their respective state corporations
-      const stateCorporationsByMinistry = {
-        information: [
-          "Communications Authority of Kenya (CA) – www.ca.go.ke",
-          "Kenya Broadcasting Corporation – www.kbc.co.ke",
-          "Postal Corporation of Kenya – http://www.posta.co.ke",
-          "Konza Technopolis Development Authority  – http://www.konzacity.go.ke",
-          "Kenya ICT Authority – www.icta.go.ke",
-          "Kenya Yearbook Editorial Board (KYEB) – http://kenyayearbook.co.ke",
-          "Media Council of Kenya – http://www.mediacouncil.or.ke",
-          "Office of the Data Protection Commissioner – https://www.odpc.go.ke"
-        ],
-        // Add mappings for other ministries
+       // Define a JSON object with details for each ministry and state corporation
+       var serviceDetails = {
+        'interior': {
+          'State Corp 1': {
+            title: 'Government EDRMS',
+            description: 'By automating processes, the EDRMS enhances efficiency and ensures secure access to information, simplifying tasks and optimizing organizational productivity.',
+            learnMoreLink: 'http://example.com/learn-more-interior',
+            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+          },
+          'State Corp 2': {
+            title: 'Another Service Title',
+            description: 'Description for another service under Interior.',
+            learnMoreLink: 'http://example.com/learn-more-another',
+            signInLink: 'http://example.com/sign-in-another'
+          }
+        },
+        'public': {
+          'State Corp 3': {
+            title: 'Public Service EDRMS',
+            description: 'Description for the EDRMS service under Public Service.',
+            learnMoreLink: 'http://example.com/learn-more-public',
+            signInLink: 'http://example.com/sign-in-public'
+          },
+          'State Corp 4': {
+            title: 'Public Another Service',
+            description: 'Description for another service under Public Service.',
+            learnMoreLink: 'http://example.com/learn-more-public-another',
+            signInLink: 'http://example.com/sign-in-public-another'
+          }
+        },
+        'information': {
+          'Kenya ICT Authority': {
+            title: 'ICTA EDRMS',
+            description: 'Description for the EDRMS service under ICTA',
+            learnMoreLink: 'http://example.com/learn-more-information',
+            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+          },
+          'ICT and Digital Economy': {
+            title: 'ICT and Digital Economy EDRMS',
+            description: 'Description for another service under Information.',
+            learnMoreLink: 'http://example.com/learn-more-information-another',
+            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+          },
+          
+          'Broadcasting and Telecommunications': {
+            title: 'Broadcasting and Telecommunications EDRMS',
+            description: 'Description for another service under Information.',
+            learnMoreLink: 'http://example.com/learn-more-information-another',
+            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+          }
+        },
+        'health': {
+          'Health Corp 1': {
+            title: 'Health EDRMS',
+            description: 'Description for the EDRMS service under Health.',
+            learnMoreLink: 'http://example.com/learn-more-health',
+            signInLink: 'http://edrms.health.go.ke:86/edrms/Home'
+          },
+          'Health Corp 2': {
+            title: 'Health Another Service',
+            description: 'Description for another service under Health.',
+            learnMoreLink: 'http://example.com/learn-more-health-another',
+            signInLink: 'http://example.com/sign-in-health-another'
+          }
+        },
+        'education': {
+          'Education Corp 1': {
+            title: 'Education EDRMS',
+            description: 'Description for the EDRMS service under Education.',
+            learnMoreLink: 'http://example.com/learn-more-education',
+            signInLink: 'http://edrms.education.go.ke:86/edrms/Home'
+          },
+          'Education Corp 2': {
+            title: 'Education Another Service',
+            description: 'Description for another service under Education.',
+            learnMoreLink: 'http://example.com/learn-more-education-another',
+            signInLink: 'http://example.com/sign-in-education-another'
+          }
+        },
+        'youth': {
+          'Youth Corp 1': {
+            title: 'Youth EDRMS',
+            description: 'Description for the EDRMS service under Youth.',
+            learnMoreLink: 'http://example.com/learn-more-youth',
+            signInLink: 'http://edrms.youth.go.ke:86/edrms/Home'
+          },
+          'Youth Corp 2': {
+            title: 'Youth Another Service',
+            description: 'Description for another service under Youth.',
+            learnMoreLink: 'http://example.com/learn-more-youth-another',
+            signInLink: 'http://example.com/sign-in-youth-another'
+          }
+        },
+        // Add more ministries and state corporations as needed
       };
-    
-      function handleMinistryChange() {
-        // Get the selected ministry from the dropdown
-        const selectedMinistry = document.getElementById("ministryDropdown").value;
-    
-        // Get the state corporation dropdown element
-        const stateCorporationDropdown = document.getElementById("stateCorporationDropdown");
-    
-        // Clear existing options
-        stateCorporationDropdown.innerHTML = '<option value="" disabled selected>Select a State Corporation</option>';
-    
-        // Populate state corporations based on the selected ministry
-        const stateCorporations = stateCorporationsByMinistry[selectedMinistry] || [];
-        stateCorporations.forEach((corporation) => {
-          const option = document.createElement("option");
-          option.value = corporation;
-          option.text = corporation;
-          stateCorporationDropdown.add(option);
-        });
-    
-        // Show the state corporation dropdown
+      
+
+    function handleMinistryChange() {
+      var selectedMinistry = document.getElementById("ministryDropdown").value;
+
+      if (selectedMinistry) {
         document.getElementById("stateCorporationDropdownContainer").classList.remove("hidden");
-
-        // Hide the service card when ministry changes
-    document.getElementById("serviceCard").classList.add("hidden");
-  }
-
-  function handleStateCorporationChange() {
-    // Check if a state corporation is selected
-    var selectedStateCorporation = document.getElementById("stateCorporationDropdown").value;
-
-    // Show or hide the service card based on whether a state corporation is selected
-    var serviceCard = document.getElementById("serviceCard");
-    if (selectedStateCorporation !== "") {
-      serviceCard.classList.remove("hidden");
-    } else {
-      serviceCard.classList.add("hidden");
+        populateStateCorporations(selectedMinistry);
+      } else {
+        document.getElementById("stateCorporationDropdownContainer").classList.add("hidden");
+        document.getElementById("serviceCard").classList.add("hidden");
+      }
     }
-  }
+
+    function handleStateCorporationChange() {
+      var selectedMinistry = document.getElementById("ministryDropdown").value;
+      var selectedCorporation = document.getElementById("stateCorporationDropdown").value;
+
+      if (selectedMinistry && selectedCorporation) {
+        populateServiceCard(selectedMinistry, selectedCorporation);
+        document.getElementById("serviceCard").classList.remove("hidden");
+      } else {
+        document.getElementById("serviceCard").classList.add("hidden");
+      }
+    }
+
+    function populateStateCorporations(selectedMinistry) {
+      var stateCorporations = {
+        'interior': ['State Corp 1', 'State Corp 2'],
+        'public': ['State Corp 3', 'State Corp 4'],
+        'information': ['Kenya ICT Authority', 'ICT and Digital Economy', 'Broadcasting and Telecommunications'], // Update this line
+        'health': ['Health Corp 1', 'Health Corp 2'],
+        'education': ['Education Corp 1', 'Education Corp 2'],
+        'youth': ['Youth Corp 1', 'Youth Corp 2'],
+    // Add more entries as needed
+      };
+
+      var stateCorporationDropdown = document.getElementById("stateCorporationDropdown");
+
+      stateCorporationDropdown.innerHTML = '<option value="" disabled selected>Select a State Corporation</option>';
+
+      stateCorporations[selectedMinistry].forEach(function (corporation) {
+        var option = document.createElement("option");
+        option.value = corporation;
+        option.text = corporation;
+        stateCorporationDropdown.add(option);
+      });
+    }
+
+    function populateServiceCard(selectedMinistry, selectedCorporation) {
+      var serviceCard = document.getElementById("serviceCard");
+      serviceCard.innerHTML = ''; // Clear existing content
+
+      var serviceDetail = serviceDetails[selectedMinistry][selectedCorporation];
+
+      // Dynamically populate the "Sign In" link
+      var signInLink = `
+      <div class="flex justify-center">
+        <a href="${serviceDetail.signInLink}" class="whitespace-nowrap inline-flex items-center justify-center px-3 py-2 border border-primary-700 bg-transparent rounded-full shadow-sm text-sm font-bold text-primary-700 hover:opacity-80 space-x-2">
+          <span>Sign In</span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+              <path d="M4.50005 10H16.1667M16.1667 10L10.3334 4.16669M16.1667 10L10.3334 15.8334" stroke="#FF5A5F" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+      `;
+
+       // Add the Kenyan government logo
+      var governmentLogo = `
+      <div class="pb-3">
+        <img src="images/gok.png" alt="Government Logo" class="w-12 h-12">
+      </div>
+    `;
+
+      // Replace the following with your actual service card content
+      var cardContent = `
+        <div class="px-4 py-6 sm:px-8 bg-primary-800 rounded-lg">
+          ${governmentLogo}
+          <h2 class="text-2xl lg:text-3xl font-bold text-primary-700 mb-3 text-center justify-center">
+            ${serviceDetail.title}
+          </h2>
+          <p class="font-normal text-base text-center justify-center md:text-lg w-10/12">
+            ${serviceDetail.description}
+          </p>
+          ${signInLink}
+        </div>
+      `;
+
+      serviceCard.innerHTML = cardContent;
+    }
   // JavaScript to toggle the responsive menu
   document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
