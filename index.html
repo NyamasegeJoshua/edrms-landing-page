@@ -80,7 +80,7 @@
                 </div>
               </div>
               <!-- Responsive menu for small screens -->
-              <div id="responsive-menu" class="sm:hidden mt-2">
+              <div id="responsive-menu" class="hidden sm:hidden mt-2  flex flex-col items-end">
                 <a href="documentation.html" class="block px-4 py-2 text-gray-800">Documentation</a>
                 <a href="about-us.html" class="block px-4 py-2 text-gray-800">About Us</a>
                 <a href="contact-us.html" class="block px-4 py-2 text-gray-800">Contact Us</a>
@@ -102,8 +102,7 @@
                 >
                   <div
                     class="col-span-12 md:col-span-6 lg:col-span-7 pr-0 md:pr-5 lg:pr-12 mt-0"
-                  >
-                  <a href="#ministry" style="display: block; text-align: center; text-decoration: underline; color: red; font-weight: bold; font-size:large;">Click Here To Get Started&#8594;</a>
+                  >                  
                     <h2
                       class="text-xl text-center justify-center md:text-2xl lg:text-3xl font-bold text-primary-700 mb-4 relative"
                     >
@@ -112,13 +111,11 @@
                     <p
                       class="text-base text-center justify-center tracking-[0.01em] lg:text-lg font-normal mb-5 md:mb-0"
                     >
-                    Embracing the digital revolution, our government is transitioning towards a paperless administration. 
-                    This transformation enhances efficiency, reduces environmental impact, and provides citizens with faster, 
-                    more convenient access to services. Our Electronic Document and Records Management System (EDRMS) is at the heart of this change. 
-                    It streamlines the creation, organization, and management of documents, ensuring a seamless flow of information. 
-                    By automating processes, we’re not only saving time and 
-                    resources but also improving transparency and accountability. Join us in this journey towards a sustainable, digital future.
+                    Our government is transitioning to a paperless administration to enhance efficiency and reduce environmental impact. 
+                    The Electronic Document and Records Management System (EDRMS) is central to this change, streamlining document management and improving transparency and accountability.
+                    Join us on this journey towards a sustainable, digital future.
                     </p>
+                    <a href="#ministry" style="display: block; text-align: center; text-decoration: underline; color: red; font-weight: bold; font-size:large;">Click Here To Get Started&#8594;</a>
                   </div>
                   <div
                     class="col-span-12 md:col-span-6 lg:col-span-5 relative z-10"
@@ -683,8 +680,13 @@
     }
   }
   // JavaScript to toggle the responsive menu
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    document.getElementById('responsive-menu').classList.toggle('hidden');
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const responsiveMenu = document.getElementById('responsive-menu');
+
+    menuToggle.addEventListener('click', function () {
+      responsiveMenu.classList.toggle('hidden');
+    });
   });
     </script>
     
