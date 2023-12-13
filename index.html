@@ -57,7 +57,7 @@
         />
       </head>
       <body>
-        <div class="min-h-4 bg-white relative z-10 pb-18">
+        <div class="min-h-4 bg-white relative z-10 pb-18" style="margin-bottom: 20px;">
           <section class="lg:px-4 xl:px-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-8">
               <div class="flex flex-row justify-between items-start sm:items-center my-3">
@@ -91,15 +91,16 @@
               </div>
             </div>
           </section>
-        </div>          
+        </div>      
         
         
             
           <!-- header section -->
-          <section class="bg-[#F9F4F7]" >
-            
+          <section class="bg-[#F9F4F7]" >  
+            <!-- Add an empty styled div for separation -->
+            <div class="max-w-7xl mx-auto px-4 mb-12 h-10 bg-primary-200"></div>          
                   <!-- Add this code for the search field -->
-                  <div class="max-w-7xl mx-auto px-4 mt-6 mb-12">
+                  <div class="max-w-7xl mx-auto px-4 mt-1 h-16 mb-12 py-14">
                     <label for="globalSearchInput" class="sr-only">Search</label>
                     <div class="relative rounded-md shadow-sm">
                       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -118,7 +119,7 @@
                   </div>
 
                   <!-- Add this code for the search results container -->
-                  <div id="searchResults" class="max-w-7xl mx-auto px-4 mb-12 hidden">
+                  <div id="searchResults" style="display: grid;" class="max-w-7xl mx-auto px-4 mb-12 hidden">
                     <!-- Search results will be dynamically added here using JavaScript -->
                   </div>
             <div class="max-w-7xl mx-auto px-4">
@@ -839,9 +840,10 @@
     var searchResultsContainer = document.getElementById("searchResults");
 
     // Create a new service card element
-    var cardElement = document.createElement("div");
-    cardElement.className = "px-4 py-6 sm:px-8 bg-primary-800 rounded-lg mb-4";
-    cardElement.innerHTML = getServiceCardHTML(selectedMinistry, selectedCorporation);
+  var cardElement = document.createElement("div");
+  cardElement.className = "relative flex flex-col mt-6 text-gray-700 bg-none shadow-primary rounded-xl w-full sm:w-full";
+  cardElement.innerHTML = getServiceCardHTML(selectedMinistry, selectedCorporation);
+
 
     // Append the card to the search results container
     searchResultsContainer.appendChild(cardElement);
@@ -853,42 +855,43 @@
 
     // Dynamically populate the "Sign In" link
  // Dynamically populate the "Sign In" link
- var signInLink = `
- <div class="flex justify-center mt-2">
-   <a href="${serviceDetail.signInLink}" class="whitespace-nowrap inline-flex items-center justify-center px-2 py-1 border border-primary-700 bg-transparent rounded-full shadow-sm text-sm font-bold text-primary-700 hover:opacity-80 space-x-2">
-     <span>Sign In</span>
-     <span>
-       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-         <path d="M3.5 7.5H11.1667M11.1667 7.5L8.00003 4.16669M11.1667 7.5L8.00003 10.8334" stroke="#FF5A5F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
-       </svg>
-     </span>
-   </a>
- </div>
-`;
+  var signInLink = `
+    <div class="flex justify-center mt-2">
+      <a href="${serviceDetail.signInLink}" class="whitespace-nowrap inline-flex items-center justify-center px-2 py-1 border border-primary-700 bg-transparent rounded-full shadow-sm text-sm font-bold text-primary-700 hover:opacity-80 space-x-2">
+        <span>Sign In</span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M3.5 7.5H11.1667M11.1667 7.5L8.00003 4.16669M11.1667 7.5L8.00003 10.8334" stroke="#FF5A5F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  `;
 
-// Add the Kenyan government logo
-var governmentLogo = `
- <div class="pb-2">
-   <img src="images/gok.png" alt="Government Logo" class="w-8 h-8">
- </div>
-`;
+  // Add the Kenyan government logo
+  var governmentLogo = `
+    <div class="pb-2">
+      <img src="images/gok.png" alt="Government Logo" class="w-8 h-8">
+    </div>
+  `;
 
-// Replace the following with your actual service card content
-var cardContent = `
- <div class="bg-primary-800 rounded-lg p-4 mb-4" style="flex: 0 0 calc(25% - 1rem); max-width: calc(25% - 1rem);">
-   ${governmentLogo}
-   <h2 class="text-sm lg:text-base font-bold text-primary-700 mb-1 text-center">
-     ${serviceDetail.title}
-   </h2>
-   <p class="font-normal text-xs text-center md:text-sm">
-     ${serviceDetail.description}
-   </p>
-   ${signInLink}
- </div>
-`;
+  // Replace the following with your actual service card content
+  var cardContent = `
+    <div class="bg-primary-800 rounded-lg p-4 mb-4 mx-auto" style="max-width: 300px; min-width:300px;">
+      ${governmentLogo}
+      <h2 class="text-sm lg:text-base font-bold text-primary-700 mb-1 text-center">
+        ${serviceDetail.title}
+      </h2>
+      <p class="font-normal text-xs text-center md:text-sm">
+        ${serviceDetail.description}
+      </p>
+      ${signInLink}
+    </div>
+  `;
 
-return cardContent;
+  return cardContent;
 }
+
 
     </script>   
     
