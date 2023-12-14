@@ -120,7 +120,7 @@
 
                   <!-- Add this code for the search results container -->
                   <div class="bg-white shadow-lg px-2 py-10 -mb-px">
-                    <h2 class="ml-2 text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl sm:text-sm">
+                    <h2 class="ml-2 text-center font-display text-4xl font-bold tracking-tight text-slate-900 md:text-4xl sm:text-sm">
                       Your Search Results Will Appear here...
                     </h2>
                     <ul class="mt-16 grid-cols-1 gap-6 text-center md:grid-cols-3" id="searchResults">
@@ -150,9 +150,7 @@
                     <p
                       class="text-base text-center justify-center tracking-[0.01em] lg:text-lg font-normal mb-5 md:mb-0"
                     >
-                    Our government is transitioning to a paperless administration to enhance efficiency and reduce environmental impact. 
-                    The Electronic Document and Records Management System (EDRMS) is central to this change, streamlining document management and improving transparency and accountability.
-                    Join us on this journey towards a sustainable, digital future.
+                    Embrace a digital future with EDRMS for streamlined efficiency, transparency, and sustainability. Join us on the journey towards a paperless administration.
                     </p>
                     <a href="#ministry" style="display: block; text-align: center; text-decoration: underline; color: red; font-weight: bold; font-size:large;">Click Here To Get Started&#8594;</a>
                   </div>
@@ -169,6 +167,29 @@
               </div>
             </div>
           </section>
+
+          <!-- Ministry Section -->
+          <!-- Ministry Section -->
+        <section class="py-10">
+          <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Ministries</h2>
+
+            <!-- Container for Ministry Cards -->
+            <div id="ministryCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Cards will be dynamically added here using JavaScript -->
+            </div>
+
+            <!-- Container for "See More" link -->
+            <div id="seeMoreContainer" class="mt-4 flex justify-center items-center"></div>
+
+            <!-- Container for "Minimize" link -->
+            <div id="minimizeContainer" class="mt-4 flex justify-center items-center"></div>
+          </div>
+        </section>
+
+
+
+
           <!-- about edrms -->
           <section id="ministry">
             <div class="max-w-7xl mx-auto px-4 pt-4 ">
@@ -648,98 +669,207 @@
        // Define a JSON object with details for each ministry and state corporation
        var serviceDetails = {
         'interior': {
-          'State Corp 1': {
-            title: 'Government EDRMS',
-            description: 'By automating processes, the EDRMS enhances efficiency and ensures secure access to information, simplifying tasks and optimizing organizational productivity.',
-            learnMoreLink: 'http://example.com/learn-more-interior',
-            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+          'State Department For Correctional Services': {
+              title: 'Correctional Services EDRMS',
+              description: 'Optimize operations and ensure security within correctional services using the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-correctional-services',
+              signInLink: 'http://edrms.correctionalservices.go.ke:86/edrms/Home'
           },
-          'State Corp 2': {
-            title: 'Another Service Title',
-            description: 'Description for another service under Interior.',
-            learnMoreLink: 'http://example.com/learn-more-another',
-            signInLink: 'http://example.com/sign-in-another'
-          }
-        },
-        'public': {
-          'State Corp 3': {
+          'State Department For Internal Security And National Administration': {
+              title: 'Internal Security EDRMS',
+              description: 'Enhance internal security and national administration through streamlined processes with the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-internal-security',
+              signInLink: 'http://edrms.internalsecurity.go.ke:86/edrms/Home'
+          },
+          'State Department For Citizen Services': {
+              title: 'Citizen Services EDRMS',
+              description: 'Improve citizen services with efficient document management through the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-citizen-services',
+              signInLink: 'http://edrms.citizenservices.go.ke:86/edrms/Home'
+          },
+          'Kenya Police': {
+              title: 'Police EDRMS',
+              description: 'Optimize police operations and ensure information security with the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-police',
+              signInLink: 'http://edrms.police.go.ke:86/edrms/Home'
+          },
+          'Administration Police': {
+              title: 'Administration Police EDRMS',
+              description: 'Improve administrative processes within the police force using the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-administration-police',
+              signInLink: 'http://edrms.administrationpolice.go.ke:86/edrms/Home'
+          },
+          'Kenya Prisons Service': {
+              title: 'Prisons Service EDRMS',
+              description: 'Enhance efficiency and security within the Kenya Prisons Service through the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-prisons-service',
+              signInLink: 'http://edrms.prisonsservice.go.ke:86/edrms/Home'
+          },
+          'Probation and Aftercare Services': {
+              title: 'Probation and Aftercare EDRMS',
+              description: 'Optimize probation and aftercare services through efficient document management with the EDRMS.',
+              learnMoreLink: 'http://example.com/learn-more-probation-aftercare',
+              signInLink: 'http://edrms.probationaftercare.go.ke:86/edrms/Home'
+          },
+          // Remove the dummies
+      },      
+      'public': {
+        'State Department For Public Service': {
             title: 'Public Service EDRMS',
-            description: 'Description for the EDRMS service under Public Service.',
-            learnMoreLink: 'http://example.com/learn-more-public',
-            signInLink: 'http://example.com/sign-in-public'
-          },
-          'State Corp 4': {
-            title: 'Public Another Service',
-            description: 'Description for another service under Public Service.',
-            learnMoreLink: 'http://example.com/learn-more-public-another',
-            signInLink: 'http://example.com/sign-in-public-another'
-          }
+            description: 'Enhance efficiency in public service operations through the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-public-service',
+            signInLink: 'http://edrms.publicservice.go.ke:86/edrms/Home'
         },
+        'State Department For Gender And Affirmative Action': {
+            title: 'Gender and Affirmative Action EDRMS',
+            description: 'Promote gender equality and affirmative action through efficient document management with the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-gender-affirmative',
+            signInLink: 'http://edrms.genderaffirmative.go.ke:86/edrms/Home'
+        },
+        'Kenya School of Government': {
+            title: 'School of Government EDRMS',
+            description: 'Facilitate efficient document management and training processes at the Kenya School of Government using the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-school-of-government',
+            signInLink: 'http://edrms.schoolofgovernment.go.ke:86/edrms/Home'
+        },
+        'Huduma Centres': {
+            title: 'Huduma Centres EDRMS',
+            description: 'Optimize service delivery at Huduma Centres through the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-huduma-centres',
+            signInLink: 'http://edrms.hudumacentres.go.ke:86/edrms/Home'
+        },
+        'Institute of Human Resource Management': {
+            title: 'Human Resource Management EDRMS',
+            description: 'Enhance human resource processes and document management at the Institute of Human Resource Management with the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-hr-management',
+            signInLink: 'http://edrms.hrmmanagement.go.ke:86/edrms/Home'
+        },
+        'Anti-Female Genital Mutilation Board': {
+            title: 'Anti-FGM Board EDRMS',
+            description: 'Support the fight against Female Genital Mutilation through efficient document management with the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-anti-fgm-board',
+            signInLink: 'http://edrms.antifgmboard.go.ke:86/edrms/Home'
+        },
+        'Gender Violence Protection Centres': {
+            title: 'Gender Violence Protection Centres EDRMS',
+            description: 'Ensure effective document management in Gender Violence Protection Centres with the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-gender-violence-centres',
+            signInLink: 'http://edrms.genderviolencecentres.go.ke:86/edrms/Home'
+        },
+        'Women Enterprise Fund': {
+            title: 'Women Enterprise Fund EDRMS',
+            description: 'Facilitate efficient document management in the Women Enterprise Fund using the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-women-enterprise-fund',
+            signInLink: 'http://edrms.womenenterprisefund.go.ke:86/edrms/Home'
+        },
+        'Uwezo Fund': {
+            title: 'Uwezo Fund EDRMS',
+            description: 'Support effective document management in the Uwezo Fund through the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-uwezo-fund',
+            signInLink: 'http://edrms.uwezofund.go.ke:86/edrms/Home'
+        },
+        // Remove the dummies
+    },    
         'information': {
           'Kenya ICT Authority': {
-            title: 'ICTA EDRMS',
-            description: 'Description for the EDRMS service under ICTA',
-            learnMoreLink: 'http://example.com/learn-more-information',
-            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+              title: 'ICTA EDRMS',
+              description: 'Description for the EDRMS service under ICTA.',
+              learnMoreLink: 'http://example.com/learn-more-information',
+              signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
           },
-          'ICT and Digital Economy': {
-            title: 'ICT and Digital Economy EDRMS',
-            description: 'Description for another service under Information.',
-            learnMoreLink: 'http://example.com/learn-more-information-another',
-            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
-          },
-          
           'Broadcasting and Telecommunications': {
-            title: 'Broadcasting and Telecommunications EDRMS',
-            description: 'Description for another service under Information.',
-            learnMoreLink: 'http://example.com/learn-more-information-another',
-            signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
-          }
-        },
-        'health': {
-          'Health Corp 1': {
-            title: 'Health EDRMS',
-            description: 'Description for the EDRMS service under Health.',
-            learnMoreLink: 'http://example.com/learn-more-health',
-            signInLink: 'http://edrms.health.go.ke:86/edrms/Home'
+              title: 'Broadcasting and Telecommunications EDRMS',
+              description: 'Description for the EDRMS service under Broadcasting and Telecommunications.',
+              learnMoreLink: 'http://example.com/learn-more-broadcasting',
+              signInLink: 'http://edrms.broadcasting.go.ke:86/edrms/Home'
           },
-          'Health Corp 2': {
-            title: 'Health Another Service',
-            description: 'Description for another service under Health.',
-            learnMoreLink: 'http://example.com/learn-more-health-another',
-            signInLink: 'http://example.com/sign-in-health-another'
-          }
-        },
-        'education': {
-          'Education Corp 1': {
-            title: 'Education EDRMS',
-            description: 'Description for the EDRMS service under Education.',
-            learnMoreLink: 'http://example.com/learn-more-education',
-            signInLink: 'http://edrms.education.go.ke:86/edrms/Home'
+          'Kenya Broadcasting Corporation': {
+              title: 'Broadcasting Corporation EDRMS',
+              description: 'Description for the EDRMS service under Kenya Broadcasting Corporation.',
+              learnMoreLink: 'http://example.com/learn-more-broadcasting-corporation',
+              signInLink: 'http://edrms.kbc.go.ke:86/edrms/Home'
           },
-          'Education Corp 2': {
-            title: 'Education Another Service',
-            description: 'Description for another service under Education.',
-            learnMoreLink: 'http://example.com/learn-more-education-another',
-            signInLink: 'http://example.com/sign-in-education-another'
-          }
-        },
-        'youth': {
-          'Youth Corp 1': {
-            title: 'Youth EDRMS',
-            description: 'Description for the EDRMS service under Youth.',
-            learnMoreLink: 'http://example.com/learn-more-youth',
-            signInLink: 'http://edrms.youth.go.ke:86/edrms/Home'
+          'Postal Corporation of Kenya': {
+              title: 'Postal Corporation EDRMS',
+              description: 'Description for the EDRMS service under Postal Corporation of Kenya.',
+              learnMoreLink: 'http://example.com/learn-more-postal-corporation',
+              signInLink: 'http://edrms.postalcorporation.go.ke:86/edrms/Home'
           },
-          'Youth Corp 2': {
-            title: 'Youth Another Service',
-            description: 'Description for another service under Youth.',
-            learnMoreLink: 'http://example.com/learn-more-youth-another',
-            signInLink: 'http://example.com/sign-in-youth-another'
-          }
+          'Konza Technopolis Development Authority': {
+              title: 'Konza Technopolis EDRMS',
+              description: 'Description for the EDRMS service under Konza Technopolis Development Authority.',
+              learnMoreLink: 'http://example.com/learn-more-konza',
+              signInLink: 'http://edrms.konza.go.ke:86/edrms/Home'
+          },
+          'Kenya Yearbook Editorial Board (KYEB)': {
+              title: 'KYEB EDRMS',
+              description: 'Description for the EDRMS service under Kenya Yearbook Editorial Board.',
+              learnMoreLink: 'http://example.com/learn-more-kyeb',
+              signInLink: 'http://edrms.kyeb.go.ke:86/edrms/Home'
+          },
+          'Media Council of Kenya': {
+              title: 'Media Council EDRMS',
+              description: 'Description for the EDRMS service under Media Council of Kenya.',
+              learnMoreLink: 'http://example.com/learn-more-media-council',
+              signInLink: 'http://edrms.mediacouncil.go.ke:86/edrms/Home'
+          },
+          'Office of the Data Protection Commissioner': {
+              title: 'Data Protection EDRMS',
+              description: 'Description for the EDRMS service under Office of the Data Protection Commissioner.',
+              learnMoreLink: 'http://example.com/learn-more-data-protection',
+              signInLink: 'http://edrms.dataprotection.go.ke:86/edrms/Home'
+          },
+          // Add more entities as needed
+      },
+      
+      'health': {
+        'State Department For Medical Services': {
+            title: 'Medical Services EDRMS',
+            description: 'Enhance document management and processes within the State Department for Medical Services through the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-medical-services',
+            signInLink: 'http://edrms.medicalservices.go.ke:86/edrms/Home'
         },
-        // Add more ministries and state corporations as needed
-      };
+        'State Department For Public Health Services': {
+            title: 'Public Health Services EDRMS',
+            description: 'Improve document management and public health services with the EDRMS.',
+            learnMoreLink: 'http://example.com/learn-more-public-health-services',
+            signInLink: 'http://edrms.publichealthservices.go.ke:86/edrms/Home'
+        },
+        // Remove the dummies
+    },    
+    'education': {
+      'State Department For Basic Education': {
+          title: 'Basic Education EDRMS',
+          description: 'Facilitate efficient document management and processes in basic education through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-basic-education',
+          signInLink: 'http://edrms.basiceducation.go.ke:86/edrms/Home'
+      },
+      'State Department For Technical, Vocational Education And Training': {
+          title: 'Technical, Vocational Education And Training EDRMS',
+          description: 'Optimize document management and training processes in technical and vocational education through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-tvet-education',
+          signInLink: 'http://edrms.tveteducation.go.ke:86/edrms/Home'
+      },
+      'State Department For Higher Education And Research': {
+          title: 'Higher Education And Research EDRMS',
+          description: 'Support document management and research processes in higher education through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-higher-education',
+          signInLink: 'http://edrms.highereducation.go.ke:86/edrms/Home'
+      },
+      // Remove the dummies
+  },
+  'youth': {
+    'State Department of Sports': {
+        title: 'Sports EDRMS',
+        description: 'Enhance document management and processes within the State Department of Sports through the EDRMS.',
+        learnMoreLink: 'http://example.com/learn-more-sports',
+        signInLink: 'http://edrms.sports.go.ke:86/edrms/Home'
+    },
+    // Remove the dummies
+},
+
+// Add more ministries and state corporations as needed
+};
       
 
     function handleMinistryChange() {
@@ -768,14 +898,57 @@
 
     function populateStateCorporations(selectedMinistry) {
       var stateCorporations = {
-        'interior': ['State Corp 1', 'State Corp 2'],
-        'public': ['State Corp 3', 'State Corp 4'],
-        'information': ['Kenya ICT Authority', 'ICT and Digital Economy', 'Broadcasting and Telecommunications'], // Update this line
-        'health': ['Health Corp 1', 'Health Corp 2'],
-        'education': ['Education Corp 1', 'Education Corp 2'],
-        'youth': ['Youth Corp 1', 'Youth Corp 2'],
-    // Add more entries as needed
-      };
+        'interior': [
+        'State Department For Correctional Services',
+        'State Department For Internal Security And National Administration',
+        'State Department For Citizen Services',
+        'Kenya Police',
+        'Administration Police',
+        'Kenya Prisons Service',
+        'Probation and Aftercare Services'
+    ],
+// Update this line
+
+'public': [
+    'State Department For Public Service',
+    'State Department For Gender And Affirmative Action',
+    'Kenya School of Government',
+    'Huduma Centres',
+    'Institute of Human Resource Management',
+    'Anti-Female Genital Mutilation Board',
+    'Gender Violence Protection Centres',
+    'Women Enterprise Fund',
+    'Uwezo Fund'
+],
+// Update this line
+
+        'information': [
+        'Kenya ICT Authority', 
+        'Broadcasting and Telecommunications', 
+        'Kenya Broadcasting Corporation', 
+        'Postal Corporation of Kenya', 
+        'Konza Technopolis Development Authority', 
+        'Kenya Yearbook Editorial Board (KYEB)', 
+        'Media Council of Kenya', 
+        'Office of the Data Protection Commissioner'
+      ],
+        // Update this line
+  'health': [
+    'State Department For Medical Services',
+    'State Department For Public Health Services',
+],
+// Update this line
+
+'education': [
+    'State Department For Basic Education',
+    'State Department For Technical, Vocational Education And Training',
+    'State Department For Higher Education And Research',
+],
+'youth': [
+    'State Department of Sports',
+],
+// Add more entries as needed
+};
 
       var stateCorporationDropdown = document.getElementById("stateCorporationDropdown");
 
@@ -976,6 +1149,249 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// Sample Ministry Data
+var ministries = [
+  {
+    title: 'Interior and National Administration',
+    description: 'Description for Interior and National Administration.',
+    learnMoreLink: 'http://example.com/learn-more-interior',
+    signInLink: 'http://example.com/sign-in-interior',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'National Treasury and Planning',
+    description: 'Description for National Treasury and Planning.',
+    learnMoreLink: 'http://example.com/learn-more-treasury',
+    signInLink: 'http://example.com/sign-in-treasury',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Public Service, Gender and Affirmative Action',
+    description: 'Description for Public Service, Gender and Affirmative Action.',
+    learnMoreLink: 'http://example.com/learn-more-public-service',
+    signInLink: 'http://example.com/sign-in-public-service',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Defence',
+    description: 'Description for Defence.',
+    learnMoreLink: 'http://example.com/learn-more-defence',
+    signInLink: 'http://example.com/sign-in-defence',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Water, Sanitation and Irrigation',
+    description: 'Description for Water, Sanitation and Irrigation.',
+    learnMoreLink: 'http://example.com/learn-more-water',
+    signInLink: 'http://example.com/sign-in-water',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Foreign and Diaspora Affairs',
+    description: 'Description for Foreign and Diaspora Affairs.',
+    learnMoreLink: 'http://example.com/learn-more-foreign-affairs',
+    signInLink: 'http://example.com/sign-in-foreign-affairs',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Trade, Investment and Industry',
+    description: 'Description for Trade, Investment and Industry.',
+    learnMoreLink: 'http://example.com/learn-more-trade',
+    signInLink: 'http://example.com/sign-in-trade',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development',
+    description: 'Description for East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development.',
+    learnMoreLink: 'http://example.com/learn-more-eac',
+    signInLink: 'http://example.com/sign-in-eac',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Roads, Transport and Public Works',
+    description: 'Description for Roads, Transport and Public Works.',
+    learnMoreLink: 'http://example.com/learn-more-roads',
+    signInLink: 'http://example.com/sign-in-roads',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Environment and Forestry',
+    description: 'Description for Environment and Forestry.',
+    learnMoreLink: 'http://example.com/learn-more-environment',
+    signInLink: 'http://example.com/sign-in-environment',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Lands, Housing and Urban Development',
+    description: 'Description for Lands, Housing and Urban Development.',
+    learnMoreLink: 'http://example.com/learn-more-lands',
+    signInLink: 'http://example.com/sign-in-lands',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Tourism, Wildlife and Heritage',
+    description: 'Description for Tourism, Wildlife and Heritage.',
+    learnMoreLink: 'http://example.com/learn-more-tourism',
+    signInLink: 'http://example.com/sign-in-tourism',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Agriculture and Livestock Development',
+    description: 'Description for Agriculture and Livestock Development.',
+    learnMoreLink: 'http://example.com/learn-more-agriculture',
+    signInLink: 'http://example.com/sign-in-agriculture',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'EducationEnergy and Petroleum',
+    description: 'Description for EducationEnergy and Petroleum.',
+    learnMoreLink: 'http://example.com/learn-more-education',
+    signInLink: 'http://example.com/sign-in-education',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Youth Affairs, Sports and the Arts',
+    description: 'Description for Youth Affairs, Sports and the Arts.',
+    learnMoreLink: 'http://example.com/learn-more-youth',
+    signInLink: 'http://example.com/sign-in-youth',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Co-operatives and Micro, Small and Medium Enterprises (MSME) Development',
+    description: 'Description for Co-operatives and Micro, Small and Medium Enterprises (MSME) Development.',
+    learnMoreLink: 'http://example.com/learn-more-cooperatives',
+    signInLink: 'http://example.com/sign-in-cooperatives',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Mining, Blue Economy and Maritime Affairs',
+    description: 'Description for Mining, Blue Economy and Maritime Affairs.',
+    learnMoreLink: 'http://example.com/learn-more-mining',
+    signInLink: 'http://example.com/sign-in-mining',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Labour and Social Protection',
+    description: 'Description for Labour and Social Protection.',
+    learnMoreLink: 'http://example.com/learn-more-labour',
+    signInLink: 'http://example.com/sign-in-labour',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Information, Communications and the Digital Economy',
+    description: 'Description for Information, Communications and the Digital Economy.',
+    learnMoreLink: 'http://example.com/learn-more-ict',
+    signInLink: 'http://example.com/sign-in-ict',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+  {
+    title: 'Health',
+    description: 'Description for Health.',
+    learnMoreLink: 'http://example.com/learn-more-health',
+    signInLink: 'http://example.com/sign-in-health',
+    icon: 'images/gok.png' // Replace with actual icon path
+  },
+];
+
+
+// Function to create and display ministry cards
+function displayMinistryCards() {
+  var ministryCardsContainer = document.getElementById('ministryCards');
+  var seeMoreContainer = document.getElementById('seeMoreContainer');
+  var minimizeContainer = document.getElementById('minimizeContainer');
+
+  // Clear existing content
+  ministryCardsContainer.innerHTML = '';
+  seeMoreContainer.innerHTML = '';
+  minimizeContainer.innerHTML = '';
+
+  // Display the first 6 ministries
+  for (let i = 0; i < 6 && i < ministries.length; i++) {
+    var cardElement = createMinistryCard(ministries[i]);
+    ministryCardsContainer.appendChild(cardElement);
+  }
+
+  // Display "See More" link if there are more ministries
+  if (ministries.length > 6) {
+    seeMoreContainer.innerHTML = `
+      <a id="seeMoreLink" class="text-red-500 hover:underline cursor-pointer" onclick="seeMoreMinistries()">See More Ministries <span>&#8595;</span></a>
+    `;
+  }
+}
+
+// Function to create a single ministry card
+function createMinistryCard(ministry) {
+  var cardElement = document.createElement('div');
+  cardElement.className = 'bg-gray-200 p-6 rounded-md shadow-lg';
+
+  // Card Content
+  cardElement.innerHTML = `
+    <div class="flex items-center justify-start ml-2 mb-4">
+      <img src="${ministry.icon}" alt="${ministry.title}" class="w-10 h-10 mr-4">
+      <h3 class="text-xl font-bold justify-start ml-2">${ministry.title}</h3>
+    </div>
+    <p class="text-gray-700">${ministry.description}</p>
+    <div class="mt-4">
+      <a href="${ministry.learnMoreLink}" class="text-green-500 hover:underline">Learn More</a>
+      <span class="mx-2">|</span>
+      <a href="${ministry.signInLink}" class="text-red-500 font-bold hover:underline">Sign In<span class="font-semibold">&rarr;</span></a>
+    </div>
+  `;
+
+  return cardElement;
+}
+
+// Function to display the next set of ministries when "See More" is clicked
+function seeMoreMinistries() {
+  var ministryCardsContainer = document.getElementById('ministryCards');
+  var seeMoreContainer = document.getElementById('seeMoreContainer');
+  var minimizeContainer = document.getElementById('minimizeContainer');
+
+  // Remove "See More" link
+  seeMoreContainer.innerHTML = '';
+
+  // Display the next set of ministries
+  for (let i = 6; i < ministries.length; i++) {
+    var cardElement = createMinistryCard(ministries[i]);
+    ministryCardsContainer.appendChild(cardElement);
+  }
+
+  // Display "Minimize" link
+  minimizeContainer.innerHTML = `
+    <a id="minimizeLink" class="text-red-500 font-bold hover:underline cursor-pointer" onclick="minimizeSection()">Minimize Section <span>&#8593;</span></a>
+  `;
+}
+
+// Function to minimize the section and display the first 6 ministries
+function minimizeSection() {
+  var ministryCardsContainer = document.getElementById('ministryCards');
+  var seeMoreContainer = document.getElementById('seeMoreContainer');
+  var minimizeContainer = document.getElementById('minimizeContainer');
+
+  // Clear existing content and reset to the first 6 ministries
+  ministryCardsContainer.innerHTML = '';
+  for (let i = 0; i < 6 && i < ministries.length; i++) {
+    var cardElement = createMinistryCard(ministries[i]);
+    ministryCardsContainer.appendChild(cardElement);
+  }
+
+  // Display "See More" link if there are more ministries
+  if (ministries.length > 6) {
+    seeMoreContainer.innerHTML = `
+      <a id="seeMoreLink" class="text-red-500 font-bold hover:underline cursor-pointer" onclick="seeMoreMinistries()">See More Ministries <span>&#8595;</span></a>
+    `;
+  }
+
+  // Hide "Minimize" link
+  minimizeContainer.innerHTML = '';
+}
+
+// Call the function to display ministry cards
+displayMinistryCards();
+
+
+
 
 
     </script>   
