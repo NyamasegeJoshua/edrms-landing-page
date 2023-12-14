@@ -1,272 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content="WCdfJy4VcTcFPFczChV7CBIAI0UIEgd9oo7fJy7VRknr_qMfMIjh_gO0" />
+  <title data-suffix="">Govt EDRMS</title>
+  <link rel="canonical" href="https://crs.ecitizen.go.ke" />
+  <link rel="icon" type="image/x-icon" href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico" />
+  <link phx-track-static rel="stylesheet" href="assets/main-19eca7b2e7656617bc169bee5136883e.css" />
+  <link phx-track-static rel="stylesheet" href="assets/app-ced38148c650510e515759b66aeb3e30.css" />
+  <script defer phx-track-static type="text/javascript"
+    src="/assets/app-afd6b69306582c548fae7ef3c36bdacd.js?vsn=d"></script>
+  <script src="/highcharts.js"></script>
+</head>
+
+<body class="h-full">
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="csrf-token"
-      content="WCdfJy4VcTcFPFczChV7CBIAI0UIEgd9oo7fJy7VRknr_qMfMIjh_gO0"
-    />
-    <title data-suffix="">Govt EDRMS</title>
-    <link rel="canonical" href="https://crs.ecitizen.go.ke" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico"
-    />
-    <link
-      phx-track-static
-      rel="stylesheet"
-      href="assets/main-19eca7b2e7656617bc169bee5136883e.css"
-    />
-    <link
-      phx-track-static
-      rel="stylesheet"
-      href="assets/app-ced38148c650510e515759b66aeb3e30.css"
-    />
-    <script
-      defer
-      phx-track-static
-      type="text/javascript"
-      src="/assets/app-afd6b69306582c548fae7ef3c36bdacd.js?vsn=d"
-    ></script>
-    <script src="/highcharts.js"></script>
+    <meta name="description" content="A really cool weather widget" />
+    <title>Government EDRMS</title>
+    <link phx-track-static rel="stylesheet" href="assets/main-19eca7b2e7656617bc169bee5136883e.css" />
+    <link phx-track-static rel="stylesheet" href="assets/app-ced38148c650510e515759b66aeb3e30.css" />
   </head>
-  <body class="h-full">
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link
-          rel="icon"
-          href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="A really cool weather widget" />
-        <title>Government EDRMS</title>
-        <link
-          phx-track-static
-          rel="stylesheet"
-          href="assets/main-19eca7b2e7656617bc169bee5136883e.css"
-        />
-        <link
-          phx-track-static
-          rel="stylesheet"
-          href="assets/app-ced38148c650510e515759b66aeb3e30.css"
-        />
-      </head>
-      <body>
-        <div class="min-h-4 bg-white relative z-10 pb-18" style="margin-bottom: 20px;">
-          <section class="lg:px-4 xl:px-0">
-            <div class="max-w-7xl mx-auto px-4 sm:px-8">
-              <div class="flex flex-row justify-between items-start sm:items-center my-3">
-                <div class="flex items-center">
-                  <img src="images/gok.png" class="h-8 sm:h-10 sm:w-2 lg:h-12" alt="logo" />
-                  <div class="ml-3 sm:ml-1 pl-10 pr-0 max-w-full flex flex-col items-center"> <!-- Added margin-left -->
-                    <h1 class="text-red-500 font-bold text-lg mb-1 sm:text-xl md:text-2xl lg:text-3xl">Republic of Kenya</h1>
-                    <h2 class="text-black font-bold text-lg mb-2 sm:text-xs md:text-lg lg:text-xl sm:overflow-hidden sm:whitespace-nowrap sm:flex-shrink-0 md:overflow-ellipsis sm:overflow-ellipsis lg:w-auto sm:auto-center">GOVERNMENT EDRMS</h2>
-                  </div>
-                </div>
-                <!-- Hamburger icon for small screens -->
-                <div class="sm:hidden">
-                  <button id="menu-toggle" class="text-gray-600 hover:text-gray-800 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                  </button>
-                </div>
-                <!-- Navigation links for larger screens -->
-                <div class="hidden sm:flex items-center space-x-3">
-                  <a href="documentation.html" class="text-gray-600 hover:text-gray-800" style="text-decoration: underline; color: green; font-weight: bold; font-size:large;">Documentation</a>
-                  <a href="about-us.html" class="text-gray-600 hover:text-gray-800" style="text-decoration: underline; color: red; font-weight: bold; font-size:large;">About Us</a>
-                  <a href="contact-us.html" class="text-gray-600 hover:text-gray-800" style="text-decoration: underline; font-weight: bold; font-size:large;">Contact Us</a>
-                </div>
-              </div>
-              <!-- Responsive menu for small screens -->
-              <div id="responsive-menu" class="hidden sm:hidden mt-2  flex flex-col items-end">
-                <a href="documentation.html" class="block px-4 py-2 text-gray-800">Documentation</a>
-                <a href="about-us.html" class="block px-4 py-2 text-gray-800">About Us</a>
-                <a href="contact-us.html" class="block px-4 py-2 text-gray-800">Contact Us</a>
+
+  <body>
+    <div class="min-h-4 bg-white relative z-10 pb-18" style="margin-bottom: 20px;">
+      <section class="lg:px-4 xl:px-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+          <div class="flex flex-row justify-between items-start sm:items-center my-3">
+            <div class="flex items-center">
+              <img src="images/gok.png" class="h-8 sm:h-10 sm:w-2 lg:h-12" alt="logo" />
+              <div class="ml-3 sm:ml-1 pl-10 pr-0 max-w-full flex flex-col items-center"> <!-- Added margin-left -->
+                <h1 class="text-red-500 font-bold text-lg mb-1 sm:text-xl md:text-2xl lg:text-3xl">Republic of Kenya
+                </h1>
+                <h2
+                  class="text-black font-bold text-lg mb-2 sm:text-xs md:text-lg lg:text-xl sm:overflow-hidden sm:whitespace-nowrap sm:flex-shrink-0 md:overflow-ellipsis sm:overflow-ellipsis lg:w-auto sm:auto-center">
+                  GOVERNMENT EDRMS</h2>
               </div>
             </div>
-          </section>
-        </div>      
-        
-        
-            
-          <!-- header section -->
-          <section class="bg-[#F9F4F7]" >  
-            <!-- Add an empty styled div for separation -->
-            <div class="max-w-7xl mx-auto px-4 mb-4 h-10 bg-primary-200"></div>          
-                  <!-- Add this code for the search field -->
-                  <div class="max-w-7xl mx-auto px-4 mt-1 h-16 mb-12 py-14">
-                    <label for="globalSearchInput" class="sr-only">Search</label>
-                    <div class="relative rounded-md shadow-sm">
-                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M15.291 14.707l4.85 4.85a1 1 0 01-1.414 1.414l-4.85-4.85a8 8 0 111.414-1.414zM14 8a6 6 0 11-12 0 6 6 0 0112 0z" clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <input
-                        type="text"
-                        id="globalSearchInput"
-                        class="form-input rounded-full  block w-full pl-10 sm:text-sm sm:leading-5"
-                        placeholder="Type to search Ministries or Agencies..."
-                        oninput="handleGlobalSearch()"
-                      />
-                    </div>
-                  </div>
-
-                  <!-- Add this code for the search results container -->
-                  <div class="bg-white shadow-lg px-2 py-10 -mb-px">
-                    <h2 class="ml-2 text-center font-display text-4xl font-bold tracking-tight text-slate-900 md:text-4xl sm:text-sm">
-                      Your Search Results Will Appear here...
-                    </h2>
-                    <ul class="mt-16 grid-cols-1 gap-6 text-center md:grid-cols-3" id="searchResults">
-                      <li class="rounded-xl bg-white px-6 shadow-sm">
-                  <div id="searchResults" class="flex rounded-lg flex-col mx-auto px-4 mb-8 hidden">
-                    <!-- Search results will be dynamically added here using JavaScript -->
-                  </div>
-                </li>
-                </ul>
-                </div>
-
-            <div class="max-w-7xl mx-auto px-4">
-              <div
-                class="pb-8 md:pb-12 pt-4 sm:pt-40 lg:pt-44 md:pt-20 lg:pb-24 rounded-xl mb-8 sm:mb-10 md:mb-10 lg:mb-20 xl:mb-16"
-              >
-                <div
-                  class="px-8 mx-auto grid grid-cols-12 gap-2 md:gap-3 lg:gap-10"
-                >
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-7 pr-0 md:pr-5 lg:pr-12 mt-0"
-                  >                  
-                    <h2
-                      class="text-xl mt-0 text-center justify-center md:text-2xl lg:text-3xl font-bold text-primary-700 mb-4 relative"
-                    >
-                      What is EDRMS
-                    </h2>
-                    <p
-                      class="text-base text-center justify-center tracking-[0.01em] lg:text-lg font-normal mb-5 md:mb-0"
-                    >
-                    Embrace a digital future with EDRMS for streamlined efficiency, transparency, and sustainability. Join us on the journey towards a paperless administration.
-                    </p>
-                    <a href="#ministry" style="display: block; text-align: center; text-decoration: underline; color: red; font-weight: bold; font-size:large;">Click Here To Get Started&#8594;</a>
-                  </div>
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-5 relative z-10"
-                  >
-                    <img
-                      alt="crs kenya "
-                      src="images/earth.png"
-                      class="md:absolute left-0 right-0 md:-top-7 w-full"
-                    />
-                  </div>
-                </div>
-              </div>
+            <!-- Hamburger icon for small screens -->
+            <div class="sm:hidden">
+              <button id="menu-toggle" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                  </path>
+                </svg>
+              </button>
             </div>
-          </section>
-
-          <!-- Ministry Section -->
-          <!-- Ministry Section -->
-        <section class="py-10">
-          <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Ministries</h2>
-
-            <!-- Container for Ministry Cards -->
-            <div id="ministryCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Cards will be dynamically added here using JavaScript -->
+            <!-- Navigation links for larger screens -->
+            <div class="hidden sm:flex items-center space-x-3">
+              <a href="documentation.html" class="text-gray-600 hover:text-gray-800"
+                style="text-decoration: underline; color: green; font-weight: bold; font-size:large;">Documentation</a>
+              <a href="about-us.html" class="text-gray-600 hover:text-gray-800"
+                style="text-decoration: underline; color: red; font-weight: bold; font-size:large;">About Us</a>
+              <a href="contact-us.html" class="text-gray-600 hover:text-gray-800"
+                style="text-decoration: underline; font-weight: bold; font-size:large;">Contact Us</a>
             </div>
-
-            <!-- Container for "See More" link -->
-            <div id="seeMoreContainer" class="mt-4 flex justify-center items-center"></div>
-
-            <!-- Container for "Minimize" link -->
-            <div id="minimizeContainer" class="mt-4 flex justify-center items-center"></div>
           </div>
-        </section>
+          <!-- Responsive menu for small screens -->
+          <div id="responsive-menu" class="hidden sm:hidden mt-2  flex flex-col items-end">
+            <a href="documentation.html" class="block px-4 py-2 text-gray-800">Documentation</a>
+            <a href="about-us.html" class="block px-4 py-2 text-gray-800">About Us</a>
+            <a href="contact-us.html" class="block px-4 py-2 text-gray-800">Contact Us</a>
+          </div>
+        </div>
+      </section>
+    </div>
 
 
 
+    <!-- header section -->
+    <section class="bg-[#F9F4F7]">
+      <!-- Add an empty styled div for separation -->
+      <div class="max-w-7xl mx-auto px-4 mb-4 h-10 bg-primary-200"></div>
+      <!-- Add this code for the search field -->
+      <div class="max-w-7xl mx-auto px-4 mt-1 h-16 mb-12 py-14">
+        <label for="globalSearchInput" class="sr-only">Search</label>
+        <div class="relative rounded-md shadow-sm">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M15.291 14.707l4.85 4.85a1 1 0 01-1.414 1.414l-4.85-4.85a8 8 0 111.414-1.414zM14 8a6 6 0 11-12 0 6 6 0 0112 0z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <input type="text" id="globalSearchInput"
+            class="form-input rounded-full  block w-full pl-10 sm:text-sm sm:leading-5"
+            placeholder="Type to search Ministries or Agencies..." oninput="handleGlobalSearch()" />
+        </div>
+      </div>
 
-          <!-- about edrms -->
-          <section id="ministry">
-            <div class="max-w-7xl mx-auto px-4 pt-4 ">
-              <label for="ministryDropdown" class="text-lg font-bold text-primary-700" id="ministry">
-                Select Ministry To Get Started:
-              </label>
-              <select id="ministryDropdown" class="block w-full p-2 border border-gray-300 rounded-full mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleMinistryChange()">
-                <option value="" disabled selected>Select a Ministry</option>
-                <option value="interior">Interior and National Administration</option>
-                <option value="public">Public Service, Gender and Affirmative Action</option>
-                <option value="defence">Defence</option>
-                <option value="water">Water, Sanitation and Irrigation</option>
-                <option value="foregn">Foreign and Diaspora Affairs</option>
-                <option value="trade">Trade, Investment and Industry</option>
-                <option value="eac">East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development</option>
-                <option value="roads">Roads, Transport and Public Works</option>
-                <option value="environment">Environment and Forestry</option>
-                <option value="lands">Lands, Housing and Urban Development</option>
-                <option value="tourism">Tourism, Wildlife and Heritage</option>
-                <option value="agriculture">Agriculture and Livestock Development</option>
-                <option value="education">EducationEnergy and Petroleum</option>
-                <option value="youth">Youth Affairs, Sports and the Arts</option>
-                <option value="cooperatives">Co-operatives and Micro, Small and Medium Enterprises (MSME) Development</option>
-                <option value="mining">Mining, Blue Economy and Maritime Affairs</option>
-                <option value="labor">Labour and Social Protection</option>
-                <option value="information">Information, Communications and the Digital Economy</option>
-                <option value="health">Health</option>
-                <!-- Add more options for other ministries -->
-              </select>
+      <!-- Add this code for the search results container -->
+      <div class="bg-white shadow-lg px-2 py-10 -mb-px">
+        <h2
+          class="ml-2 text-center font-display text-4xl font-bold tracking-tight text-slate-900 md:text-4xl sm:text-sm">
+          Your Search Results Will Appear here...
+        </h2>
+        <ul class="mt-16 grid-cols-1 gap-6 text-center md:grid-cols-3" id="searchResults">
+          <li class="rounded-xl bg-white px-6 shadow-sm">
+            <div id="searchResults" class="flex rounded-lg flex-col mx-auto px-4 mb-8 hidden">
+              <!-- Search results will be dynamically added here using JavaScript -->
             </div>
+          </li>
+        </ul>
+      </div>
 
-            <!-- State Corporation Dropdown (Initially Hidden) -->
-            <div id="stateCorporationDropdownContainer" class="max-w-7xl mx-auto px-4 pt-4 hidden">
-              <label for="stateCorporationDropdown" class="text-lg font-semibold text-primary-700">
-                Select State Corporation:
-              </label>
-              <select id="stateCorporationDropdown" class="block w-full p-2 border border-gray-300 rounded-full mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm" onchange="handleStateCorporationChange()">
-                <!-- Options for State Corporations will be dynamically populated based on the selected ministry -->
-                <option value="" disabled selected>Select a State Corporation</option>
-              </select>
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="pb-8 md:pb-12 pt-4 sm:pt-40 lg:pt-44 md:pt-20 lg:pb-24 rounded-xl mb-8 sm:mb-10 md:mb-10 lg:mb-20 xl:mb-16">
+          <div class="px-8 mx-auto grid grid-cols-12 gap-2 md:gap-3 lg:gap-10">
+            <div class="col-span-12 md:col-span-6 lg:col-span-7 pr-0 md:pr-5 lg:pr-12 mt-0">
+              <h2
+                class="text-xl mt-0 text-center justify-center md:text-2xl lg:text-3xl font-bold text-primary-700 mb-4 relative">
+                What is EDRMS
+              </h2>
+              <p class="text-base text-center justify-center tracking-[0.01em] lg:text-lg font-normal mb-5 md:mb-0">
+                Embrace a digital future with EDRMS for streamlined efficiency, transparency, and sustainability. Join
+                us on the journey towards a paperless administration.
+              </p>
+              <a href="#ministry"
+                style="display: block; text-align: center; text-decoration: underline; color: red; font-weight: bold; font-size:large;">Click
+                Here To Get Started&#8594;</a>
             </div>
-          
-            <!-- Online Services Cards -->
-            <div id="serviceCard" class="max-w-4xl mx-auto px-4 pt-4 hidden">
-              <!-- Card content will be dynamically populated based on user selections -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-5 relative z-10">
+              <img alt="crs kenya " src="images/earth.png" class="md:absolute left-0 right-0 md:-top-7 w-full" />
             </div>
-          </section>
-          
-          
-          <!-- Civil Registration Services -->
-          <section class="py-10">
-            <div class="max-w-7xl mx-auto px-4 z-10">
-              <div class="grid grid-cols-12 gap-6 px-2 sm:px-8">
-                <div class="col-span-12 sm:col-span-4">
-                  <h2 class="text-2xl font-bold text-primary-700">
-                    Key information <br class="hidden sm:block" />
-                    and facts
-                  </h2>
-                </div>
-                <div class="col-span-12 sm:col-span-8">
-                  <div
-                    class="bg-white border border-white rounded-3xl"
-                    x-data="{selected:1}"
-                  >
-                    <ul class="shadow-box">
-                      <li
-                        class="relative rounded-3xl"
-                        x-bind:class="selected == 1  ? 'bg-[#FCF5FB]' : 'bg-white'"
-                      >
-                        <button
-                          type="button"
-                          class="w-full px-6 py-6 text-left"
-                          @click="selected !== 1 ? selected = 1 : selected = null"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="text-lg text-base font-bold"> Efficiency </span>
-                            <!--
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ministry Section -->
+    <!-- Ministry Section -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Ministries</h2>
+
+        <!-- Container for Ministry Cards -->
+        <div id="ministryCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards will be dynamically added here using JavaScript -->
+        </div>
+
+        <!-- Container for "See More" link -->
+        <div id="seeMoreContainer" class="mt-4 flex justify-center items-center"></div>
+
+        <!-- Container for "Minimize" link -->
+        <div id="minimizeContainer" class="mt-4 flex justify-center items-center"></div>
+      </div>
+    </section>
+
+
+
+
+    <!-- about edrms -->
+    <section id="ministry">
+      <div class="max-w-7xl mx-auto px-4 pt-4 ">
+        <label for="ministryDropdown" class="text-lg font-bold text-primary-700" id="ministry">
+          Select Ministry To Get Started:
+        </label>
+        <select id="ministryDropdown"
+          class="block w-full p-2 border border-gray-300 rounded-full mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm"
+          onchange="handleMinistryChange()">
+          <option value="" disabled selected>Select a Ministry</option>
+          <option value="interior">Interior and National Administration</option>
+          <option value="public">Public Service, Gender and Affirmative Action</option>
+          <option value="defence">Defence</option>
+          <option value="water">Water, Sanitation and Irrigation</option>
+          <option value="foregn">Foreign and Diaspora Affairs</option>
+          <option value="trade">Trade, Investment and Industry</option>
+          <option value="eac">East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development
+          </option>
+          <option value="roads">Roads, Transport and Public Works</option>
+          <option value="environment">Environment and Forestry</option>
+          <option value="lands">Lands, Housing and Urban Development</option>
+          <option value="tourism">Tourism, Wildlife and Heritage</option>
+          <option value="agriculture">Agriculture and Livestock Development</option>
+          <option value="education">EducationEnergy and Petroleum</option>
+          <option value="youth">Youth Affairs, Sports and the Arts</option>
+          <option value="cooperatives">Co-operatives and Micro, Small and Medium Enterprises (MSME) Development</option>
+          <option value="mining">Mining, Blue Economy and Maritime Affairs</option>
+          <option value="labor">Labour and Social Protection</option>
+          <option value="information">Information, Communications and the Digital Economy</option>
+          <option value="health">Health</option>
+          <!-- Add more options for other ministries -->
+        </select>
+      </div>
+
+      <!-- State Corporation Dropdown (Initially Hidden) -->
+      <div id="stateCorporationDropdownContainer" class="max-w-7xl mx-auto px-4 pt-4 hidden">
+        <label for="stateCorporationDropdown" class="text-lg font-semibold text-primary-700">
+          Select State Corporation:
+        </label>
+        <select id="stateCorporationDropdown"
+          class="block w-full p-2 border border-gray-300 rounded-full mt-2 md:mx-auto sm:mx-auto md:text-md sm:text-sm"
+          onchange="handleStateCorporationChange()">
+          <!-- Options for State Corporations will be dynamically populated based on the selected ministry -->
+          <option value="" disabled selected>Select a State Corporation</option>
+        </select>
+      </div>
+
+      <!-- Online Services Cards -->
+      <div id="serviceCard" class="max-w-4xl mx-auto px-4 pt-4 hidden">
+        <!-- Card content will be dynamically populated based on user selections -->
+      </div>
+    </section>
+
+
+    <!-- Civil Registration Services -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4 z-10">
+        <div class="grid grid-cols-12 gap-6 px-2 sm:px-8">
+          <div class="col-span-12 sm:col-span-4">
+            <h2 class="text-2xl font-bold text-primary-700">
+              Key information <br class="hidden sm:block" />
+              and facts
+            </h2>
+          </div>
+          <div class="col-span-12 sm:col-span-8">
+            <div class="bg-white border border-white rounded-3xl" x-data="{selected:1}">
+              <ul class="shadow-box">
+                <li class="relative rounded-3xl" x-bind:class="selected == 1  ? 'bg-[#FCF5FB]' : 'bg-white'">
+                  <button type="button" class="w-full px-6 py-6 text-left"
+                    @click="selected !== 1 ? selected = 1 : selected = null">
+                    <div class="flex items-center justify-between">
+                      <span class="text-lg text-base font-bold"> Efficiency </span>
+                      <!--
                                                 x-html="open ? '-' :'+' "
                                             <svg x-bind:class="openProfile ? 'rotate-0 transform' : 'rotate-180 transform'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 rotate-0 transform">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
@@ -278,599 +244,525 @@
                                                 </svg>
                                             </span>
                                             -->
-                            <span>
-                              <img
-                              src="images/efficiency.png"
-                              alt="Icon"
-                              width="42"
-                              height="41"
-                            />
-                            </span>
-                          </div>
-                        </button>
-                        <div
-                          class="relative overflow-hidden transition-all max-h-0 duration-700"
-                          x-ref="container1"
-                          x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-                        >
-                          <div class="pb-6 px-6 pt-2 space-y-5">
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                Automated Workflow Integration:
-                              </span>
-                              Electronic Document and Records Management Systems (EDRMS) enhance efficiency by seamlessly integrating automated workflows. 
-                              These systems allow organizations to establish predefined processes for document creation, review, approval, and retention. 
-                              Automated workflows eliminate manual intervention, reducing the risk of errors, streamlining tasks, and ensuring a more efficient document management process.
-                            </p>
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                Version Control and Collaboration Features
-                              </span>
-                              EDRMS promotes efficiency through robust version control and collaboration features. 
-                              Users can concurrently work on documents, with the system keeping track of changes and managing different versions. 
-                              This eliminates confusion, prevents data duplication, and ensures that the latest and most accurate information is readily available. 
-                              Efficient collaboration tools within EDRMS enable teams to work together seamlessly, 
-                              fostering productivity and reducing the time spent on coordinating and consolidating input from multiple contributors.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="relative rounded-3xl"
-                        x-bind:class="selected == 2  ? 'bg-[#FCF5FB]' : 'bg-white'"
-                      >
-                        <button
-                          type="button"
-                          class="w-full px-6 py-6 text-left"
-                          @click="selected !== 2 ? selected = 2 : selected = null"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="text-lg text-base font-bold"> Cost Saving </span>
-                            <span>
-                              <img
-                              src="images/automation.png"
-                              alt="Icon"
-                              width="42"
-                              height="41"
-                            />
-                            </span>
-                          </div>
-                        </button>
-                        <div
-                          class="relative overflow-hidden transition-all max-h-0 duration-700"
-                          x-ref="container2"
-                          x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-                        >
-                          <div class="pb-6 px-6 pt-2 space-y-5">
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                Reduced Paper and Storage Costs:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS contribute to cost savings by significantly reducing the reliance on paper-based documentation and physical storage. 
-                              Organizations can digitize documents, eliminating the need for extensive paper usage, printing, and associated expenses. 
-                              Additionally, the electronic storage of records reduces the demand for physical space, leading to substantial cost savings related to file cabinets, office space, and offsite storage facilities.
-                            </p>
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                Streamlined Retrieval and Search Capabilities:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS enhance cost efficiency by streamlining the retrieval process. Advanced search capabilities within these systems enable users to quickly locate specific documents or records, reducing the time spent on manual searching. 
-                              This not only enhances productivity but also minimizes labor costs associated with employees spending excessive time searching for information. 
-                              The improved accessibility of electronic records contributes to overall time and cost savings for the organization.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="relative rounded-3xl"
-                        x-bind:class="selected == 3  ? 'bg-[#FCF5FB]' : 'bg-white'"
-                      >
-                        <button
-                          type="button"
-                          class="w-full px-6 py-6 text-left"
-                          @click="selected !== 3 ? selected = 3 : selected = null"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="text-lg text-base font-bold">
-                              Accessibility
-                            </span>
-                            <span>
-                              <img
-                              src="images/file.png"
-                              alt="Icon"
-                              width="40"
-                              height="40"
-                            />
-                            </span>
-                          </div>
-                        </button>
-                        <div
-                          class="relative overflow-hidden transition-all max-h-0 duration-700"
-                          x-ref="container3"
-                          x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
-                        >
-                          <div class="pb-6 px-6 pt-2 space-y-5">
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                Remote Access and Collaboration:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS enhance accessibility by enabling users to access documents and records remotely. 
-                              This capability is particularly valuable in today's globalized and remote work environments. 
-                              Users can securely retrieve, edit, and collaborate on documents from different locations, fostering seamless teamwork and ensuring that critical information is accessible regardless of physical location. 
-                              This feature contributes to increased productivity and responsiveness.
-                            </p>
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                User-Friendly Interface and Navigation:
-                              </span>
-                              <!---explanatio-->
-                              Accessibility is improved through user-friendly interfaces and intuitive navigation features in EDRMS. 
-                              These systems are designed to be easily understood by users, reducing the learning curve and making it simple to locate, view, and interact with documents. 
-                              Intuitive navigation enhances user adoption and encourages employees to leverage the system effectively. By promoting a user-friendly experience, 
-                              EDRMS ensures that individuals across various departments can access and manage information efficiently without extensive training.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="relative rounded-3xl"
-                        x-bind:class="selected == 4  ? 'bg-[#FCF5FB]' : 'bg-white'"
-                      >
-                        <button
-                          type="button"
-                          class="w-full px-6 py-6 text-left"
-                          @click="selected !== 4 ? selected = 4 : selected = null"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="text-lg text-base font-bold">
-                              Security
-                            </span>
-                            <span>
-                              <img
-                              src="images/secure.png"
-                              alt="Icon"
-                              width="42"
-                              height="41"
-                            />
-                            </span>
-                          </div>
-                        </button>
-                        <div
-                          class="relative overflow-hidden transition-all max-h-0 duration-700"
-                          x-ref="container4"
-                          x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
-                        >
-                          <div class="pb-6 px-6 pt-2 space-y-5">
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                Role-Based Access Control (RBAC):
-                              </span>
-                              <!---explanatio-->
-                              EDRMS enhances security through Role-Based Access Control (RBAC), ensuring that users only have access to the information necessary for their specific roles. 
-                              RBAC restricts unauthorized access to sensitive documents, reducing the risk of data breaches and ensuring that confidential information is protected. 
-                              This granular access control helps organizations comply with privacy regulations and internal security policies, safeguarding sensitive data from unauthorized viewing or manipulation.
-                            </p>
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                Encryption and Data Integrity:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS prioritizes security by employing encryption techniques to protect data both during transmission and while stored. 
-                              Encryption safeguards documents from unauthorized interception or access, providing an additional layer of defense against cyber threats. 
-                              Furthermore, these systems often include mechanisms to maintain data integrity, ensuring that information remains unchanged and uncorrupted. 
-                              By implementing robust encryption and integrity measures, EDRMS bolster the overall security posture, safeguarding critical organizational information.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="relative rounded-3xl"
-                        x-bind:class="selected == 5  ? 'bg-[#FCF5FB]' : 'bg-white'"
-                      >
-                        <button
-                          type="button"
-                          class="w-full px-6 py-6 text-left"
-                          @click="selected !== 5 ? selected = 5 : selected = null"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="text-lg text-base font-bold">
-                              Accuracy
-                            </span>
-                            <span>
-                              <img
-                              src="images/target.png"
-                              alt="Icon"
-                              width="42"
-                              height="41"
-                            />
-                            </span>
-                          </div>
-                        </button>
-                        <div
-                          class="relative overflow-hidden transition-all max-h-0 duration-700"
-                          x-ref="container5"
-                          x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
-                        >
-                          <div class="pb-6 px-6 pt-2 space-y-5">
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                Metadata Accuracy and Consistency:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS contributes to accuracy by employing metadata standards and ensuring consistent metadata application to documents and records. 
-                              Metadata includes information about the document, such as creation date, author, and version history. By maintaining accurate and consistent metadata, 
-                              EDRMS facilitates precise document identification, tracking, and retrieval. 
-                              This accuracy in metadata enhances the reliability of document management processes and ensures that users can confidently locate and work with the right information.
-                            </p>
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                Version Control and Revision Tracking:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS enhances accuracy through robust version control and revision tracking features. Users can easily track changes made to documents over time, including who made the changes and when. 
-                              This ensures that the most up-to-date and accurate version of a document is readily available. 
-                              Version control eliminates the risk of working with outdated information, reducing errors and enhancing overall accuracy in collaborative work environments. 
-                              The system provides a transparent record of document evolution, fostering accountability and accuracy in document management.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="relative rounded-3xl"
-                        x-bind:class="selected == 6  ? 'bg-[#FCF5FB]' : 'bg-white'"
-                      >
-                        <button
-                          type="button"
-                          class="w-full px-6 py-6 text-left"
-                          @click="selected !== 6 ? selected = 6 : selected = null"
-                        >
-                          <div class="flex items-center justify-between">
-                            <span class="text-lg text-base font-bold">
-                              Compliance
-                            </span>
-                            <span>
-                              <img
-                                  src="images/compliance.png"
-                                  alt="Icon"
-                                  width="42"
-                                  height="41"
-                                />
-                                
-                              
-                          </div>
-                        </button>
-                        <div
-                          class="relative overflow-hidden transition-all max-h-0 duration-700"
-                          x-ref="container6"
-                          x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
-                        >
-                          <div class="pb-6 px-6 pt-2 space-y-5">
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                <!---point-->
-                                Regulatory Compliance Tracking:
-                              </span>
-                              <!---explanatio-->
-                              EDRMS plays a crucial role in ensuring compliance with various regulations by providing tools to track and manage regulatory requirements. 
-                              These systems often include features that allow organizations to map document and record management practices to specific regulatory frameworks.
-                              This ensures that the organization can demonstrate adherence to legal and industry-specific requirements, reducing the risk of non-compliance penalties and legal consequences.
-                            </p>
-                            <p
-                              class="text-base tracking-[0.01em] font-normal text-gray-500"
-                            >
-                              <span class="font-medium text-black">
-                                Audit Trails and Reporting:
-                              </span>
-                              <!--description-->
-                              EDRMS enhances compliance by maintaining detailed audit trails and reporting capabilities. 
-                              These features track user activities within the system, recording who accessed, modified, or deleted documents. 
-                              In the event of an audit, organizations can produce comprehensive reports that demonstrate compliance with document management policies and regulatory requirements. 
-                              The ability to generate audit trails not only ensures transparency but also provides evidence of compliance efforts, offering a layer of protection in the face of regulatory scrutiny.
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+                      <span>
+                        <img src="images/efficiency.png" alt="Icon" width="42" height="41" />
+                      </span>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+                    x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                    <div class="pb-6 px-6 pt-2 space-y-5">
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          Automated Workflow Integration:
+                        </span>
+                        Electronic Document and Records Management Systems (EDRMS) enhance efficiency by seamlessly
+                        integrating automated workflows.
+                        These systems allow organizations to establish predefined processes for document creation,
+                        review, approval, and retention.
+                        Automated workflows eliminate manual intervention, reducing the risk of errors, streamlining
+                        tasks, and ensuring a more efficient document management process.
+                      </p>
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          Version Control and Collaboration Features
+                        </span>
+                        EDRMS promotes efficiency through robust version control and collaboration features.
+                        Users can concurrently work on documents, with the system keeping track of changes and managing
+                        different versions.
+                        This eliminates confusion, prevents data duplication, and ensures that the latest and most
+                        accurate information is readily available.
+                        Efficient collaboration tools within EDRMS enable teams to work together seamlessly,
+                        fostering productivity and reducing the time spent on coordinating and consolidating input from
+                        multiple contributors.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </li>
+                <li class="relative rounded-3xl" x-bind:class="selected == 2  ? 'bg-[#FCF5FB]' : 'bg-white'">
+                  <button type="button" class="w-full px-6 py-6 text-left"
+                    @click="selected !== 2 ? selected = 2 : selected = null">
+                    <div class="flex items-center justify-between">
+                      <span class="text-lg text-base font-bold"> Cost Saving </span>
+                      <span>
+                        <img src="images/automation.png" alt="Icon" width="42" height="41" />
+                      </span>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container2"
+                    x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                    <div class="pb-6 px-6 pt-2 space-y-5">
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          Reduced Paper and Storage Costs:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS contribute to cost savings by significantly reducing the reliance on paper-based
+                        documentation and physical storage.
+                        Organizations can digitize documents, eliminating the need for extensive paper usage, printing,
+                        and associated expenses.
+                        Additionally, the electronic storage of records reduces the demand for physical space, leading
+                        to substantial cost savings related to file cabinets, office space, and offsite storage
+                        facilities.
+                      </p>
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          Streamlined Retrieval and Search Capabilities:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS enhance cost efficiency by streamlining the retrieval process. Advanced search
+                        capabilities within these systems enable users to quickly locate specific documents or records,
+                        reducing the time spent on manual searching.
+                        This not only enhances productivity but also minimizes labor costs associated with employees
+                        spending excessive time searching for information.
+                        The improved accessibility of electronic records contributes to overall time and cost savings
+                        for the organization.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative rounded-3xl" x-bind:class="selected == 3  ? 'bg-[#FCF5FB]' : 'bg-white'">
+                  <button type="button" class="w-full px-6 py-6 text-left"
+                    @click="selected !== 3 ? selected = 3 : selected = null">
+                    <div class="flex items-center justify-between">
+                      <span class="text-lg text-base font-bold">
+                        Accessibility
+                      </span>
+                      <span>
+                        <img src="images/file.png" alt="Icon" width="40" height="40" />
+                      </span>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3"
+                    x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                    <div class="pb-6 px-6 pt-2 space-y-5">
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          Remote Access and Collaboration:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS enhance accessibility by enabling users to access documents and records remotely.
+                        This capability is particularly valuable in today's globalized and remote work environments.
+                        Users can securely retrieve, edit, and collaborate on documents from different locations,
+                        fostering seamless teamwork and ensuring that critical information is accessible regardless of
+                        physical location.
+                        This feature contributes to increased productivity and responsiveness.
+                      </p>
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          User-Friendly Interface and Navigation:
+                        </span>
+                        <!---explanatio-->
+                        Accessibility is improved through user-friendly interfaces and intuitive navigation features in
+                        EDRMS.
+                        These systems are designed to be easily understood by users, reducing the learning curve and
+                        making it simple to locate, view, and interact with documents.
+                        Intuitive navigation enhances user adoption and encourages employees to leverage the system
+                        effectively. By promoting a user-friendly experience,
+                        EDRMS ensures that individuals across various departments can access and manage information
+                        efficiently without extensive training.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative rounded-3xl" x-bind:class="selected == 4  ? 'bg-[#FCF5FB]' : 'bg-white'">
+                  <button type="button" class="w-full px-6 py-6 text-left"
+                    @click="selected !== 4 ? selected = 4 : selected = null">
+                    <div class="flex items-center justify-between">
+                      <span class="text-lg text-base font-bold">
+                        Security
+                      </span>
+                      <span>
+                        <img src="images/secure.png" alt="Icon" width="42" height="41" />
+                      </span>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container4"
+                    x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                    <div class="pb-6 px-6 pt-2 space-y-5">
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          Role-Based Access Control (RBAC):
+                        </span>
+                        <!---explanatio-->
+                        EDRMS enhances security through Role-Based Access Control (RBAC), ensuring that users only have
+                        access to the information necessary for their specific roles.
+                        RBAC restricts unauthorized access to sensitive documents, reducing the risk of data breaches
+                        and ensuring that confidential information is protected.
+                        This granular access control helps organizations comply with privacy regulations and internal
+                        security policies, safeguarding sensitive data from unauthorized viewing or manipulation.
+                      </p>
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          Encryption and Data Integrity:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS prioritizes security by employing encryption techniques to protect data both during
+                        transmission and while stored.
+                        Encryption safeguards documents from unauthorized interception or access, providing an
+                        additional layer of defense against cyber threats.
+                        Furthermore, these systems often include mechanisms to maintain data integrity, ensuring that
+                        information remains unchanged and uncorrupted.
+                        By implementing robust encryption and integrity measures, EDRMS bolster the overall security
+                        posture, safeguarding critical organizational information.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative rounded-3xl" x-bind:class="selected == 5  ? 'bg-[#FCF5FB]' : 'bg-white'">
+                  <button type="button" class="w-full px-6 py-6 text-left"
+                    @click="selected !== 5 ? selected = 5 : selected = null">
+                    <div class="flex items-center justify-between">
+                      <span class="text-lg text-base font-bold">
+                        Accuracy
+                      </span>
+                      <span>
+                        <img src="images/target.png" alt="Icon" width="42" height="41" />
+                      </span>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container5"
+                    x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+                    <div class="pb-6 px-6 pt-2 space-y-5">
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          Metadata Accuracy and Consistency:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS contributes to accuracy by employing metadata standards and ensuring consistent metadata
+                        application to documents and records.
+                        Metadata includes information about the document, such as creation date, author, and version
+                        history. By maintaining accurate and consistent metadata,
+                        EDRMS facilitates precise document identification, tracking, and retrieval.
+                        This accuracy in metadata enhances the reliability of document management processes and ensures
+                        that users can confidently locate and work with the right information.
+                      </p>
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          Version Control and Revision Tracking:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS enhances accuracy through robust version control and revision tracking features. Users can
+                        easily track changes made to documents over time, including who made the changes and when.
+                        This ensures that the most up-to-date and accurate version of a document is readily available.
+                        Version control eliminates the risk of working with outdated information, reducing errors and
+                        enhancing overall accuracy in collaborative work environments.
+                        The system provides a transparent record of document evolution, fostering accountability and
+                        accuracy in document management.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative rounded-3xl" x-bind:class="selected == 6  ? 'bg-[#FCF5FB]' : 'bg-white'">
+                  <button type="button" class="w-full px-6 py-6 text-left"
+                    @click="selected !== 6 ? selected = 6 : selected = null">
+                    <div class="flex items-center justify-between">
+                      <span class="text-lg text-base font-bold">
+                        Compliance
+                      </span>
+                      <span>
+                        <img src="images/compliance.png" alt="Icon" width="42" height="41" />
+
+
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container6"
+                    x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
+                    <div class="pb-6 px-6 pt-2 space-y-5">
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          <!---point-->
+                          Regulatory Compliance Tracking:
+                        </span>
+                        <!---explanatio-->
+                        EDRMS plays a crucial role in ensuring compliance with various regulations by providing tools to
+                        track and manage regulatory requirements.
+                        These systems often include features that allow organizations to map document and record
+                        management practices to specific regulatory frameworks.
+                        This ensures that the organization can demonstrate adherence to legal and industry-specific
+                        requirements, reducing the risk of non-compliance penalties and legal consequences.
+                      </p>
+                      <p class="text-base tracking-[0.01em] font-normal text-gray-500">
+                        <span class="font-medium text-black">
+                          Audit Trails and Reporting:
+                        </span>
+                        <!--description-->
+                        EDRMS enhances compliance by maintaining detailed audit trails and reporting capabilities.
+                        These features track user activities within the system, recording who accessed, modified, or
+                        deleted documents.
+                        In the event of an audit, organizations can produce comprehensive reports that demonstrate
+                        compliance with document management policies and regulatory requirements.
+                        The ability to generate audit trails not only ensures transparency but also provides evidence of
+                        compliance efforts, offering a layer of protection in the face of regulatory scrutiny.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </section>
-          <footer class="bg-[#F7FAFD]">
-            <div class="max-w-7xl mx-auto px-4 py-12">
-              <div class="px-2 sm:px-8 grid grid-cols-12 gap-x-5">
-                <div
-                  class="col-span-12 sm:col-span-5 md:col-span-4 space-y-6 sm:space-y-16 mb-6 sm:mb-0"
-                >
-                  <div>
-                    <img
-                      src="images/icta.png"
-                      class="h-10 md:h-12"
-                      alt="ict authority"
-                    />
-                  </div>
-                  <div>
-                    <a href="">
-                      <img
-                        src="images/moict.png"
-                        class="h-10"
-                        alt="moict"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-span-12 sm:col-span-7 md:col-span-5 space-y-6">
-                  <div class="space-y-4">
-                    <p class="text-lg text-[#475467] font-semibold">Location of Our Offices</p>
-                    <p class="text-base text-[#475467] font-normal">
-                      Teleposta Towers, Kenyatta Ave, Nairobi.
-                    </p>
-                  </div>
-                  <div class="space-y-4">
-                    <p class="text-lg text-[#475467] font-semibold">
-                      Talk to us
-                    </p>
-                    <ul class="text-base text-[#475467] font-normal space-y-1">
-                      <li>+254 20 667 6999 / +254 20 667 6999</li>
-                      <li>
-                        <a href="mailto: info@ict.go.ke" class="hover:underline"
-                          > info@ict.go.ke</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-span-3 hidden md:block">&nbsp;</div>
-              </div>
-              <div class="bg-[#F7FAFD] sm:text-right pt-7">
-                <p class="text-sm text-[#475467] text-left sm:text-right">
-                  © Copyright GovtEDRMS 2023. All rights Reserved.
-                </p>
-              </div>
-            </div>
-          </footer>
+          </div>
         </div>
-        
-      </body>
-    </html>    
-    <script>
-      // Define a mapping of ministries to their respective state corporations
-       // Define a JSON object with details for each ministry and state corporation
-       var serviceDetails = {
-        'interior': {
-          'State Department For Correctional Services': {
-              title: 'Correctional Services EDRMS',
-              description: 'Optimize operations and ensure security within correctional services using the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-correctional-services',
-              signInLink: 'http://edrms.correctionalservices.go.ke:86/edrms/Home'
-          },
-          'State Department For Internal Security And National Administration': {
-              title: 'Internal Security EDRMS',
-              description: 'Enhance internal security and national administration through streamlined processes with the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-internal-security',
-              signInLink: 'http://edrms.internalsecurity.go.ke:86/edrms/Home'
-          },
-          'State Department For Citizen Services': {
-              title: 'Citizen Services EDRMS',
-              description: 'Improve citizen services with efficient document management through the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-citizen-services',
-              signInLink: 'http://edrms.citizenservices.go.ke:86/edrms/Home'
-          },
-          'Kenya Police': {
-              title: 'Police EDRMS',
-              description: 'Optimize police operations and ensure information security with the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-police',
-              signInLink: 'http://edrms.police.go.ke:86/edrms/Home'
-          },
-          'Administration Police': {
-              title: 'Administration Police EDRMS',
-              description: 'Improve administrative processes within the police force using the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-administration-police',
-              signInLink: 'http://edrms.administrationpolice.go.ke:86/edrms/Home'
-          },
-          'Kenya Prisons Service': {
-              title: 'Prisons Service EDRMS',
-              description: 'Enhance efficiency and security within the Kenya Prisons Service through the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-prisons-service',
-              signInLink: 'http://edrms.prisonsservice.go.ke:86/edrms/Home'
-          },
-          'Probation and Aftercare Services': {
-              title: 'Probation and Aftercare EDRMS',
-              description: 'Optimize probation and aftercare services through efficient document management with the EDRMS.',
-              learnMoreLink: 'http://example.com/learn-more-probation-aftercare',
-              signInLink: 'http://edrms.probationaftercare.go.ke:86/edrms/Home'
-          },
-          // Remove the dummies
-      },      
+      </div>
+    </section>
+    <footer class="bg-[#F7FAFD]">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="px-2 sm:px-8 grid grid-cols-12 gap-x-5">
+          <div class="col-span-12 sm:col-span-5 md:col-span-4 space-y-6 sm:space-y-16 mb-6 sm:mb-0">
+            <div>
+              <img src="images/icta.png" class="h-10 md:h-12" alt="ict authority" />
+            </div>
+            <div>
+              <a href="">
+                <img src="images/moict.png" class="h-10" alt="moict" />
+              </a>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-7 md:col-span-5 space-y-6">
+            <div class="space-y-4">
+              <p class="text-lg text-[#475467] font-semibold">Location of Our Offices</p>
+              <p class="text-base text-[#475467] font-normal">
+                Teleposta Towers, Kenyatta Ave, Nairobi.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <p class="text-lg text-[#475467] font-semibold">
+                Talk to us
+              </p>
+              <ul class="text-base text-[#475467] font-normal space-y-1">
+                <li>+254 20 667 6999 / +254 20 667 6999</li>
+                <li>
+                  <a href="mailto: info@ict.go.ke" class="hover:underline"> info@ict.go.ke</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-span-3 hidden md:block">&nbsp;</div>
+        </div>
+        <div class="bg-[#F7FAFD] sm:text-right pt-7">
+          <p class="text-sm text-[#475467] text-left sm:text-right">
+            © Copyright GovtEDRMS 2023. All rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    </div>
+
+  </body>
+
+  </html>
+  <script>
+    // Define a mapping of ministries to their respective state corporations
+    // Define a JSON object with details for each ministry and state corporation
+    var serviceDetails = {
+      'interior': {
+        'State Department For Correctional Services': {
+          title: 'Correctional Services EDRMS',
+          description: 'Optimize operations and ensure security within correctional services using the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-correctional-services',
+          signInLink: 'http://edrms.correctionalservices.go.ke:86/edrms/Home'
+        },
+        'State Department For Internal Security And National Administration': {
+          title: 'Internal Security EDRMS',
+          description: 'Enhance internal security and national administration through streamlined processes with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-internal-security',
+          signInLink: 'http://edrms.internalsecurity.go.ke:86/edrms/Home'
+        },
+        'State Department For Citizen Services': {
+          title: 'Citizen Services EDRMS',
+          description: 'Improve citizen services with efficient document management through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-citizen-services',
+          signInLink: 'http://edrms.citizenservices.go.ke:86/edrms/Home'
+        },
+        'Kenya Police': {
+          title: 'Police EDRMS',
+          description: 'Optimize police operations and ensure information security with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-police',
+          signInLink: 'http://edrms.police.go.ke:86/edrms/Home'
+        },
+        'Administration Police': {
+          title: 'Administration Police EDRMS',
+          description: 'Improve administrative processes within the police force using the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-administration-police',
+          signInLink: 'http://edrms.administrationpolice.go.ke:86/edrms/Home'
+        },
+        'Kenya Prisons Service': {
+          title: 'Prisons Service EDRMS',
+          description: 'Enhance efficiency and security within the Kenya Prisons Service through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-prisons-service',
+          signInLink: 'http://edrms.prisonsservice.go.ke:86/edrms/Home'
+        },
+        'Probation and Aftercare Services': {
+          title: 'Probation and Aftercare EDRMS',
+          description: 'Optimize probation and aftercare services through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-probation-aftercare',
+          signInLink: 'http://edrms.probationaftercare.go.ke:86/edrms/Home'
+        },
+        // Remove the dummies
+      },
       'public': {
         'State Department For Public Service': {
-            title: 'Public Service EDRMS',
-            description: 'Enhance efficiency in public service operations through the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-public-service',
-            signInLink: 'http://edrms.publicservice.go.ke:86/edrms/Home'
+          title: 'Public Service EDRMS',
+          description: 'Enhance efficiency in public service operations through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-public-service',
+          signInLink: 'http://edrms.publicservice.go.ke:86/edrms/Home'
         },
         'State Department For Gender And Affirmative Action': {
-            title: 'Gender and Affirmative Action EDRMS',
-            description: 'Promote gender equality and affirmative action through efficient document management with the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-gender-affirmative',
-            signInLink: 'http://edrms.genderaffirmative.go.ke:86/edrms/Home'
+          title: 'Gender and Affirmative Action EDRMS',
+          description: 'Promote gender equality and affirmative action through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-gender-affirmative',
+          signInLink: 'http://edrms.genderaffirmative.go.ke:86/edrms/Home'
         },
         'Kenya School of Government': {
-            title: 'School of Government EDRMS',
-            description: 'Facilitate efficient document management and training processes at the Kenya School of Government using the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-school-of-government',
-            signInLink: 'http://edrms.schoolofgovernment.go.ke:86/edrms/Home'
+          title: 'School of Government EDRMS',
+          description: 'Facilitate efficient document management and training processes at the Kenya School of Government using the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-school-of-government',
+          signInLink: 'http://edrms.schoolofgovernment.go.ke:86/edrms/Home'
         },
         'Huduma Centres': {
-            title: 'Huduma Centres EDRMS',
-            description: 'Optimize service delivery at Huduma Centres through the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-huduma-centres',
-            signInLink: 'http://edrms.hudumacentres.go.ke:86/edrms/Home'
+          title: 'Huduma Centres EDRMS',
+          description: 'Optimize service delivery at Huduma Centres through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-huduma-centres',
+          signInLink: 'http://edrms.hudumacentres.go.ke:86/edrms/Home'
         },
         'Institute of Human Resource Management': {
-            title: 'Human Resource Management EDRMS',
-            description: 'Enhance human resource processes and document management at the Institute of Human Resource Management with the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-hr-management',
-            signInLink: 'http://edrms.hrmmanagement.go.ke:86/edrms/Home'
+          title: 'Human Resource Management EDRMS',
+          description: 'Enhance human resource processes and document management at the Institute of Human Resource Management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-hr-management',
+          signInLink: 'http://edrms.hrmmanagement.go.ke:86/edrms/Home'
         },
         'Anti-Female Genital Mutilation Board': {
-            title: 'Anti-FGM Board EDRMS',
-            description: 'Support the fight against Female Genital Mutilation through efficient document management with the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-anti-fgm-board',
-            signInLink: 'http://edrms.antifgmboard.go.ke:86/edrms/Home'
+          title: 'Anti-FGM Board EDRMS',
+          description: 'Support the fight against Female Genital Mutilation through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-anti-fgm-board',
+          signInLink: 'http://edrms.antifgmboard.go.ke:86/edrms/Home'
         },
         'Gender Violence Protection Centres': {
-            title: 'Gender Violence Protection Centres EDRMS',
-            description: 'Ensure effective document management in Gender Violence Protection Centres with the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-gender-violence-centres',
-            signInLink: 'http://edrms.genderviolencecentres.go.ke:86/edrms/Home'
+          title: 'Gender Violence Protection Centres EDRMS',
+          description: 'Ensure effective document management in Gender Violence Protection Centres with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-gender-violence-centres',
+          signInLink: 'http://edrms.genderviolencecentres.go.ke:86/edrms/Home'
         },
         'Women Enterprise Fund': {
-            title: 'Women Enterprise Fund EDRMS',
-            description: 'Facilitate efficient document management in the Women Enterprise Fund using the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-women-enterprise-fund',
-            signInLink: 'http://edrms.womenenterprisefund.go.ke:86/edrms/Home'
+          title: 'Women Enterprise Fund EDRMS',
+          description: 'Facilitate efficient document management in the Women Enterprise Fund using the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-women-enterprise-fund',
+          signInLink: 'http://edrms.womenenterprisefund.go.ke:86/edrms/Home'
         },
         'Uwezo Fund': {
-            title: 'Uwezo Fund EDRMS',
-            description: 'Support effective document management in the Uwezo Fund through the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-uwezo-fund',
-            signInLink: 'http://edrms.uwezofund.go.ke:86/edrms/Home'
+          title: 'Uwezo Fund EDRMS',
+          description: 'Support effective document management in the Uwezo Fund through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-uwezo-fund',
+          signInLink: 'http://edrms.uwezofund.go.ke:86/edrms/Home'
         },
         // Remove the dummies
-    },    
-        'information': {
-          'Kenya ICT Authority': {
-              title: 'ICTA EDRMS',
-              description: 'Description for the EDRMS service under ICTA.',
-              learnMoreLink: 'http://example.com/learn-more-information',
-              signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
-          },
-          'Broadcasting and Telecommunications': {
-              title: 'Broadcasting and Telecommunications EDRMS',
-              description: 'Description for the EDRMS service under Broadcasting and Telecommunications.',
-              learnMoreLink: 'http://example.com/learn-more-broadcasting',
-              signInLink: 'http://edrms.broadcasting.go.ke:86/edrms/Home'
-          },
-          'Kenya Broadcasting Corporation': {
-              title: 'Broadcasting Corporation EDRMS',
-              description: 'Description for the EDRMS service under Kenya Broadcasting Corporation.',
-              learnMoreLink: 'http://example.com/learn-more-broadcasting-corporation',
-              signInLink: 'http://edrms.kbc.go.ke:86/edrms/Home'
-          },
-          'Postal Corporation of Kenya': {
-              title: 'Postal Corporation EDRMS',
-              description: 'Description for the EDRMS service under Postal Corporation of Kenya.',
-              learnMoreLink: 'http://example.com/learn-more-postal-corporation',
-              signInLink: 'http://edrms.postalcorporation.go.ke:86/edrms/Home'
-          },
-          'Konza Technopolis Development Authority': {
-              title: 'Konza Technopolis EDRMS',
-              description: 'Description for the EDRMS service under Konza Technopolis Development Authority.',
-              learnMoreLink: 'http://example.com/learn-more-konza',
-              signInLink: 'http://edrms.konza.go.ke:86/edrms/Home'
-          },
-          'Kenya Yearbook Editorial Board (KYEB)': {
-              title: 'KYEB EDRMS',
-              description: 'Description for the EDRMS service under Kenya Yearbook Editorial Board.',
-              learnMoreLink: 'http://example.com/learn-more-kyeb',
-              signInLink: 'http://edrms.kyeb.go.ke:86/edrms/Home'
-          },
-          'Media Council of Kenya': {
-              title: 'Media Council EDRMS',
-              description: 'Description for the EDRMS service under Media Council of Kenya.',
-              learnMoreLink: 'http://example.com/learn-more-media-council',
-              signInLink: 'http://edrms.mediacouncil.go.ke:86/edrms/Home'
-          },
-          'Office of the Data Protection Commissioner': {
-              title: 'Data Protection EDRMS',
-              description: 'Description for the EDRMS service under Office of the Data Protection Commissioner.',
-              learnMoreLink: 'http://example.com/learn-more-data-protection',
-              signInLink: 'http://edrms.dataprotection.go.ke:86/edrms/Home'
-          },
-          // Add more entities as needed
       },
-      
+      'information': {
+        'Kenya ICT Authority': {
+          title: 'ICTA EDRMS',
+          description: 'Description for the EDRMS service under ICTA.',
+          learnMoreLink: 'http://example.com/learn-more-information',
+          signInLink: 'http://edrms.icta.go.ke:86/edrms/Home'
+        },
+        'Broadcasting and Telecommunications': {
+          title: 'Broadcasting and Telecommunications EDRMS',
+          description: 'Description for the EDRMS service under Broadcasting and Telecommunications.',
+          learnMoreLink: 'http://example.com/learn-more-broadcasting',
+          signInLink: 'http://edrms.broadcasting.go.ke:86/edrms/Home'
+        },
+        'Kenya Broadcasting Corporation': {
+          title: 'Broadcasting Corporation EDRMS',
+          description: 'Description for the EDRMS service under Kenya Broadcasting Corporation.',
+          learnMoreLink: 'http://example.com/learn-more-broadcasting-corporation',
+          signInLink: 'http://edrms.kbc.go.ke:86/edrms/Home'
+        },
+        'Postal Corporation of Kenya': {
+          title: 'Postal Corporation EDRMS',
+          description: 'Description for the EDRMS service under Postal Corporation of Kenya.',
+          learnMoreLink: 'http://example.com/learn-more-postal-corporation',
+          signInLink: 'http://edrms.postalcorporation.go.ke:86/edrms/Home'
+        },
+        'Konza Technopolis Development Authority': {
+          title: 'Konza Technopolis EDRMS',
+          description: 'Description for the EDRMS service under Konza Technopolis Development Authority.',
+          learnMoreLink: 'http://example.com/learn-more-konza',
+          signInLink: 'http://edrms.konza.go.ke:86/edrms/Home'
+        },
+        'Kenya Yearbook Editorial Board (KYEB)': {
+          title: 'KYEB EDRMS',
+          description: 'Description for the EDRMS service under Kenya Yearbook Editorial Board.',
+          learnMoreLink: 'http://example.com/learn-more-kyeb',
+          signInLink: 'http://edrms.kyeb.go.ke:86/edrms/Home'
+        },
+        'Media Council of Kenya': {
+          title: 'Media Council EDRMS',
+          description: 'Description for the EDRMS service under Media Council of Kenya.',
+          learnMoreLink: 'http://example.com/learn-more-media-council',
+          signInLink: 'http://edrms.mediacouncil.go.ke:86/edrms/Home'
+        },
+        'Office of the Data Protection Commissioner': {
+          title: 'Data Protection EDRMS',
+          description: 'Description for the EDRMS service under Office of the Data Protection Commissioner.',
+          learnMoreLink: 'http://example.com/learn-more-data-protection',
+          signInLink: 'http://edrms.dataprotection.go.ke:86/edrms/Home'
+        },
+        // Add more entities as needed
+      },
+
       'health': {
         'State Department For Medical Services': {
-            title: 'Medical Services EDRMS',
-            description: 'Enhance document management and processes within the State Department for Medical Services through the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-medical-services',
-            signInLink: 'http://edrms.medicalservices.go.ke:86/edrms/Home'
+          title: 'Medical Services EDRMS',
+          description: 'Enhance document management and processes within the State Department for Medical Services through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-medical-services',
+          signInLink: 'http://edrms.medicalservices.go.ke:86/edrms/Home'
         },
         'State Department For Public Health Services': {
-            title: 'Public Health Services EDRMS',
-            description: 'Improve document management and public health services with the EDRMS.',
-            learnMoreLink: 'http://example.com/learn-more-public-health-services',
-            signInLink: 'http://edrms.publichealthservices.go.ke:86/edrms/Home'
+          title: 'Public Health Services EDRMS',
+          description: 'Improve document management and public health services with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-public-health-services',
+          signInLink: 'http://edrms.publichealthservices.go.ke:86/edrms/Home'
         },
         // Remove the dummies
-    },    
-    'education': {
-      'State Department For Basic Education': {
+      },
+      'education': {
+        'State Department For Basic Education': {
           title: 'Basic Education EDRMS',
           description: 'Facilitate efficient document management and processes in basic education through the EDRMS.',
           learnMoreLink: 'http://example.com/learn-more-basic-education',
           signInLink: 'http://edrms.basiceducation.go.ke:86/edrms/Home'
-      },
-      'State Department For Technical, Vocational Education And Training': {
+        },
+        'State Department For Technical, Vocational Education And Training': {
           title: 'Technical, Vocational Education And Training EDRMS',
           description: 'Optimize document management and training processes in technical and vocational education through the EDRMS.',
           learnMoreLink: 'http://example.com/learn-more-tvet-education',
           signInLink: 'http://edrms.tveteducation.go.ke:86/edrms/Home'
-      },
-      'State Department For Higher Education And Research': {
+        },
+        'State Department For Higher Education And Research': {
           title: 'Higher Education And Research EDRMS',
           description: 'Support document management and research processes in higher education through the EDRMS.',
           learnMoreLink: 'http://example.com/learn-more-higher-education',
           signInLink: 'http://edrms.highereducation.go.ke:86/edrms/Home'
+        },
+        // Remove the dummies
       },
-      // Remove the dummies
-  },
-  'youth': {
-    'State Department of Sports': {
-        title: 'Sports EDRMS',
-        description: 'Enhance document management and processes within the State Department of Sports through the EDRMS.',
-        learnMoreLink: 'http://example.com/learn-more-sports',
-        signInLink: 'http://edrms.sports.go.ke:86/edrms/Home'
-    },
-    // Remove the dummies
-},
+      'youth': {
+        'State Department of Sports': {
+          title: 'Sports EDRMS',
+          description: 'Enhance document management and processes within the State Department of Sports through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-sports',
+          signInLink: 'http://edrms.sports.go.ke:86/edrms/Home'
+        },
+        // Remove the dummies
+      },
 
-// Add more ministries and state corporations as needed
-};
-      
+      // Add more ministries and state corporations as needed
+    };
+
 
     function handleMinistryChange() {
       var selectedMinistry = document.getElementById("ministryDropdown").value;
@@ -899,56 +791,56 @@
     function populateStateCorporations(selectedMinistry) {
       var stateCorporations = {
         'interior': [
-        'State Department For Correctional Services',
-        'State Department For Internal Security And National Administration',
-        'State Department For Citizen Services',
-        'Kenya Police',
-        'Administration Police',
-        'Kenya Prisons Service',
-        'Probation and Aftercare Services'
-    ],
-// Update this line
+          'State Department For Correctional Services',
+          'State Department For Internal Security And National Administration',
+          'State Department For Citizen Services',
+          'Kenya Police',
+          'Administration Police',
+          'Kenya Prisons Service',
+          'Probation and Aftercare Services'
+        ],
+        // Update this line
 
-'public': [
-    'State Department For Public Service',
-    'State Department For Gender And Affirmative Action',
-    'Kenya School of Government',
-    'Huduma Centres',
-    'Institute of Human Resource Management',
-    'Anti-Female Genital Mutilation Board',
-    'Gender Violence Protection Centres',
-    'Women Enterprise Fund',
-    'Uwezo Fund'
-],
-// Update this line
+        'public': [
+          'State Department For Public Service',
+          'State Department For Gender And Affirmative Action',
+          'Kenya School of Government',
+          'Huduma Centres',
+          'Institute of Human Resource Management',
+          'Anti-Female Genital Mutilation Board',
+          'Gender Violence Protection Centres',
+          'Women Enterprise Fund',
+          'Uwezo Fund'
+        ],
+        // Update this line
 
         'information': [
-        'Kenya ICT Authority', 
-        'Broadcasting and Telecommunications', 
-        'Kenya Broadcasting Corporation', 
-        'Postal Corporation of Kenya', 
-        'Konza Technopolis Development Authority', 
-        'Kenya Yearbook Editorial Board (KYEB)', 
-        'Media Council of Kenya', 
-        'Office of the Data Protection Commissioner'
-      ],
+          'Kenya ICT Authority',
+          'Broadcasting and Telecommunications',
+          'Kenya Broadcasting Corporation',
+          'Postal Corporation of Kenya',
+          'Konza Technopolis Development Authority',
+          'Kenya Yearbook Editorial Board (KYEB)',
+          'Media Council of Kenya',
+          'Office of the Data Protection Commissioner'
+        ],
         // Update this line
-  'health': [
-    'State Department For Medical Services',
-    'State Department For Public Health Services',
-],
-// Update this line
+        'health': [
+          'State Department For Medical Services',
+          'State Department For Public Health Services',
+        ],
+        // Update this line
 
-'education': [
-    'State Department For Basic Education',
-    'State Department For Technical, Vocational Education And Training',
-    'State Department For Higher Education And Research',
-],
-'youth': [
-    'State Department of Sports',
-],
-// Add more entries as needed
-};
+        'education': [
+          'State Department For Basic Education',
+          'State Department For Technical, Vocational Education And Training',
+          'State Department For Higher Education And Research',
+        ],
+        'youth': [
+          'State Department of Sports',
+        ],
+        // Add more entries as needed
+      };
 
       var stateCorporationDropdown = document.getElementById("stateCorporationDropdown");
 
@@ -982,7 +874,7 @@
       </div>
       `;
 
-       // Add the Kenyan government logo
+      // Add the Kenyan government logo
       var governmentLogo = `
       <div class="pb-3">
         <img src="images/gok.png" alt="Government Logo" class="w-12 h-12">
@@ -1005,328 +897,294 @@
 
       serviceCard.innerHTML = cardContent;
     }
-    
-    
-  // JavaScript to toggle the responsive menu
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const responsiveMenu = document.getElementById('responsive-menu');
 
-    menuToggle.addEventListener('click', function () {
-      responsiveMenu.classList.toggle('hidden');
+
+    // JavaScript to toggle the responsive menu
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menu-toggle');
+      const responsiveMenu = document.getElementById('responsive-menu');
+
+      menuToggle.addEventListener('click', function () {
+        responsiveMenu.classList.toggle('hidden');
+      });
     });
-  });
-  // Add this function to handle global search
-  function handleGlobalSearch() {
-    var searchInput = document.getElementById("globalSearchInput");
-    var searchTerm = searchInput.value.trim().toLowerCase();
-    var searchResultsContainer = document.getElementById("searchResults");
+    // Add this function to handle global search
+    function handleGlobalSearch() {
+      var searchInput = document.getElementById("globalSearchInput");
+      var searchTerm = searchInput.value.trim().toLowerCase();
+      var searchResultsContainer = document.getElementById("searchResults");
 
-    if (searchTerm === "") {
-      searchResultsContainer.classList.add("hidden");
-      searchResultsContainer.innerHTML = "";
-    } else {
-      // Perform search and update search results
-      performGlobalSearch(searchTerm);
+      if (searchTerm === "") {
+        searchResultsContainer.classList.add("hidden");
+        searchResultsContainer.innerHTML = "";
+      } else {
+        // Perform search and update search results
+        performGlobalSearch(searchTerm);
+      }
+    }
+
+    // Add this function to perform the actual search and update results
+    // Add this function to perform the actual search and update results
+function performGlobalSearch(searchTerm) {
+  var searchResultsContainer = document.getElementById("searchResults");
+  searchResultsContainer.innerHTML = ""; // Clear existing content
+
+  // Create a grid container for search results
+  var searchResultsGrid = document.createElement("div");
+  searchResultsGrid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
+
+  // Perform your search logic here and dynamically populate search results
+  // For example, iterate through your ministries and state corporations to find matches
+  for (var ministry of ministries) {
+    var lowercaseMinistryTitle = ministry.title.toLowerCase();
+    var lowercaseMinistryDescription = ministry.description.toLowerCase();
+
+    // Check if the search term matches the ministry title or description
+    if (lowercaseMinistryTitle.includes(searchTerm) || lowercaseMinistryDescription.includes(searchTerm)) {
+      // Display the card for the matching ministry using createMinistryCard
+      var ministryCardElement = createMinistryCard(ministry);
+      searchResultsGrid.appendChild(ministryCardElement);
     }
   }
 
-  // Add this function to perform the actual search and update results
-  function performGlobalSearch(searchTerm) {
-    var searchResultsContainer = document.getElementById("searchResults");
-    searchResultsContainer.innerHTML = ""; // Clear existing content
+  for (var ministry in serviceDetails) {
+    if (serviceDetails.hasOwnProperty(ministry)) {
+      for (var corporation in serviceDetails[ministry]) {
+        if (serviceDetails[ministry].hasOwnProperty(corporation)) {
+          var corporationDetails = serviceDetails[ministry][corporation];
+          var lowercaseTitle = corporationDetails.title.toLowerCase();
+          var lowercaseDescription = corporationDetails.description.toLowerCase();
 
-    // Perform your search logic here and dynamically populate search results
-    // For example, iterate through your ministries and state corporations to find matches
-    for (var ministry in serviceDetails) {
-      if (serviceDetails.hasOwnProperty(ministry)) {
-        for (var corporation in serviceDetails[ministry]) {
-          if (serviceDetails[ministry].hasOwnProperty(corporation)) {
-            var corporationDetails = serviceDetails[ministry][corporation];
-            var lowercaseTitle = corporationDetails.title.toLowerCase();
-            var lowercaseDescription = corporationDetails.description.toLowerCase();
-
-            // Check if the search term matches the title or description
-            if (lowercaseTitle.includes(searchTerm) || lowercaseDescription.includes(searchTerm)) {
-              // Display the card for the matching state corporation
-              displayServiceCard(ministry, corporation);
-            }
+          // Check if the search term matches the title or description
+          if (lowercaseTitle.includes(searchTerm) || lowercaseDescription.includes(searchTerm)) {
+            // Display the card for the matching state corporation using createMinistryCard
+            var cardElement = createMinistryCard(corporationDetails);
+            searchResultsGrid.appendChild(cardElement);
           }
         }
       }
     }
-
-    // Show the search results container if there are results
-    if (searchResultsContainer.innerHTML.trim() !== "") {
-      searchResultsContainer.classList.remove("hidden");
-    } else {
-      searchResultsContainer.classList.add("hidden");
-    }
   }
 
-  // Add this function to display the service card for a matching state corporation
-  function displayServiceCard(selectedMinistry, selectedCorporation) {
-    var searchResultsContainer = document.getElementById("searchResults");
+  // Append the grid container to the search results container
+  searchResultsContainer.appendChild(searchResultsGrid);
 
-    // Create a new service card element
-  var cardElement = document.createElement("div");
-  cardElement.className = "relative flex flex-col mt-6 text-gray-700 bg-none shadow-primary rounded-xl w-full sm:w-full";
-  cardElement.innerHTML = getServiceCardHTML(selectedMinistry, selectedCorporation);
-
-
-    // Append the card to the search results container
-    searchResultsContainer.appendChild(cardElement);
+  // Show the search results container if there are results
+  if (searchResultsGrid.children.length > 0) {
+    searchResultsContainer.classList.remove("hidden");
+  } else {
+    searchResultsContainer.classList.add("hidden");
   }
-
-  // Add this function to get the HTML content for the service card
-  function getServiceCardHTML(selectedMinistry, selectedCorporation) {
-    var serviceDetail = serviceDetails[selectedMinistry][selectedCorporation];
-
-    // Dynamically populate the "Sign In" link
- // Dynamically populate the "Sign In" link
-  var signInLink = `
-    <div class="flex justify-center mt-2">
-      <a href="${serviceDetail.signInLink}" class="whitespace-nowrap inline-flex items-center justify-center px-2 py-1 border border-primary-700 bg-transparent rounded-full shadow-sm text-sm font-bold text-primary-700 hover:opacity-80 space-x-2">
-        <span>Sign In</span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-            <path d="M3.5 7.5H11.1667M11.1667 7.5L8.00003 4.16669M11.1667 7.5L8.00003 10.8334" stroke="#FF5A5F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </span>
-      </a>
-    </div>
-  `;
-
-  // Add the Kenyan government logo
-  var governmentLogo = `
-    <div class="pb-2">
-      <img src="images/gok.png" alt="Government Logo" class="w-8 h-8">
-    </div>
-  `;
-
-  // Replace the following with your actual service card content
-  var cardContent = `
-    <div class="bg-primary-800 rounded-lg p-4 mb-4 mx-auto" style="max-width: 300px; min-width:300px;">
-      ${governmentLogo}
-      <h2 class="text-sm lg:text-base font-bold text-primary-700 mb-1 text-center">
-        ${serviceDetail.title}
-      </h2>
-      <p class="font-normal text-xs text-center md:text-sm">
-        ${serviceDetail.description}
-      </p>
-      ${signInLink}
-    </div>
-  `;
-
-  return cardContent;
 }
 
-// Accordions
-document.addEventListener('DOMContentLoaded', function () {
-  const accordions = document.querySelectorAll('[x-data]');
 
-  accordions.forEach((accordion) => {
-    let selected = accordion.getAttribute('x-data');
-    const buttons = accordion.querySelectorAll('button');
 
-    buttons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        if (selected == index + 1) {
-          selected = null;
-        } else {
-          selected = index + 1;
-        }
+    // Accordions
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordions = document.querySelectorAll('[x-data]');
 
-        buttons.forEach((btn, btnIndex) => {
-          btn.classList.toggle('bg-[#FCF5FB]', selected == btnIndex + 1);
-        });
+      accordions.forEach((accordion) => {
+        let selected = accordion.getAttribute('x-data');
+        const buttons = accordion.querySelectorAll('button');
 
-        const containers = accordion.querySelectorAll('[x-ref^=container]');
-        containers.forEach((container, containerIndex) => {
-          container.style.maxHeight = selected == containerIndex + 1 ? container.scrollHeight + 'px' : '0';
+        buttons.forEach((button, index) => {
+          button.addEventListener('click', () => {
+            if (selected == index + 1) {
+              selected = null;
+            } else {
+              selected = index + 1;
+            }
+
+            buttons.forEach((btn, btnIndex) => {
+              btn.classList.toggle('bg-[#FCF5FB]', selected == btnIndex + 1);
+            });
+
+            const containers = accordion.querySelectorAll('[x-ref^=container]');
+            containers.forEach((container, containerIndex) => {
+              container.style.maxHeight = selected == containerIndex + 1 ? container.scrollHeight + 'px' : '0';
+            });
+          });
         });
       });
     });
-  });
-});
 
-// Sample Ministry Data
-var ministries = [
-  {
-    title: 'Interior and National Administration',
-    description: 'Description for Interior and National Administration.',
-    learnMoreLink: 'http://example.com/learn-more-interior',
-    signInLink: 'http://example.com/sign-in-interior',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'National Treasury and Planning',
-    description: 'Description for National Treasury and Planning.',
-    learnMoreLink: 'http://example.com/learn-more-treasury',
-    signInLink: 'http://example.com/sign-in-treasury',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Public Service, Gender and Affirmative Action',
-    description: 'Description for Public Service, Gender and Affirmative Action.',
-    learnMoreLink: 'http://example.com/learn-more-public-service',
-    signInLink: 'http://example.com/sign-in-public-service',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Defence',
-    description: 'Description for Defence.',
-    learnMoreLink: 'http://example.com/learn-more-defence',
-    signInLink: 'http://example.com/sign-in-defence',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Water, Sanitation and Irrigation',
-    description: 'Description for Water, Sanitation and Irrigation.',
-    learnMoreLink: 'http://example.com/learn-more-water',
-    signInLink: 'http://example.com/sign-in-water',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Foreign and Diaspora Affairs',
-    description: 'Description for Foreign and Diaspora Affairs.',
-    learnMoreLink: 'http://example.com/learn-more-foreign-affairs',
-    signInLink: 'http://example.com/sign-in-foreign-affairs',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Trade, Investment and Industry',
-    description: 'Description for Trade, Investment and Industry.',
-    learnMoreLink: 'http://example.com/learn-more-trade',
-    signInLink: 'http://example.com/sign-in-trade',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development',
-    description: 'Description for East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development.',
-    learnMoreLink: 'http://example.com/learn-more-eac',
-    signInLink: 'http://example.com/sign-in-eac',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Roads, Transport and Public Works',
-    description: 'Description for Roads, Transport and Public Works.',
-    learnMoreLink: 'http://example.com/learn-more-roads',
-    signInLink: 'http://example.com/sign-in-roads',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Environment and Forestry',
-    description: 'Description for Environment and Forestry.',
-    learnMoreLink: 'http://example.com/learn-more-environment',
-    signInLink: 'http://example.com/sign-in-environment',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Lands, Housing and Urban Development',
-    description: 'Description for Lands, Housing and Urban Development.',
-    learnMoreLink: 'http://example.com/learn-more-lands',
-    signInLink: 'http://example.com/sign-in-lands',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Tourism, Wildlife and Heritage',
-    description: 'Description for Tourism, Wildlife and Heritage.',
-    learnMoreLink: 'http://example.com/learn-more-tourism',
-    signInLink: 'http://example.com/sign-in-tourism',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Agriculture and Livestock Development',
-    description: 'Description for Agriculture and Livestock Development.',
-    learnMoreLink: 'http://example.com/learn-more-agriculture',
-    signInLink: 'http://example.com/sign-in-agriculture',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'EducationEnergy and Petroleum',
-    description: 'Description for EducationEnergy and Petroleum.',
-    learnMoreLink: 'http://example.com/learn-more-education',
-    signInLink: 'http://example.com/sign-in-education',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Youth Affairs, Sports and the Arts',
-    description: 'Description for Youth Affairs, Sports and the Arts.',
-    learnMoreLink: 'http://example.com/learn-more-youth',
-    signInLink: 'http://example.com/sign-in-youth',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Co-operatives and Micro, Small and Medium Enterprises (MSME) Development',
-    description: 'Description for Co-operatives and Micro, Small and Medium Enterprises (MSME) Development.',
-    learnMoreLink: 'http://example.com/learn-more-cooperatives',
-    signInLink: 'http://example.com/sign-in-cooperatives',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Mining, Blue Economy and Maritime Affairs',
-    description: 'Description for Mining, Blue Economy and Maritime Affairs.',
-    learnMoreLink: 'http://example.com/learn-more-mining',
-    signInLink: 'http://example.com/sign-in-mining',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Labour and Social Protection',
-    description: 'Description for Labour and Social Protection.',
-    learnMoreLink: 'http://example.com/learn-more-labour',
-    signInLink: 'http://example.com/sign-in-labour',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Information, Communications and the Digital Economy',
-    description: 'Description for Information, Communications and the Digital Economy.',
-    learnMoreLink: 'http://example.com/learn-more-ict',
-    signInLink: 'http://example.com/sign-in-ict',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-  {
-    title: 'Health',
-    description: 'Description for Health.',
-    learnMoreLink: 'http://example.com/learn-more-health',
-    signInLink: 'http://example.com/sign-in-health',
-    icon: 'images/gok.png' // Replace with actual icon path
-  },
-];
+    // Sample Ministry Data
+    var ministries = [
+      {
+        title: 'Ministry Of Interior and National Administration',
+        description: 'Description for Interior and National Administration.',
+        learnMoreLink: 'http://example.com/learn-more-interior',
+        signInLink: 'http://example.com/sign-in-interior',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of National Treasury and Planning',
+        description: 'Description for National Treasury and Planning.',
+        learnMoreLink: 'http://example.com/learn-more-treasury',
+        signInLink: 'http://example.com/sign-in-treasury',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Public Service, Gender and Affirmative Action',
+        description: 'Description for Public Service, Gender and Affirmative Action.',
+        learnMoreLink: 'http://example.com/learn-more-public-service',
+        signInLink: 'http://example.com/sign-in-public-service',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Defence',
+        description: 'Description for Defence.',
+        learnMoreLink: 'http://example.com/learn-more-defence',
+        signInLink: 'http://example.com/sign-in-defence',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Water, Sanitation and Irrigation',
+        description: 'Description for Water, Sanitation and Irrigation.',
+        learnMoreLink: 'http://example.com/learn-more-water',
+        signInLink: 'http://example.com/sign-in-water',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Foreign and Diaspora Affairs',
+        description: 'Description for Foreign and Diaspora Affairs.',
+        learnMoreLink: 'http://example.com/learn-more-foreign-affairs',
+        signInLink: 'http://example.com/sign-in-foreign-affairs',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Trade, Investment and Industry',
+        description: 'Description for Trade, Investment and Industry.',
+        learnMoreLink: 'http://example.com/learn-more-trade',
+        signInLink: 'http://example.com/sign-in-trade',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development',
+        description: 'Description for East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development.',
+        learnMoreLink: 'http://example.com/learn-more-eac',
+        signInLink: 'http://example.com/sign-in-eac',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Roads, Transport and Public Works',
+        description: 'Description for Roads, Transport and Public Works.',
+        learnMoreLink: 'http://example.com/learn-more-roads',
+        signInLink: 'http://example.com/sign-in-roads',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Environment and Forestry',
+        description: 'Description for Environment and Forestry.',
+        learnMoreLink: 'http://example.com/learn-more-environment',
+        signInLink: 'http://example.com/sign-in-environment',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Lands, Housing and Urban Development',
+        description: 'Description for Lands, Housing and Urban Development.',
+        learnMoreLink: 'http://example.com/learn-more-lands',
+        signInLink: 'http://example.com/sign-in-lands',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Tourism, Wildlife and Heritage',
+        description: 'Description for Tourism, Wildlife and Heritage.',
+        learnMoreLink: 'http://example.com/learn-more-tourism',
+        signInLink: 'http://example.com/sign-in-tourism',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Agriculture and Livestock Development',
+        description: 'Description for Agriculture and Livestock Development.',
+        learnMoreLink: 'http://example.com/learn-more-agriculture',
+        signInLink: 'http://example.com/sign-in-agriculture',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of EducationEnergy and Petroleum',
+        description: 'Description for EducationEnergy and Petroleum.',
+        learnMoreLink: 'http://example.com/learn-more-education',
+        signInLink: 'http://example.com/sign-in-education',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Youth Affairs, Sports and the Arts',
+        description: 'Description for Youth Affairs, Sports and the Arts.',
+        learnMoreLink: 'http://example.com/learn-more-youth',
+        signInLink: 'http://example.com/sign-in-youth',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Co-operatives and Micro, Small and Medium Enterprises (MSME) Development',
+        description: 'Description for Co-operatives and Micro, Small and Medium Enterprises (MSME) Development.',
+        learnMoreLink: 'http://example.com/learn-more-cooperatives',
+        signInLink: 'http://example.com/sign-in-cooperatives',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Mining, Blue Economy and Maritime Affairs',
+        description: 'Description for Mining, Blue Economy and Maritime Affairs.',
+        learnMoreLink: 'http://example.com/learn-more-mining',
+        signInLink: 'http://example.com/sign-in-mining',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Labour and Social Protection',
+        description: 'Description for Labour and Social Protection.',
+        learnMoreLink: 'http://example.com/learn-more-labour',
+        signInLink: 'http://example.com/sign-in-labour',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Information, Communications and the Digital Economy',
+        description: 'Description for Information, Communications and the Digital Economy.',
+        learnMoreLink: 'http://example.com/learn-more-ict',
+        signInLink: 'http://example.com/sign-in-ict',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry Of Health',
+        description: 'Description for Health.',
+        learnMoreLink: 'http://example.com/learn-more-health',
+        signInLink: 'http://example.com/sign-in-health',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+    ];
 
 
-// Function to create and display ministry cards
-function displayMinistryCards() {
-  var ministryCardsContainer = document.getElementById('ministryCards');
-  var seeMoreContainer = document.getElementById('seeMoreContainer');
-  var minimizeContainer = document.getElementById('minimizeContainer');
+    // Function to create and display ministry cards
+    function displayMinistryCards() {
+      var ministryCardsContainer = document.getElementById('ministryCards');
+      var seeMoreContainer = document.getElementById('seeMoreContainer');
+      var minimizeContainer = document.getElementById('minimizeContainer');
 
-  // Clear existing content
-  ministryCardsContainer.innerHTML = '';
-  seeMoreContainer.innerHTML = '';
-  minimizeContainer.innerHTML = '';
+      // Clear existing content
+      ministryCardsContainer.innerHTML = '';
+      seeMoreContainer.innerHTML = '';
+      minimizeContainer.innerHTML = '';
 
-  // Display the first 6 ministries
-  for (let i = 0; i < 6 && i < ministries.length; i++) {
-    var cardElement = createMinistryCard(ministries[i]);
-    ministryCardsContainer.appendChild(cardElement);
-  }
+      // Display the first 6 ministries
+      for (let i = 0; i < 6 && i < ministries.length; i++) {
+        var cardElement = createMinistryCard(ministries[i]);
+        ministryCardsContainer.appendChild(cardElement);
+      }
 
-  // Display "See More" link if there are more ministries
-  if (ministries.length > 6) {
-    seeMoreContainer.innerHTML = `
+      // Display "See More" link if there are more ministries
+      if (ministries.length > 6) {
+        seeMoreContainer.innerHTML = `
       <a id="seeMoreLink" class="text-red-500 hover:underline cursor-pointer" onclick="seeMoreMinistries()">See More Ministries <span>&#8595;</span></a>
     `;
-  }
-}
+      }
+    }
 
-// Function to create a single ministry card
-function createMinistryCard(ministry) {
-  var cardElement = document.createElement('div');
-  cardElement.className = 'bg-gray-200 p-6 rounded-md shadow-lg';
+    // Function to create a single ministry card
+    function createMinistryCard(ministry) {
+      var cardElement = document.createElement('div');
+      cardElement.className = 'bg-gray-200 p-6 rounded-md shadow-lg';
 
-  // Card Content
-  cardElement.innerHTML = `
+      // Card Content
+      cardElement.innerHTML = `
     <div class="flex items-center justify-start ml-2 mb-4">
       <img src="${ministry.icon}" alt="${ministry.title}" class="w-10 h-10 mr-4">
       <h3 class="text-xl font-bold justify-start ml-2">${ministry.title}</h3>
@@ -1339,62 +1197,63 @@ function createMinistryCard(ministry) {
     </div>
   `;
 
-  return cardElement;
-}
+      return cardElement;
+    }
 
-// Function to display the next set of ministries when "See More" is clicked
-function seeMoreMinistries() {
-  var ministryCardsContainer = document.getElementById('ministryCards');
-  var seeMoreContainer = document.getElementById('seeMoreContainer');
-  var minimizeContainer = document.getElementById('minimizeContainer');
+    // Function to display the next set of ministries when "See More" is clicked
+    function seeMoreMinistries() {
+      var ministryCardsContainer = document.getElementById('ministryCards');
+      var seeMoreContainer = document.getElementById('seeMoreContainer');
+      var minimizeContainer = document.getElementById('minimizeContainer');
 
-  // Remove "See More" link
-  seeMoreContainer.innerHTML = '';
+      // Remove "See More" link
+      seeMoreContainer.innerHTML = '';
 
-  // Display the next set of ministries
-  for (let i = 6; i < ministries.length; i++) {
-    var cardElement = createMinistryCard(ministries[i]);
-    ministryCardsContainer.appendChild(cardElement);
-  }
+      // Display the next set of ministries
+      for (let i = 6; i < ministries.length; i++) {
+        var cardElement = createMinistryCard(ministries[i]);
+        ministryCardsContainer.appendChild(cardElement);
+      }
 
-  // Display "Minimize" link
-  minimizeContainer.innerHTML = `
+      // Display "Minimize" link
+      minimizeContainer.innerHTML = `
     <a id="minimizeLink" class="text-red-500 font-bold hover:underline cursor-pointer" onclick="minimizeSection()">Minimize Section <span>&#8593;</span></a>
   `;
-}
+    }
 
-// Function to minimize the section and display the first 6 ministries
-function minimizeSection() {
-  var ministryCardsContainer = document.getElementById('ministryCards');
-  var seeMoreContainer = document.getElementById('seeMoreContainer');
-  var minimizeContainer = document.getElementById('minimizeContainer');
+    // Function to minimize the section and display the first 6 ministries
+    function minimizeSection() {
+      var ministryCardsContainer = document.getElementById('ministryCards');
+      var seeMoreContainer = document.getElementById('seeMoreContainer');
+      var minimizeContainer = document.getElementById('minimizeContainer');
 
-  // Clear existing content and reset to the first 6 ministries
-  ministryCardsContainer.innerHTML = '';
-  for (let i = 0; i < 6 && i < ministries.length; i++) {
-    var cardElement = createMinistryCard(ministries[i]);
-    ministryCardsContainer.appendChild(cardElement);
-  }
+      // Clear existing content and reset to the first 6 ministries
+      ministryCardsContainer.innerHTML = '';
+      for (let i = 0; i < 6 && i < ministries.length; i++) {
+        var cardElement = createMinistryCard(ministries[i]);
+        ministryCardsContainer.appendChild(cardElement);
+      }
 
-  // Display "See More" link if there are more ministries
-  if (ministries.length > 6) {
-    seeMoreContainer.innerHTML = `
+      // Display "See More" link if there are more ministries
+      if (ministries.length > 6) {
+        seeMoreContainer.innerHTML = `
       <a id="seeMoreLink" class="text-red-500 font-bold hover:underline cursor-pointer" onclick="seeMoreMinistries()">See More Ministries <span>&#8595;</span></a>
     `;
-  }
+      }
 
-  // Hide "Minimize" link
-  minimizeContainer.innerHTML = '';
-}
+      // Hide "Minimize" link
+      minimizeContainer.innerHTML = '';
+    }
 
-// Call the function to display ministry cards
-displayMinistryCards();
-
-
+    // Call the function to display ministry cards
+    displayMinistryCards();
 
 
 
-    </script>   
-    
-  </body>
+
+
+  </script>
+
+</body>
+
 </html>
