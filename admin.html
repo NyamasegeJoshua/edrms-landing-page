@@ -123,7 +123,7 @@
           <input type="text" placeholder="Enter Ministry Name" name="ministryBelonging"
             class="w-full px-3 py-2 rounded-full text-gray-700 text-sm font-medium border border-gray-300" />
         </div>
-        
+
       </div>
 
       <!-- step three -->
@@ -151,67 +151,75 @@
 
 
       <!-- start previous / next buttons -->
-      <div class="form-footer flex gap-3">
-        <button type="button" id="prevBtn"
-          class="flex-1 focus:outline-none border border-gray-300 py-2 px-5 rounded-lg shadow-sm text-center text-gray-700 bg-white hover:bg-gray-100 text-lg"
-          onclick="nextPrev(-1)">
-          Previous
-        </button>
-        <button type="button" id="nextBtn"
-          class="flex-1 border border-transparent focus:outline-none p-3 rounded-full text-center text-white bg-primary-600 hover:bg-indigo-700 text-lg"
-          onclick="nextPrev(1)">
-          Next
-        </button>
-      </div>
+      <!-- Next and Previous buttons -->
+      <button type="button"
+        class="inline-block rounded bg-neutral-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(251,251,251,0.3)] dark:hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)]"
+        onclick="nextPrev(-1)">
+        Previous
+      </button>
+      <button type="button"
+        class="inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]"
+        onclick="nextPrev(1)">
+        <span class="text-red-500 active:text-white">Next</span>
+      </button>
+      <!-- Don't have an account? Signup link -->
+<div class="flex items-center justify-center mt-4">
+  <p class="text-gray-700 mr-2">Don't have an account?</p>
+  <a href="signup.html" class="flex items-center">
+    <span class="text-gray-700">Signup</span>
+    <img src="images/right.png" alt="Arrow Right" class="w-4 h-4 ml-2">
+  </a>
+</div>
+
       <!-- end previous / next buttons -->
     </form>
 
     <script>
       var currentTab = 0; // Current tab is set to be the first tab (0)
       showTab(currentTab); // Display the current tab
-    
+
       function showTab(n) {
         var x = document.getElementsByClassName("step");
         x[n].style.display = "block";
-    
+
         if (n == 0) {
           document.getElementById("prevBtn").style.display = "none";
         } else {
           document.getElementById("prevBtn").style.display = "inline";
         }
-    
+
         if (n == (x.length - 1)) {
           document.getElementById("nextBtn").innerHTML = "Submit";
         } else {
           document.getElementById("nextBtn").innerHTML = "Next";
         }
-    
+
         fixStepIndicator(n);
       }
-    
+
       function nextPrev(n) {
         var x = document.getElementsByClassName("step");
-    
+
         if (n == 1 && !validateForm()) return false;
-    
+
         x[currentTab].style.display = "none";
         currentTab = currentTab + n;
-    
+
         if (currentTab >= x.length) {
           document.getElementById("signUpForm").submit();
           return false;
         }
-    
+
         showTab(currentTab);
         showMinistryBelongingField(); // Call the function to handle visibility
       }
-    
+
       function validateForm() {
         var x, y, i, valid = true;
         x = document.getElementsByClassName("step");
         y = x[currentTab].getElementsByTagName("input");
         var category = document.getElementById("category").value; // Define category variable
-    
+
         // A loop that checks every input field in the current tab:
         for (i = 0; i < y.length; i++) {
           // If a field is empty and not Ministry Belonging when the category is "ministry"...
@@ -228,37 +236,37 @@
         }
         return valid; // return the valid status
       }
-    
+
       function fixStepIndicator(n) {
         var i, x = document.getElementsByClassName("stepIndicator");
-    
+
         for (i = 0; i < x.length; i++) {
           x[i].className = x[i].className.replace(" active", "");
         }
-    
+
         x[n].className += " active";
       }
-    
+
       function showMinistryBelongingField() {
         var categorySelect = document.getElementById("category");
         var ministrySelection = document.getElementById("ministrySelection");
-    
+
         if (categorySelect.value === "ministry") {
           ministrySelection.style.display = "none";
         } else {
           ministrySelection.style.display = "block";
         }
       }
-    
+
       // Add event listener for category change
       document.getElementById("category").addEventListener("change", showMinistryBelongingField);
-    
+
       // Call the function on page load to handle initial visibility
       showMinistryBelongingField();
     </script>
-    
-    
-    
+
+
+
   </body>
 
   </html>
