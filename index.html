@@ -43,14 +43,13 @@
             <img src="images/gok.png" alt="Your Image Alt Text" class="h-14 mr-3">
             <p class="text-xl font-bold text-red-600 md:hidden">
               Republic of Kenya
-              <span class="text-lg font-bold text-black block sm:inline sm:text-sm">Electronic Document & Record
-                Management System</span>
+              <span class="text-lg font-bold text-black block sm:inline sm:text-sm">Electronic Document & Record Management System</span>
             </p>
           </a>
-
+    
           <div class="hidden md:flex space-x-8">
             <a href="#" class="text-black font-semibold hover:text-blue-700">Home</a>
-
+    
             <div class="relative group">
               <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                 class="text-red-700 hover:text-blue-700 font-medium flex items-center space-x-1">
@@ -61,7 +60,7 @@
                     clip-rule="evenodd"></path>
                 </svg>
               </button>
-
+    
               <!-- Dropdown menu -->
               <div id="dropdownNavbar"
                 class="absolute hidden bg-white text-base z-10 mt-2 py-1 space-y-1 group-hover:block">
@@ -71,14 +70,16 @@
                 <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
               </div>
             </div>
-
+    
             <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">Services</a>
             <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">About us</a>
             <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
           </div>
-
+    
+          <!-- Mobile Menu Button -->
           <button data-collapse-toggle="mobile-menu" type="button"
-            class="lg:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center">
+            class="lg:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center"
+            onclick="toggleMobileMenu()">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -86,6 +87,17 @@
                 clip-rule="evenodd"></path>
             </svg>
           </button>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden hidden">
+          <!-- Insert your mobile menu items here -->
+          <!-- For example: -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home</a>
+          <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Services</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About us</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
         </div>
       </nav>
     </div>
@@ -1615,10 +1627,12 @@
     // Call the function to display ministry cards
     displayMinistryCards();
 
-
-
-
-
+  </script>
+  <script id="myScript" >
+    function toggleMobileMenu() {
+      var mobileMenu = document.getElementById("mobileMenu");
+      mobileMenu.classList.toggle("hidden");
+    }
   </script>
   <script id="myScript" src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 
