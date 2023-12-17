@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content="WCdfJy4VcTcFPFczChV7CBIAI0UIEgd9oo7fJy7VRknr_qMfMIjh_gO0" />
+  <title data-suffix="">Govt EDRMS</title>
+  <link rel="canonical" href="https://crs.ecitizen.go.ke" />
+  <link rel="icon" type="image/x-icon" href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico" />
+  <link phx-track-static rel="stylesheet" href="assets/main-19eca7b2e7656617bc169bee5136883e.css" />
+  <!-- tailwind css -->
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/stye.css">
+  <link phx-track-static rel="stylesheet" href="assets/app-ced38148c650510e515759b66aeb3e30.css" />
+  <style>
+    #myScript {
+      visibility: hidden;
+    }
+  </style>
+  <script defer phx-track-static type="text/javascript" id="myScript"
+    src="/assets/app-afd6b69306582c548fae7ef3c36bdacd.js?vsn=d"></script>
+  <script id="myScript" src="/highcharts.js"></script>
+</head>
+
+<body class="h-full">
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <body>
+    <h1 class="text-lg font-bold text-gray-700 leading-tight text-center mt-12 mb-5">
+      Create New Ministry
+    </h1>
+    <form id="signUpForm" class="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+      action="#!">
+      <!-- start step indicators -->
+      <div class="form-header flex gap-3 mb-4 text-xs text-center">
+        <span class="stepIndicator flex-1 pb-8 relative">Admin Authentication</span>
+        <span class="stepIndicator flex-1 pb-8 relative">MCDA General Info</span>
+        <span class="stepIndicator flex-1 pb-8 relative">System Config Details</span>
+        <span class="stepIndicator flex-1 pb-8 relative">Database Creation</span>
+      </div>
+      <!-- end step indicators -->
+
+      <!-- step one -->
+      <div class="flex flex-col mt-0 mb-0 items-center justify-center">
+        <img src="images/gok.png" alt="User Icon" class="w-12 h-12 mr-2">
+      </div>
+      <div class="step">
+        <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+          Login into your account
+        </p>
+        <!-- Login Form -->
+        <form id="loginForm" class="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8">
+          <div class="mb-6">
+              <label for="loginEmail" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+              <input type="email" id="loginEmail" name="email" placeholder="Enter your email..."
+                     class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+                     required>
+          </div>
+          <div class="mb-6 relative">
+              <label for="loginPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+              <div class="flex items-center">
+                  <input type="password" id="loginPassword" name="password" placeholder="Enter your password..."
+                         class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+                         required>
+                         <div class="ml-2">
+                          <img id="password-eye" src="images/eye2.svg" alt="Show password" onclick="togglePasswordVisibility()" class="h-6 w-6 text-gray-700 cursor-pointer">
+                          <img id="password-eye-hidden" src="images/eye1.svg" alt="Hide password" style="display: none;" class="h-6 w-6 text-gray-700 cursor-pointer">
+                        </div>
+                        
+              </div>
+          </div>
+          <div class="mb-6">
+              <button type="button" id="loginBtn" class="font-semibold" onclick="login()">Login</button>
+          </div>
+      </form>
+
+        <!-- step two -->
+        <div class="step">
+          <p class="text-full text-gray-700 leading-tight text-center mt-8 mb-5">
+            Ministry/Agency General Info
+          </p>
+          <div class="mb-4">
+            <input type="text" placeholder="Name (Must be unique)" name="ministryName"
+              class="w-full px-3 py-2 text-sm rounded-full text-gray-700 font-medium border border-gray-300"
+              oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
+              required />
+          </div>
+          <div class="mb-4">
+            <input type="text" placeholder="Onboarding ID (Must be unique)" name="onboardingID"
+              class="w-full text-sm px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300"
+              oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
+              required />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium">Logo Upload</label>
+            <input type="file" name="logo" accept="image/*" class="w-full text-sm py-2 border border-gray-300" />
+          </div>
+          <div class="mb-4">
+            <textarea placeholder="Type and submit Ministry/Agency Description" name="description"
+              class="w-full px-3 py-2 text-sm rounded-full text-gray-700 font-medium border border-gray-300"
+              oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
+              required></textarea>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium">Category</label>
+            <select id="category"
+              class="w-full px-3 text-sm py-2 rounded-full text-gray-700 font-medium border border-gray-300" required>
+              <option value="" disabled selected>Select Category</option>
+              <option value="ministry">Ministry</option>
+              <option value="agency">Agency</option>
+              <option value="state_department">State Department</option>
+            </select>
+          </div>
+          <div class="mb-4" id="ministrySelection" style="display:none;">
+            <label class="block text-gray-700 font-medium">Ministry Belonging</label>
+            <input type="text" placeholder="Enter Ministry Name" name="ministryBelonging"
+              class="w-full px-3 py-2 rounded-full text-gray-700 text-sm font-medium border border-gray-300" />
+          </div>
+
+        </div>
+
+        <!-- step three -->
+        <div class="step">
+          <p class="text-full text-gray-700 leading-tight text-center mt-8 mb-5">
+            System Configuration Details
+          </p>
+          <div class="mb-6">
+            <input type="text" placeholder="HTTP Connector Port" name="httpConnectorPort"
+              class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+              oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+          </div>
+          <div class="mb-6">
+            <input type="text" placeholder="HTTPS Connector Port" name="httpsConnectorPort"
+              class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+              oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+          </div>
+          <div class="mb-6">
+            <input type="text" placeholder="AJB Connector Port" name="ajbConnectorPort"
+              class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+              oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+          </div>
+          <!-- Add more fields as needed for system configuration details -->
+        </div>
+
+
+        <!-- start previous / next buttons -->
+        <!-- Next and Previous buttons -->
+        <button type="button"
+          class="inline-block rounded bg-neutral-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(251,251,251,0.3)] dark:hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)]"
+          onclick="nextPrev(-1)">
+          Previous
+        </button>
+        <!-- Next and Previous buttons -->
+        <button type="button" id="nextBtn"
+          class="inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]"
+          onclick="nextPrev(1)">
+          <span class="text-red-500 active:text-white">Next</span>
+        </button>
+
+
+        <!-- Don't have an account? Signup link -->
+        <div class="flex items-center justify-center mt-4">
+          <p class="text-gray-700 mr-2">Don't have an account?</p>
+          <a href="signup.html" class="flex items-center">
+            <span class="text-gray-700">Signup</span>
+            <img src="images/right.png" alt="Arrow Right" class="w-4 h-4 ml-2">
+          </a>
+        </div>
+
+        <!-- end previous / next buttons -->
+    </form>
+    <script>
+      document.getElementById('loginBtn').addEventListener('click', login);
+
+      let failedAttempts = 0;
+
+      async function login() {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        try {
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          if (response.ok) {
+            // Login successful
+            const confirmed = window.confirm('Login successful! Click OK to proceed.');
+
+            if (confirmed) {
+              // Toggle the visibility of the "Next" button
+              document.getElementById("nextBtn").style.display = "inline";
+            }
+          } else {
+            // Handle login failure
+            failedAttempts++;
+
+            let message = 'Login failed. Please check your credentials.';
+
+            if (failedAttempts >= 3) {
+              message = 'Too many failed attempts. Please try again after 5 minutes.';
+              // Reset the failed attempts counter after 5 minutes
+              setTimeout(() => {
+                failedAttempts = 0;
+              }, 5 * 60 * 1000);
+            }
+
+            const confirmed = window.confirm(message);
+
+            if (confirmed && failedAttempts < 3) {
+              // Allow the user to try again
+            }
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+          // Handle login failure, e.g., display an error message
+          const confirmed = window.confirm('Login failed. Please try again later.');
+
+          if (confirmed) {
+            // Allow the user to try again
+          }
+        }
+      }
+    </script>
+
+    <script>
+      function nextPrev(n) {
+        // This function will figure out which tab to display
+        const steps = document.querySelectorAll('.step');
+        let currentStep = 0;
+
+        // Find the currently visible step
+        for (let i = 0; i < steps.length; i++) {
+          if (steps[i].style.display !== 'none') {
+            currentStep = i;
+            break;
+          }
+        }
+
+        // Hide the current step
+        steps[currentStep].style.display = 'none';
+
+        // Show the next or previous step based on the parameter 'n'
+        const nextStep = currentStep + n;
+
+        if (steps[nextStep]) {
+          steps[nextStep].style.display = 'block';
+        }
+
+        // Adjust the "Next" and "Previous" button visibility
+        const nextBtn = document.getElementById('nextBtn');
+
+        if (nextStep === steps.length - 1) {
+          // If on the last step, hide the "Next" button
+          nextBtn.style.display = 'none';
+        } else {
+          // Otherwise, show the "Next" button
+          nextBtn.style.display = 'inline';
+        }
+      }
+
+    </script>
+
+
+    <script>
+      var currentTab = 0; // Current tab is set to be the first tab (0)
+      showTab(currentTab); // Display the current tab
+
+      function showTab(n) {
+        var x = document.getElementsByClassName("step");
+        x[n].style.display = "block";
+
+        if (n == 0) {
+          document.getElementById("prevBtn").style.display = "none";
+        } else {
+          document.getElementById("prevBtn").style.display = "inline";
+        }
+
+        if (n == (x.length - 1)) {
+          document.getElementById("nextBtn").innerHTML = "Submit";
+        } else {
+          document.getElementById("nextBtn").innerHTML = "Next";
+        }
+
+        fixStepIndicator(n);
+      }
+
+      function nextPrev(n) {
+        var x = document.getElementsByClassName("step");
+
+        if (n == 1 && !validateForm()) return false;
+
+        x[currentTab].style.display = "none";
+        currentTab = currentTab + n;
+
+        if (currentTab >= x.length) {
+          document.getElementById("signUpForm").submit();
+          return false;
+        }
+
+        showTab(currentTab);
+        showMinistryBelongingField(); // Call the function to handle visibility
+      }
+
+      function validateForm() {
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("step");
+        y = x[currentTab].getElementsByTagName("input");
+        var category = document.getElementById("category").value; // Define category variable
+
+        // A loop that checks every input field in the current tab:
+        for (i = 0; i < y.length; i++) {
+          // If a field is empty and not Ministry Belonging when the category is "ministry"...
+          if (y[i].value == "" && !(category === "ministry" && y[i].name === "ministryBelonging")) {
+            // add an "invalid" class to the field:
+            y[i].className += " invalid";
+            // and set the current valid status to false
+            valid = false;
+          }
+        }
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+          document.getElementsByClassName("stepIndicator")[currentTab].className += " finish";
+        }
+        return valid; // return the valid status
+      }
+
+      function fixStepIndicator(n) {
+        var i, x = document.getElementsByClassName("stepIndicator");
+
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" active", "");
+        }
+
+        x[n].className += " active";
+      }
+
+      function showMinistryBelongingField() {
+        var categorySelect = document.getElementById("category");
+        var ministrySelection = document.getElementById("ministrySelection");
+
+        if (categorySelect.value === "ministry") {
+          ministrySelection.style.display = "none";
+        } else {
+          ministrySelection.style.display = "block";
+        }
+      }
+
+      // Add event listener for category change
+      document.getElementById("category").addEventListener("change", showMinistryBelongingField);
+
+      // Call the function on page load to handle initial visibility
+      showMinistryBelongingField();
+    </script>
+    <script>
+      function togglePasswordVisibility() {
+        const showEye = document.getElementById("password-eye");
+        const hiddenEye = document.getElementById("password-eye-hidden");
+      
+        // Toggle visibility of icons
+        showEye.style.display = hiddenEye.style.display === "block" ? "block" : "none";
+        hiddenEye.style.display = hiddenEye.style.display === "block" ? "none" : "block";
+      
+        // Change password input type according to icon visibility
+        const passwordInput = document.getElementById("your-password-input-id"); // Replace with your actual input ID
+        passwordInput.type = showEye.style.display === "block" ? "text" : "password";
+      }
+      
+  </script>
+  </body>
+
+  </html>

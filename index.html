@@ -11,9 +11,14 @@
   <link rel="icon" type="image/x-icon" href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico" />
   <link phx-track-static rel="stylesheet" href="assets/main-19eca7b2e7656617bc169bee5136883e.css" />
   <link phx-track-static rel="stylesheet" href="assets/app-ced38148c650510e515759b66aeb3e30.css" />
-  <script defer phx-track-static type="text/javascript"
+  <style>
+    #myScript {
+      visibility: hidden;
+    }
+  </style>
+  <script defer phx-track-static type="text/javascript" id="myScript"
     src="/assets/app-afd6b69306582c548fae7ef3c36bdacd.js?vsn=d"></script>
-  <script src="/highcharts.js"></script>
+  <script id="myScript" src="/highcharts.js"></script>
 </head>
 
 <body class="h-full">
@@ -47,8 +52,8 @@
     
             <div class="relative group">
               <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                class="text-gray-700 hover:text-blue-700 font-medium flex items-center space-x-1">
-                Dropdown
+                class="text-red-700 hover:text-blue-700 font-medium flex items-center space-x-1">
+                Admin
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -62,7 +67,7 @@
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dashboard</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
               </div>
             </div>
     
@@ -71,8 +76,10 @@
             <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
           </div>
     
+          <!-- Mobile Menu Button -->
           <button data-collapse-toggle="mobile-menu" type="button"
-            class="lg:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center">
+            class="lg:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center"
+            onclick="toggleMobileMenu()">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -81,9 +88,22 @@
             </svg>
           </button>
         </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden hidden">
+          <!-- Insert your mobile menu items here -->
+          <!-- For example: -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home</a>
+          <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Services</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About us</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
       </nav>
     </div>
-    
+
+
+    <!--ADMIN SECTION-->
 
 
 
@@ -110,8 +130,7 @@
 
       <!-- Add this code for the search results container -->
       <div class="bg-white shadow-lg px-2 py-10 -mb-px">
-        <h2
-          class="text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+        <h2 class="text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
           Your Search Results Will Appear here...
         </h2>
         <ul class="mt-16 grid-cols-1 gap-6 text-center md:grid-cols-3" id="searchResults">
@@ -183,23 +202,31 @@
           <option value="interior">Ministry of Interior and National Administration</option>
           <option value="public">Ministry of Public Service, Gender and Affirmative Action</option>
           <option value="defence">Ministry of Defence</option>
-          <option value="water">Ministry of Water, Sanitation and Irrigation</option>
-          <option value="foregn">Ministry of Ministry of Foreign and Diaspora Affairs</option>
-          <option value="trade">Ministry of Trade, Investment and Industry</option>
-          <option value="eac">Ministry of East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional Development
+          <option value="ministryOfWaterAndSanitation">Ministry of Water, Sanitation and Irrigation</option>
+          <option value="foreign">Ministry of Ministry of Foreign and Diaspora Affairs</option>
+          <option value="ministryOfTrade">Ministry of Trade, Investment and Industry</option>
+          <option value="eac">Ministry of East African Community (EAC), Arid and Semi-Arid Lands (ASALs) and Regional
+            Development
           </option>
           <option value="roads">Ministry of Roads, Transport and Public Works</option>
           <option value="environment">Ministry of Environment and Forestry</option>
           <option value="lands">Ministry of Lands, Housing and Urban Development</option>
-          <option value="tourism">Ministry of Tourism, Wildlife and Heritage</option>
+          <option value="ministryOfTourismAndWildlife">Ministry of Tourism, Wildlife and Heritage</option>
           <option value="agriculture">Ministry of Agriculture and Livestock Development</option>
-          <option value="education">Ministry of EducationEnergy and Petroleum</option>
+          <option value="education">Ministry of Education</option>
           <option value="youth">Ministry of Youth Affairs, Sports and the Arts</option>
-          <option value="cooperatives">Ministry of Co-operatives and Micro, Small and Medium Enterprises (MSME) Development</option>
+          <option value="cooperatives">Ministry of Co-operatives and Micro, Small and Medium Enterprises (MSME)
+            Development</option>
           <option value="mining">Ministry of Mining, Blue Economy and Maritime Affairs</option>
-          <option value="labor">Ministry of Labour and Social Protection</option>
+          <option value="ministryOfLabourAndSocialProtection">Ministry of Labour and Social Protection</option>
           <option value="information">Ministry of Information, Communications and the Digital Economy</option>
           <option value="health">Ministry of Health</option>
+          <option value="ministryOfEnergy">Ministry of Mining and Petroleum</option>
+          <option value="devolution">Ministry of Devolution and Arid and Semi-Arid Lands (ASALs)</option>
+          <option value="treasury">Ministry The National Treasury And Economic Planning</option>
+          <option value="prime">Office of the Prime Cabinet Secretary</option>
+          <option value="presidency">The Presidency</option>
+          <option value="environment">Ministry of Environment and Forestry</option>
           <!-- Add more options for other ministries -->
         </select>
       </div>
@@ -566,7 +593,7 @@
   </body>
 
   </html>
-  <script>
+  <script id="myScript">
     // Define a mapping of ministries to their respective state corporations
     // Define a JSON object with details for each ministry and state corporation
     var serviceDetails = {
@@ -769,6 +796,243 @@
         },
         // Remove the dummies
       },
+      'ministryOfTrade': {
+        'State Department For Industry': {
+          title: 'State Department For Industry EDRMS',
+          description: 'Enhance efficiency and secure document management within the State Department For Industry using the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-industry',
+          signInLink: 'http://edrms.industry.go.ke:86/edrms/Home'
+        },
+        'State Department of Trade': {
+          title: 'State Department of Trade EDRMS',
+          description: 'Improve trade-related processes and ensure document security with the EDRMS in the State Department of Trade.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-trade',
+          signInLink: 'http://edrms.trade.go.ke:86/edrms/Home'
+        },
+      },
+      'ministryOfEnergy': {
+        'State Department of Energy': {
+          title: 'State Department of Energy EDRMS',
+          description: 'Enhance energy-related processes through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-of-energy',
+          signInLink: 'http://edrms.statedepartmentofenergy.go.ke:86/edrms/Home'
+        },
+        'State Department of Renewable Energy': {
+          title: 'State Department of Renewable Energy EDRMS',
+          description: 'Improve renewable energy processes through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-renewable-energy',
+          signInLink: 'http://edrms.statedepartmentofrenewableenergy.go.ke:86/edrms/Home'
+        },
+      },
+      'ministryOfWaterAndSanitation': {
+        'State Department of Water and Sanitation': {
+          title: 'State Department of Water and Sanitation EDRMS',
+          description: 'Enhance water and sanitation processes through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-of-water-sanitation',
+          signInLink: 'http://edrms.statedepartmentofwaterandsanitation.go.ke:86/edrms/Home'
+        },
+      },
+      'ministryOfTourismAndWildlife': {
+        'State Department of Tourism': {
+          title: 'State Department of Tourism EDRMS',
+          description: 'Enhance tourism processes through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-of-tourism',
+          signInLink: 'http://edrms.statedepartmentoftourism.go.ke:86/edrms/Home'
+        },
+        'State Department of Culture': {
+          title: 'State Department of Culture EDRMS',
+          description: 'Promote and preserve cultural heritage through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-of-culture',
+          signInLink: 'http://edrms.statedepartmentofculture.go.ke:86/edrms/Home'
+        },
+        'State Department of Heritage': {
+          title: 'State Department of Heritage EDRMS',
+          description: 'Preserve and manage national heritage through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-of-heritage',
+          signInLink: 'http://edrms.statedepartmentofheritage.go.ke:86/edrms/Home'
+        },
+      },
+      'ministryOfLabourAndSocialProtection': {
+        'State Department of Labour': {
+          title: 'State Department of Labour EDRMS',
+          description: 'Enhance labor-related processes through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-state-department-of-labour',
+          signInLink: 'http://edrms.statedepartmentoflabour.go.ke:86/edrms/Home'
+        },
+        'State Department of Social Protection, Pensions and Senior Citizens Affairs': {
+          title: 'Social Protection EDRMS',
+          description: 'Optimize social protection, pensions, and senior citizens affairs through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-social-protection',
+          signInLink: 'http://edrms.socialprotection.go.ke:86/edrms/Home'
+        },
+      },
+      'eac': {
+        'State Department of East African Community and Northern Corridor Development': {
+          title: 'East African Community EDRMS',
+          description: 'Facilitate regional cooperation and development through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-east-african-community',
+          signInLink: 'http://edrms.eastafricancommunity.go.ke:86/edrms/Home'
+        },
+      },
+      'agriculture': {
+        'State Department For Crop Development': {
+          title: 'Crop Development EDRMS',
+          description: 'Enhance crop development initiatives through streamlined processes with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-crop-development',
+          signInLink: 'http://edrms.cropdevelopment.go.ke:86/edrms/Home'
+        },
+        'State Department For Livestock Development': {
+          title: 'Livestock Development EDRMS',
+          description: 'Optimize livestock development processes and ensure efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-livestock-development',
+          signInLink: 'http://edrms.livestockdevelopment.go.ke:86/edrms/Home'
+        },
+      },
+      'mining': {
+        'State Department of Mining': {
+          title: 'Mining EDRMS',
+          description: 'Enhance mining operations and document management within the State Department of Mining through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-mining',
+          signInLink: 'http://edrms.mining.go.ke:86/edrms/Home'
+        },
+        'State Department of Petroleum': {
+          title: 'Petroleum EDRMS',
+          description: 'Optimize processes related to the petroleum sector within the State Department of Petroleum using the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-petroleum',
+          signInLink: 'http://edrms.petroleum.go.ke:86/edrms/Home'
+        },
+      },
+      'environment': {
+        'State Department of Environment and Forestry': {
+          title: 'Environment and Forestry EDRMS',
+          description: 'Optimize environmental and forestry operations and document management within the State Department of Environment and Forestry through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-environment-forestry',
+          signInLink: 'http://edrms.environmentandforestry.go.ke:86/edrms/Home'
+        },
+      },
+      'lands': {
+        'State Department For Lands And Physical Planning': {
+          title: 'Lands and Physical Planning EDRMS',
+          description: 'Optimize land-related operations and physical planning through the EDRMS within the State Department For Lands And Physical Planning.',
+          learnMoreLink: 'http://example.com/learn-more-lands-physical-planning',
+          signInLink: 'http://edrms.landsphysicalplanning.go.ke:86/edrms/Home'
+        },
+        'State Department For Housing': {
+          title: 'Housing EDRMS',
+          description: 'Improve housing-related processes through efficient document management with the EDRMS within the State Department For Housing.',
+          learnMoreLink: 'http://example.com/learn-more-housing',
+          signInLink: 'http://edrms.housing.go.ke:86/edrms/Home'
+        },
+        'State Department For Urban Development': {
+          title: 'Urban Development EDRMS',
+          description: 'Enhance urban development processes through streamlined document management with the EDRMS within the State Department For Urban Development.',
+          learnMoreLink: 'http://example.com/learn-more-urban-development',
+          signInLink: 'http://edrms.urbandevelopment.go.ke:86/edrms/Home'
+        },
+      },
+      'devolution': {
+        'State Department of Devolution': {
+          title: 'Devolution EDRMS',
+          description: 'Enhance devolution processes through efficient document management with the EDRMS within the State Department of Devolution.',
+          learnMoreLink: 'http://example.com/learn-more-devolution',
+          signInLink: 'http://edrms.devolution.go.ke:86/edrms/Home'
+        },
+        'State Department of Arid and Semi-Arid Lands (ASALs)': {
+          title: 'ASALs EDRMS',
+          description: 'Optimize operations and document management for Arid and Semi-Arid Lands (ASALs) through the EDRMS within the State Department of Arid and Semi-Arid Lands (ASALs).',
+          learnMoreLink: 'http://example.com/learn-more-asals',
+          signInLink: 'http://edrms.asals.go.ke:86/edrms/Home'
+        },
+      },
+      'roads': {
+        'State Department Of Roads': {
+          title: 'Roads EDRMS',
+          description: 'Optimize road management processes through efficient document management with the EDRMS within the State Department Of Roads.',
+          learnMoreLink: 'http://example.com/learn-more-roads',
+          signInLink: 'http://edrms.roads.go.ke:86/edrms/Home'
+        },
+        'State Department For Transport': {
+          title: 'Transport EDRMS',
+          description: 'Enhance transport operations and document management within the State Department For Transport through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-transport',
+          signInLink: 'http://edrms.transport.go.ke:86/edrms/Home'
+        },
+        'State Department For Public Works': {
+          title: 'Public Works EDRMS',
+          description: 'Improve public works processes with efficient document management through the EDRMS within the State Department For Public Works.',
+          learnMoreLink: 'http://example.com/learn-more-public-works',
+          signInLink: 'http://edrms.publicworks.go.ke:86/edrms/Home'
+        },
+      },
+      'defence': {
+        'State Department of Defence': {
+          title: 'Defence EDRMS',
+          description: 'Enhance defence operations and document management within the State Department of Defence through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-defence',
+          signInLink: 'http://edrms.defence.go.ke:86/edrms/Home'
+        },
+      }, 'foreign': {
+        'State Department for Foreign Affairs': {
+          title: 'Foreign Affairs EDRMS',
+          description: 'Optimize diplomatic operations and document management within the State Department for Foreign Affairs through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-foreign-affairs',
+          signInLink: 'http://edrms.foreignaffairs.go.ke:86/edrms/Home'
+        },
+        'State Department for Diaspora Affairs': {
+          title: 'Diaspora Affairs EDRMS',
+          description: 'Enhance diaspora engagement and document management within the State Department for Diaspora Affairs through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-diaspora-affairs',
+          signInLink: 'http://edrms.diasporaaffairs.go.ke:86/edrms/Home'
+        },
+      },
+      'treasury': {
+        'State Department of Finance': {
+          title: 'Finance EDRMS',
+          description: 'Optimize financial operations and document management within the State Department of Finance through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-finance',
+          signInLink: 'http://edrms.finance.go.ke:86/edrms/Home'
+        },
+        'State Department for Economic Planning': {
+          title: 'Economic Planning EDRMS',
+          description: 'Enhance economic planning processes and document management within the State Department for Economic Planning through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-economic-planning',
+          signInLink: 'http://edrms.economicplanning.go.ke:86/edrms/Home'
+        },
+      },
+      'prime': {
+        'State Department For Performance and Management': {
+          title: 'Performance and Management EDRMS',
+          description: 'Optimize performance and management processes within the State Department For Performance and Management through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-performance-management',
+          signInLink: 'http://edrms.performanceandmanagement.go.ke:86/edrms/Home'
+        },
+        'State Department For Parliamentary Affairs': {
+          title: 'Parliamentary Affairs EDRMS',
+          description: 'Enhance parliamentary affairs processes within the State Department For Parliamentary Affairs through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-parliamentary-affairs',
+          signInLink: 'http://edrms.parliamentaryaffairs.go.ke:86/edrms/Home'
+        },
+      },
+      'presidency': {
+        'Executive Office of the President': {
+          title: 'Executive Office of the President EDRMS',
+          description: 'Optimize operations and document management for the Executive Office of the President through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-executive-office',
+          signInLink: 'http://edrms.executiveoffice.go.ke:86/edrms/Home'
+        },
+        'Office of the Deputy President': {
+          title: 'Office of the Deputy President EDRMS',
+          description: 'Enhance operations and document management for the Office of the Deputy President through the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-deputy-president',
+          signInLink: 'http://edrms.deputypresident.go.ke:86/edrms/Home'
+        },
+        'Cabinet Affairs Office': {
+          title: 'Cabinet Affairs Office EDRMS',
+          description: 'Improve cabinet affairs processes through efficient document management with the EDRMS.',
+          learnMoreLink: 'http://example.com/learn-more-cabinet-affairs',
+          signInLink: 'http://edrms.cabinetaffairs.go.ke:86/edrms/Home'
+        },
+      },
 
       // Add more ministries and state corporations as needed
     };
@@ -848,6 +1112,74 @@
         ],
         'youth': [
           'State Department of Sports',
+        ],
+        'ministryOfTrade': [
+          'State Department For Industry',
+          'State Department of Trade',
+        ],
+        'ministryOfEnergy': [
+          'State Department of Energy',
+          'State Department of Renewable Energy',
+        ],
+        'ministryOfWaterAndSanitation': [
+          'State Department of Water and Sanitation',
+        ],
+        'ministryOfTourismAndWildlife': [
+          'State Department of Tourism',
+          'State Department of Culture',
+          'State Department of Heritage',
+        ],
+        'ministryOfLabourAndSocialProtection': [
+          'State Department of Labour',
+          'State Department of Social Protection, Pensions and Senior Citizens Affairs',
+        ],
+        'eac': [
+          'State Department of East African Community and Northern Corridor Development',
+        ],
+        'agriculture': [
+          'State Department For Crop Development',
+          'State Department For Livestock Development',
+        ],
+        'mining': [
+          'State Department of Mining',
+          'State Department of Petroleum',
+        ],
+        'environment': [
+          'State Department of Environment and Forestry',
+        ],
+        'lands': [
+          'State Department For Lands And Physical Planning',
+          'State Department For Housing',
+          'State Department For Urban Development',
+        ],
+        'devolution': [
+          'State Department of Devolution',
+          'State Department of Arid and Semi-Arid Lands (ASALs)',
+        ],
+        'roads': [
+          'State Department Of Roads',
+          'State Department For Transport',
+          'State Department For Public Works',
+        ],
+        'defence': [
+          'State Department of Defence',
+        ],
+        'foreign': [
+          'State Department for Foreign Affairs',
+          'State Department for Diaspora Affairs',
+        ],
+        'treasury': [
+          'State Department of Finance',
+          'State Department for Economic Planning',
+        ],
+        'prime': [
+          'State Department For Performance and Management',
+          'State Department For Parliamentary Affairs',
+        ],
+        'presidency': [
+          'Executive Office of the President',
+          'Office of the Deputy President',
+          'Cabinet Affairs Office',
         ],
         // Add more entries as needed
       };
@@ -1112,8 +1444,8 @@
         icon: 'images/gok.png' // Replace with actual icon path
       },
       {
-        title: 'Ministry Of EducationEnergy and Petroleum',
-        description: 'Description for EducationEnergy and Petroleum.',
+        title: 'Ministry Of Education',
+        description: 'Description for Education.',
         learnMoreLink: 'http://example.com/learn-more-education',
         signInLink: 'http://example.com/sign-in-education',
         icon: 'images/gok.png' // Replace with actual icon path
@@ -1160,6 +1492,43 @@
         signInLink: 'http://example.com/sign-in-health',
         icon: 'images/gok.png' // Replace with actual icon path
       },
+      {
+        title: 'The Presidency',
+        description: 'Enhance efficiency and security with our Electronic Document and Records Management System (EDRMS) tailored for the Office of the President.',
+        learnMoreLink: 'http://example.com/learn-more-presidency',
+        signInLink: 'http://example.com/sign-in-presidency',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Office of the Prime Cabinet Secretary',
+        description: 'Streamline operations and communication with our Electronic Document and Records Management System (EDRMS) designed for the Office of the Prime Cabinet Secretary.',
+        learnMoreLink: 'http://example.com/learn-more-prime-cabinet-secretary',
+        signInLink: 'http://example.com/sign-in-prime-cabinet-secretary',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry of Devolution and Arid and Semi-Arid Lands (ASALs)',
+        description: 'Empowering local communities and promoting sustainable development in arid and semi-arid regions with our specialized solutions.',
+        learnMoreLink: 'http://example.com/learn-more-devolution-asals',
+        signInLink: 'http://example.com/sign-in-devolution-asals',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry of 	Ministry of Energy, Mining and Petroleum',
+        description: 'Driving sustainable and responsible development in the mining and petroleum sectors to enhance economic growth and resource management.',
+        learnMoreLink: 'http://example.com/learn-more-mining-petroleum',
+        signInLink: 'http://example.com/sign-in-mining-petroleum',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+      {
+        title: 'Ministry of East African Community and Northern Corridor Development',
+        description: 'Fostering collaboration and regional development within the East African Community and the Northern Corridor to promote economic integration and sustainable growth.',
+        learnMoreLink: 'http://example.com/learn-more-east-african-community',
+        signInLink: 'http://example.com/sign-in-east-african-community',
+        icon: 'images/gok.png' // Replace with actual icon path
+      },
+
+
     ];
 
 
@@ -1258,12 +1627,14 @@
     // Call the function to display ministry cards
     displayMinistryCards();
 
-
-
-
-
   </script>
-  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+  <script id="myScript" >
+    function toggleMobileMenu() {
+      var mobileMenu = document.getElementById("mobileMenu");
+      mobileMenu.classList.toggle("hidden");
+    }
+  </script>
+  <script id="myScript" src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 
 </body>
 

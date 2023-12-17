@@ -1,0 +1,51 @@
+[
+  {
+    "firstname": "JOSHUA",
+    "lastname": "NYAMASEGE",
+    "email": "joshuamaeba@gmail.com",
+    "password": "$2b$10$biuUBpcZ.XlSt8Ef.ThgqeJVpLFbtByMxst1ZF1qfiSS7sbgOcYVa",
+    "organization": "1234"
+  },
+  {
+    "firstname": "PHILIP",
+    "lastname": "KURIA",
+    "email": "philip.kuria@coseke.com",
+    "password": "$2b$10$36yGtTkynYGWcA5.E6vCpupCxvDMarjfvUw4VJEmuGPr24154RSRm",
+    "organization": "1234"
+  },
+  {
+    "firstname": "WALLACE",
+    "lastname": "KIBE",
+    "email": "joshuanyamasege@yahoo.com",
+    "password": "$2b$10$K0LXrcqhBu63CYTQRjqEsuTTdM7wlU00j0BAyZudyTU6k9vNB1R/W",
+    "organization": "coske"
+  },
+  {
+    "firstname": "WALLACE",
+    "lastname": "KIBE",
+    "email": "joshua1maeba@gmail.com",
+    "password": "$2b$10$ao4NvI5.N95FASIaESI88OuQzH3oE1tEqBCwFy58AU2XBfAx7OsKu",
+    "organization": "coseke"
+  },
+  {
+    "firstname": "PHILIP",
+    "lastname": "KURIA",
+    "email": "joshuamaeba@gmail.com",
+    "password": "$2b$10$7QzTR08Ey0Ti4b6tsLd6x.l/jE1ek9nabchweHgfAHtE63nUsxwMO",
+    "organization": "Business/System Analyst Intern"
+  },
+  {
+    "firstname": "12",
+    "lastname": "345",
+    "email": "joshuama3eba@gmail.com",
+    "password": "$2b$10$6qXH1F8SRB4YxtQMbjkXAuE1YVJVRGRgI5CyWYpIZmLOn1Fcr1ddG",
+    "organization": "ds"
+  },
+  {
+    "firstname": "maeba",
+    "lastname": "joshua",
+    "email": "joshua@coseke.com",
+    "password": "$2b$10$jkOiOpaQQRKiXc9F7tuUbOXMYpnh2rwoq7wdnLLlJx5OzxjeILzs6",
+    "organization": "coseke"
+  }
+]
