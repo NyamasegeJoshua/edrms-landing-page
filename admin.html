@@ -30,6 +30,20 @@
   <!DOCTYPE html>
   <html lang="en">
 
+<<<<<<< HEAD
+=======
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="images/favicon-e1bdc604c7b0f9bc8d82ac3226892df2.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A really cool weather widget" />
+    <title>Government EDRMS</title>
+    <link phx-track-static rel="stylesheet" href="assets/main-19eca7b2e7656617bc169bee5136883e.css" />
+    <link phx-track-static rel="stylesheet" href="assets/app-ced38148c650510e515759b66aeb3e30.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+>>>>>>> 9c38ad65eadfb22a6058600c3a988f3bf02b0ae7
   <body>
     <h1 class="text-lg font-bold text-gray-700 leading-tight text-center mt-12 mb-5">
       Create New Ministry
@@ -53,6 +67,7 @@
         <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
           Login into your account
         </p>
+<<<<<<< HEAD
         <!-- Login Form -->
         <form id="loginForm" class="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8">
           <div class="mb-6">
@@ -270,6 +285,117 @@
 
     </script>
 
+=======
+        <div class="mb-6">
+          <input type="email" placeholder="Email Address" name="email"
+            class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+        </div>
+        <div class="mb-6">
+          <input type="password" placeholder="Password" name="password"
+            class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+        </div>
+        <div class="mb-6">
+          <input type="password" placeholder="Confirm Password" name="password"
+            class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+        </div>
+      </div>
+
+      <!-- step two -->
+      <div class="step">
+        <p class="text-full text-gray-700 leading-tight text-center mt-8 mb-5">
+          Ministry/Agency General Info
+        </p>
+        <div class="mb-4">
+          <input type="text" placeholder="Name (Must be unique)" name="ministryName"
+            class="w-full px-3 py-2 text-sm rounded-full text-gray-700 font-medium border border-gray-300"
+            oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
+            required />
+        </div>
+        <div class="mb-4">
+          <input type="text" placeholder="Onboarding ID (Must be unique)" name="onboardingID"
+            class="w-full text-sm px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300"
+            oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
+            required />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium">Logo Upload</label>
+          <input type="file" name="logo" accept="image/*" class="w-full text-sm py-2 border border-gray-300" />
+        </div>
+        <div class="mb-4">
+          <textarea placeholder="Type and submit Ministry/Agency Description" name="description"
+            class="w-full px-3 py-2 text-sm rounded-full text-gray-700 font-medium border border-gray-300"
+            oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
+            required></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium">Category</label>
+          <select id="category"
+            class="w-full px-3 text-sm py-2 rounded-full text-gray-700 font-medium border border-gray-300" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="ministry">Ministry</option>
+            <option value="agency">Agency</option>
+            <option value="state_department">State Department</option>
+          </select>
+        </div>
+        <div class="mb-4" id="ministrySelection" style="display:none;">
+          <label class="block text-gray-700 font-medium">Ministry Belonging</label>
+          <input type="text" placeholder="Enter Ministry Name" name="ministryBelonging"
+            class="w-full px-3 py-2 rounded-full text-gray-700 text-sm font-medium border border-gray-300" />
+        </div>
+
+      </div>
+
+      <!-- step three -->
+      <div class="step">
+        <p class="text-full text-gray-700 leading-tight text-center mt-8 mb-5">
+          System Configuration Details
+        </p>
+        <div class="mb-6">
+          <input type="text" placeholder="HTTP Connector Port" name="httpConnectorPort"
+            class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+        </div>
+        <div class="mb-6">
+          <input type="text" placeholder="HTTPS Connector Port" name="httpsConnectorPort"
+            class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+        </div>
+        <div class="mb-6">
+          <input type="text" placeholder="AJB Connector Port" name="ajbConnectorPort"
+            class="w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200"
+            oninput="this.className = 'w-full px-4 py-3 rounded-full text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+        </div>
+        <!-- Add more fields as needed for system configuration details -->
+      </div>
+
+
+      <!-- start previous / next buttons -->
+      <!-- Next and Previous buttons -->
+      <button type="button"
+        class="inline-block rounded bg-neutral-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(251,251,251,0.3)] dark:hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)]"
+        onclick="nextPrev(-1)">
+        Previous
+      </button>
+      <button type="button"
+        class="inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]"
+        onclick="nextPrev(1)">
+        <span class="text-red-500 active:text-white">Next</span>
+      </button>
+      <!-- Don't have an account? Signup link -->
+<div class="flex items-center justify-center mt-4">
+  <p class="text-gray-700 mr-2">Don't have an account?</p>
+  <a href="signup.html" class="flex items-center">
+    <span class="text-gray-700">Signup</span>
+    <img src="images/right.png" alt="Arrow Right" class="w-4 h-4 ml-2">
+  </a>
+</div>
+
+      <!-- end previous / next buttons -->
+    </form>
+>>>>>>> 9c38ad65eadfb22a6058600c3a988f3bf02b0ae7
 
     <script>
       var currentTab = 0; // Current tab is set to be the first tab (0)
@@ -361,6 +487,7 @@
       // Call the function on page load to handle initial visibility
       showMinistryBelongingField();
     </script>
+<<<<<<< HEAD
     <script>
       function togglePasswordVisibility() {
         const showEye = document.getElementById("password-eye");
@@ -379,3 +506,14 @@
   </body>
 
   </html>
+=======
+
+
+
+  </body>
+
+  </html>
+</body>
+
+</html>
+>>>>>>> 9c38ad65eadfb22a6058600c3a988f3bf02b0ae7
