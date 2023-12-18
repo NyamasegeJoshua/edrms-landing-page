@@ -67,7 +67,7 @@
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dashboard</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support</a>
-                <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
               </div>
             </div>
     
@@ -94,7 +94,7 @@
           <!-- Insert your mobile menu items here -->
           <!-- For example: -->
           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home</a>
-          <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin</a>
+          <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin</a>
           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Services</a>
           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About us</a>
           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
@@ -1634,6 +1634,13 @@
       mobileMenu.classList.toggle("hidden");
     }
   </script>
+  <script>
+    function toggleMobileMenu() {
+        var mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+    }
+</script>
+
   <script id="myScript" src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 
 </body>

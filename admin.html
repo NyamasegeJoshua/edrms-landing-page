@@ -41,6 +41,7 @@
                 <span class="stepIndicator flex-1 pb-8 relative">Database Creation</span>
             </div>
             <!-- end step indicators -->
+            
             <!-- step two -->
             <div class="step">
                 <p class="text-full text-gray-700 leading-tight text-center mt-8 mb-5">
@@ -203,5 +204,119 @@
 
         showTab(currentTab); // Display the initial tab
     </script>
+    <!-- Include this script in your HTML file -->
+<script>
+    // Function to display a loading spinner
+    function showLoadingSpinner() {
+        // Create a loading overlay
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'loading-overlay';
+
+        // Create a spinner
+        const spinner = document.createElement('div');
+        spinner.className = 'spinner';
+        spinner.innerHTML = '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+
+        // Append the spinner to the loading overlay
+        loadingOverlay.appendChild(spinner);
+
+        // Append the loading overlay to the body
+        document.body.appendChild(loadingOverlay);
+    }
+
+    // Function to hide the loading spinner
+    function hideLoadingSpinner() {
+        // Remove the loading overlay from the DOM
+        const loadingOverlay = document.querySelector('.loading-overlay');
+        if (loadingOverlay) {
+            document.body.removeChild(loadingOverlay);
+        }
+    }
+
+    // Function to handle the form submission and initiate the unzipping process
+    async function handleFormSubmission() {
+        try {
+            // Show loading spinner
+            showLoadingSpinner();
+
+            // Fetch to the server endpoint responsible for unzipping
+            const response = await fetch('/unzip', {
+                method: 'POST',
+            });
+
+            // Check if unzipping was successful
+            if (response.ok) {
+                // If successful, proceed to the next step (change this URL accordingly)
+                window.location.href = '/next-page.html';
+            } else {
+                // If unzipping failed, display an error message or handle it accordingly
+                console.error('Unzipping failed:', response.statusText);
+                // Optionally, you can redirect to an error page or show an error message
+            }
+        } catch (error) {
+            console.error('Error during form submission:', error);
+            // Handle other errors as needed
+        } finally {
+            // Hide loading spinner after the process is complete
+            hideLoadingSpinner();
+        }
+    }
+
+    // Attach the handleFormSubmission function to the click event of the "Next" button
+    document.getElementById('nextButton').addEventListener('click', handleFormSubmission);
+</script>
+
+<!-- Include this style in your HTML or in your CSS file -->
+<style>
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Adjust the z-index as needed */
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        margin: 100px auto;
+        background-color: #333;
+
+        border-radius: 100%;
+        animation: sk-bounce 1.4s infinite ease-in-out;
+    }
+
+    .spinner > div {
+        width: 18px;
+        height: 18px;
+        background-color: #333;
+
+        border-radius: 100%;
+        display: inline-block;
+        animation: sk-bounce-dot 1.4s infinite ease-in-out;
+    }
+
+    @keyframes sk-bounce {
+        0%, 100% {
+            transform: scale(0);
+        } 50% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes sk-bounce-dot {
+        0%, 100% {
+            transform: translateY(0);
+        } 50% {
+            transform: translateY(-18px);
+        }
+    }
+</style>
+
 </body>
 </html>
