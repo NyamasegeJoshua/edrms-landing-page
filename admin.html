@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
     <link rel="stylesheet" href="/stye.css">
     <link phx-track-static rel="stylesheet" href="assets/app-ced38148c650510e515759b66aeb3e30.css" />
     <style>
@@ -26,7 +29,7 @@
     <script id="myScript" src="/highcharts.js"></script>
 </head>
 
-<body class="h-full">
+<body class="h-full bg-gray-100">
     <h1 class="text-lg font-bold text-gray-700 leading-tight text-center mt-12 mb-5">
         Create New Ministry
     </h1>
@@ -41,34 +44,65 @@
                 <span class="stepIndicator flex-1 pb-8 relative">Database Creation</span>
             </div>
             <!-- end step indicators -->
-            
+
             <!-- step two -->
-            <div class="step">
-                <p class="text-full text-gray-700 leading-tight text-center mt-8 mb-5">
+            <div class="step" id="step-two">
+                <p class="text-full text-black-700 leading-tight text-center mt-8 mb-5">
                     Ministry/Agency General Info
                 </p>
                 <div class="mb-4">
-                    <input type="text" placeholder="Name (Must be unique)" name="ministryName"
+                    <input type="text" placeholder="Type ministry name..." name="ministryName"
                         class="w-full px-3 py-2 text-sm rounded-full text-gray-700 font-medium border border-gray-300"
                         oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
                         required />
                 </div>
                 <div class="mb-4">
-                    <input type="text" placeholder="Onboarding ID (Must be unique)" name="onboardingID"
+                    <input type="text" placeholder="Type onboarding ID..." name="onboardingID"
                         class="w-full text-sm px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300"
                         oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
                         required />
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 font-medium">Logo Upload</label>
-                    <input type="file" name="logo" accept="image/*"
-                        class="w-full text-sm py-2 border border-gray-300" />
+                    <label for="logoInput" class="block text-sm font-medium text-gray-700">Logo Upload</label>
+                    <div class="relative rounded-md overflow-hidden">
+                        <input id="logoInput" type="file" name="logo" accept="image/*" class="sr-only">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-4">
+                            <div class="flex items-center">
+                                <label for="logoInput"
+                                    class="cursor-pointer text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 focus:outline-none focus:ring focus:border-blue-300">
+                                    <img src="images/upload.png" alt="Upload Icon" class="w-6 h-6" />
+                                </label>
+                                <span class="ml-2 text-gray-500 dark:text-gray-400" id="fileName">No file
+                                    selected</span>
+                            </div>
+                            <button type="button"
+                                class="text-sm text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 focus:outline-none focus:ring focus:border-blue-300">
+                                Change
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <textarea placeholder="Type and submit Ministry/Agency Description" name="description"
-                        class="w-full px-3 py-2 text-sm rounded-full text-gray-700 font-medium border border-gray-300"
-                        oninput="this.className = 'w-full px-3 py-2 rounded-full text-gray-700 font-medium border border-gray-300'"
-                        required></textarea>
+                <div class="relative">
+                    <textarea placeholder="Type  ministry/agency Description..." name="description"
+                        class="w-full px-3 py-2 text-sm rounded-md text-gray-700 font-medium border border-gray-300"
+                        oninput="this.className = 'w-full px-3 py-3 text-sm rounded-md text-gray-700 font-medium border border-gray-300 focus:outline-none focus:ring focus:border-blue-300'"
+                        rows="5" id="myTextarea" required></textarea>
+                    <div class="absolute bottom-0 left-0 mb-2 ml-2 flex space-x-2">
+                        <button type="button" class="p-2 text-gray-500 hover:text-blue-700" onclick="editText()">
+                            <i class="far fa-edit fa-xs"></i>
+                            <span class="sr-only">Edit</span>
+                        </button>
+                        <button type="button" class="p-2 text-gray-500 hover:text-blue-700" onclick="addList()">
+                            <i class="fas fa-list-ul fa-xs"></i>
+                            <span class="sr-only">Add list</span>
+                        </button>
+                        <button type="button" class="p-2 text-gray-500 hover:text-blue-700" onclick="copyText()">
+                            <i class="far fa-copy fa-xs"></i>
+                            <span class="sr-only">Copy</span>
+                        </button>
+                        <!-- Add more buttons as needed -->
+                    </div>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 font-medium">Category</label>
@@ -83,7 +117,7 @@
                 </div>
                 <div class="mb-4" id="ministrySelection" style="display:none;">
                     <label class="block text-gray-700 font-medium">Ministry Belonging</label>
-                    <input type="text" placeholder="Enter Ministry Name" name="ministryBelonging"
+                    <input type="text" placeholder="What ministry does it belong to..." name="ministryBelonging"
                         class="w-full px-3 py-2 rounded-full text-gray-700 text-sm font-medium border border-gray-300" />
                 </div>
             </div>
@@ -110,21 +144,22 @@
                 </div>
                 <!-- Add more fields as needed for system configuration details -->
             </div>
-            <!-- start previous / next buttons -->
-            <!-- Next and Previous buttons -->
-            <button type="button" id="prevBtn"
-                class="inline-block rounded bg-neutral-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(251,251,251,0.3)] dark:hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)]"
-                onclick="nextPrev(-1)">
+            <!-- START PREVIOUS / NEXT BUTTONS -->
+            <!-- Previous button -->
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)"
+                class="text-neutral-800 bg-neutral-200 hover:bg-red-300 focus:ring-4 focus:outline-none focus:ring-neutral-400 font-medium rounded-full text-xs px-4 py-2 inline-flex items-center shadow-sm transition duration-150 ease-in-out dark:bg-neutral-800 dark:hover:bg-neutral-900 dark:focus:ring-neutral-400">
                 Previous
             </button>
-            <!-- Next and Previous buttons -->
-            <button type="button" id="nextBtn"
-                class="inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]"
-                onclick="nextPrev(1)">
+
+            <!-- Next button -->
+            <button onclick="handleStepTwo()" type="button" id="nextBtn"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs px-4 py-2 inline-flex items-center shadow-sm transition duration-150 ease-in-out dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 <span id="loadingSpinner" class="hidden">Loading...</span>
                 <span class="text-red-500 active:text-white">Next</span>
             </button>
-            <!-- end previous / next buttons -->
+
+
+
         </form>
     </div>
     <!-- Place these scripts at the end of your body before </body> tag -->
@@ -163,14 +198,14 @@
             y = x[currentTab].getElementsByTagName("input");
             var category = document.getElementById("category").value;
             var ministrySelection = document.getElementById("ministrySelection");
-    
+
             for (i = 0; i < y.length; i++) {
                 if (y[i].hasAttribute("required") && y[i].value.trim() === "") {
                     valid = false;
                     break;
                 }
             }
-    
+
             if (category !== "ministry" && ministrySelection.style.display !== "none") {
                 var ministryBelongingField = document.getElementsByName("ministryBelonging")[0];
                 if (ministryBelongingField.value.trim() === "") {
@@ -178,145 +213,166 @@
                     alert("Please specify the ministry it belongs to proceed.");
                 }
             }
-    
+
             // You can add more complex validation logic as needed
-    
+
             if (valid) {
                 document.getElementsByClassName("stepIndicator")[currentTab].className += " finish";
             }
-    
+
             return valid;
         }
-        
+
         function showMinistryBelongingField() {
             var categorySelect = document.getElementById("category");
             var ministrySelection = document.getElementById("ministrySelection");
-    
+
             if (categorySelect.value === "ministry") {
                 ministrySelection.style.display = "none";
             } else {
                 ministrySelection.style.display = "block";
             }
         }
-    
+
         document.getElementById("category").addEventListener("change", showMinistryBelongingField);
         showMinistryBelongingField();
 
         showTab(currentTab); // Display the initial tab
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
     <!-- Include this script in your HTML file -->
-<script>
-    // Function to display a loading spinner
-    function showLoadingSpinner() {
-        // Create a loading overlay
-        const loadingOverlay = document.createElement('div');
-        loadingOverlay.className = 'loading-overlay';
+    <script>
+        // Function to display a loading spinner
+        function showLoadingSpinner() {
+            // Create a loading overlay
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'loading-overlay';
 
-        // Create a spinner
-        const spinner = document.createElement('div');
-        spinner.className = 'spinner';
-        spinner.innerHTML = '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+            // Create a spinner
+            const spinner = document.createElement('div');
+            spinner.className = 'spinner';
+            spinner.innerHTML = '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
 
-        // Append the spinner to the loading overlay
-        loadingOverlay.appendChild(spinner);
+            // Append the spinner to the loading overlay
+            loadingOverlay.appendChild(spinner);
 
-        // Append the loading overlay to the body
-        document.body.appendChild(loadingOverlay);
-    }
-
-    // Function to hide the loading spinner
-    function hideLoadingSpinner() {
-        // Remove the loading overlay from the DOM
-        const loadingOverlay = document.querySelector('.loading-overlay');
-        if (loadingOverlay) {
-            document.body.removeChild(loadingOverlay);
+            // Append the loading overlay to the body
+            document.body.appendChild(loadingOverlay);
         }
-    }
 
-    // Function to handle the form submission and initiate the unzipping process
-    async function handleFormSubmission() {
-        try {
-            // Show loading spinner
-            showLoadingSpinner();
-
-            // Fetch to the server endpoint responsible for unzipping
-            const response = await fetch('/unzip', {
-                method: 'POST',
-            });
-
-            // Check if unzipping was successful
-            if (response.ok) {
-                // If successful, proceed to the next step (change this URL accordingly)
-                window.location.href = '/next-page.html';
-            } else {
-                // If unzipping failed, display an error message or handle it accordingly
-                console.error('Unzipping failed:', response.statusText);
-                // Optionally, you can redirect to an error page or show an error message
+        // Function to hide the loading spinner
+        function hideLoadingSpinner() {
+            // Remove the loading overlay from the DOM
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay) {
+                document.body.removeChild(loadingOverlay);
             }
-        } catch (error) {
-            console.error('Error during form submission:', error);
-            // Handle other errors as needed
-        } finally {
-            // Hide loading spinner after the process is complete
-            hideLoadingSpinner();
         }
-    }
 
-    // Attach the handleFormSubmission function to the click event of the "Next" button
-    document.getElementById('nextButton').addEventListener('click', handleFormSubmission);
-</script>
+        // Function to handle the form submission and initiate the unzipping process
+        async function handleFormSubmission() {
+            try {
+                // Show loading spinner
+                showLoadingSpinner();
 
-<!-- Include this style in your HTML or in your CSS file -->
-<style>
-    .loading-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000; /* Adjust the z-index as needed */
-    }
+                // Fetch to the server endpoint responsible for unzipping
+                const response = await fetch('/unzip', {
+                    method: 'POST',
+                });
 
-    .spinner {
-        width: 40px;
-        height: 40px;
-        margin: 100px auto;
-        background-color: #333;
-
-        border-radius: 100%;
-        animation: sk-bounce 1.4s infinite ease-in-out;
-    }
-
-    .spinner > div {
-        width: 18px;
-        height: 18px;
-        background-color: #333;
-
-        border-radius: 100%;
-        display: inline-block;
-        animation: sk-bounce-dot 1.4s infinite ease-in-out;
-    }
-
-    @keyframes sk-bounce {
-        0%, 100% {
-            transform: scale(0);
-        } 50% {
-            transform: scale(1);
+                // Check if unzipping was successful
+                if (response.ok) {
+                    // If successful, proceed to the next step (change this URL accordingly)
+                    window.location.href = '/next-page.html';
+                } else {
+                    // If unzipping failed, display an error message or handle it accordingly
+                    console.error('Unzipping failed:', response.statusText);
+                    // Optionally, you can redirect to an error page or show an error message
+                }
+            } catch (error) {
+                console.error('Error during form submission:', error);
+                // Handle other errors as needed
+            } finally {
+                // Hide loading spinner after the process is complete
+                hideLoadingSpinner();
+            }
         }
-    }
 
-    @keyframes sk-bounce-dot {
-        0%, 100% {
-            transform: translateY(0);
-        } 50% {
-            transform: translateY(-18px);
+        // Attach the handleFormSubmission function to the click event of the "Next" button
+        document.getElementById('nextButton').addEventListener('click', handleFormSubmission);
+    </script>
+    <script>
+        function editText() {
+            var textarea = document.getElementById('myTextarea');
+            // Your edit functionality here, for example:
+            textarea.value = "Edited text";
         }
-    }
-</style>
 
+        function addList() {
+            var textarea = document.getElementById('myTextarea');
+            // Your add list functionality here, for example:
+            textarea.value += "\n- List item";
+        }
+
+        function copyText() {
+            var textarea = document.getElementById('myTextarea');
+            // Your copy text functionality here, for example:
+            textarea.select();
+            document.execCommand('copy');
+        }
+
+        function attachFile() {
+            // Your attach file functionality here
+            alert('Attaching file');
+        }
+    </script>
+    <!-- file upload even listener -->
+    <script>
+        // Add event listener to update file name when a file is selected
+        const logoInput = document.getElementById('logoInput');
+        const fileNameSpan = document.getElementById('fileName');
+
+        logoInput.addEventListener('change', () => {
+            const fileName = logoInput.files[0] ? logoInput.files[0].name : 'No file selected';
+            fileNameSpan.textContent = fileName;
+        });
+    </script>
+    <script>
+        async function handleStepTwo() {
+            // Display loading spinner
+            document.getElementById('loadingSpinner').classList.remove('hidden');
+    
+            try {
+                // Make a POST request to your server
+                const response = await fetch('/step-two', {
+                    method: 'POST',
+                });
+    
+                // Handle the response
+                if (response.ok) {
+                    // Unzipping process on the server was successful
+                    console.log('Unzipping success');
+                    
+                    // Proceed to the next step (you need to implement this function)
+                    nextStep();
+                } else {
+                    // Unzipping process on the server failed
+                    console.error('Unzipping failed');
+                }
+            } catch (error) {
+                console.error('Error during unzipping:', error);
+            } finally {
+                // Hide loading spinner
+                document.getElementById('loadingSpinner').classList.add('hidden');
+            }
+        }
+    
+        function nextStep() {
+            // You need to implement this function to navigate to the next step
+            // For example, you might hide the current step and show the next one
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
