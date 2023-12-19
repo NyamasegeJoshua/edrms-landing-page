@@ -28,13 +28,19 @@
 
 
 <body class="min-h-screen flex items-center justify-center bg-gray-100">
+    <section class="mt-3 mb-3">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <!-- <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                <img class="w-9 h-9 mr-2" src="images/gok.png" alt="logo">
+               EDRMS Admin Portal
+            </a> -->
     <div
-        class="max-w-full rounded-md overflow-hidden mt-3 justify-center items-center bg-white shadow-lg border-solid border-2 border-gray-100">
+        class="p-6 space-y-4 md:space-y-6 sm:p-8 w-full bg-white rounded-lg shadow dark:border md:mt-0  dark:bg-gray-800 dark:border-gray-700">
         <div class="flex flex-col mt-0 mb-0 items-center justify-center">
-            <img src="images/gok.png" alt="User Icon" class="w-12 h-12 mr-2">
+            <img src="images/login.png" alt="User Icon" class="w-16 h-16 rounded-full mr-2">
         </div>
         <div class="step">
-            <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">
+            <p class="text-md font-bold text-red-700 leading-tight text-center mt-8 mb-5">
                 Login into your account
             </p>
             <!-- Login Form -->
@@ -86,6 +92,8 @@
             </form>
         </div>
     </div>
+    </div>
+</section>   
     <script>
         document.getElementById('loginBtn').addEventListener('click', login);
     
@@ -155,7 +163,5 @@
                 }
             }
         }
-    </script>
-    
-    
+    </script> 
 </body>
